@@ -1,0 +1,13 @@
+{
+  "RsData": {
+    "fundBranchList": [
+      {
+        "branchCode": "1722",
+        "hasMark": false,
+        "openDate": "2022/11/07"
+      }
+    ]
+  },
+  "status": "OK",
+  "statusCode": 200
+}

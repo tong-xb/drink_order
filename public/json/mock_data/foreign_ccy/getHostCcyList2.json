@@ -1,0 +1,154 @@
+{
+  "luckyDrawInfo": null,
+  "RsData": {
+    "ccyList": [
+      {
+        "cashBuy": "27.6480",
+        "date": null,
+        "bankSell": "27.9680",
+        "bankBuy": "27.8680",
+        "cname": null,
+        "currency": "USD",
+        "cashSell": "28.1880",
+        "time": null
+      },
+      {
+        "cashBuy": "4.2670",
+        "date": null,
+        "bankSell": "4.4070",
+        "bankBuy": "4.3670",
+        "cname": null,
+        "currency": "CNY",
+        "cashSell": "4.4520",
+        "time": null
+      },
+      {
+        "cashBuy": "0.2375",
+        "date": null,
+        "bankSell": "0.2442",
+        "bankBuy": "0.2410",
+        "cname": null,
+        "currency": "JPY",
+        "cashSell": "0.2472",
+        "time": null
+      },
+      {
+        "cashBuy": "31.0400",
+        "date": null,
+        "bankSell": "31.7400",
+        "bankBuy": "31.4200",
+        "cname": null,
+        "currency": "EUR",
+        "cashSell": "32.1200",
+        "time": null
+      },
+      {
+        "cashBuy": "3.5030",
+        "date": null,
+        "bankSell": "3.6040",
+        "bankBuy": "3.5520",
+        "cname": null,
+        "currency": "HKD",
+        "cashSell": "3.6440",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "19.9100",
+        "bankBuy": "19.7100",
+        "cname": null,
+        "currency": "AUD",
+        "cashSell": "0.0000",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "18.5500",
+        "bankBuy": "18.3500",
+        "cname": null,
+        "currency": "NZD",
+        "cashSell": "0.0000",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "1.9042",
+        "bankBuy": "1.7742",
+        "cname": null,
+        "currency": "ZAR",
+        "cashSell": "0.0000",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "21.9600",
+        "bankBuy": "21.7600",
+        "cname": null,
+        "currency": "CAD",
+        "cashSell": "0.0000",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "37.9200",
+        "bankBuy": "37.5200",
+        "cname": null,
+        "currency": "GBP",
+        "cashSell": "0.0000",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "20.7900",
+        "bankBuy": "20.6300",
+        "cname": null,
+        "currency": "SGD",
+        "cashSell": "0.0000",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "30.3200",
+        "bankBuy": "30.1000",
+        "cname": null,
+        "currency": "CHF",
+        "cashSell": "0.0000",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "3.0000",
+        "bankBuy": "2.9200",
+        "cname": null,
+        "currency": "SEK",
+        "cashSell": "0.0000",
+        "time": null
+      },
+      {
+        "cashBuy": "0.0000",
+        "date": null,
+        "bankSell": "0.8831",
+        "bankBuy": "0.8331",
+        "cname": null,
+        "currency": "THB",
+        "cashSell": "0.0000",
+        "time": null
+      }
+    ],
+    "transDate": "2022/04/29",
+    "updateTime": "16:38:23"
+  },
+  "ticketDrawInfo": null,
+  "isSuccessful": true,
+  "isThreshold": false,
+  "status": "OK",
+  "statusCode": 200
+}

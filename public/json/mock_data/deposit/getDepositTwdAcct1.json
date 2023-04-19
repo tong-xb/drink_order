@@ -1,0 +1,119 @@
+{
+  "RsData": {
+    "acctList": [
+      {
+        "branchCode": "0172",
+        "acctNo": "21CCCCCCCCC624",
+        "rate": "1.425",
+        "endDate": "2023/04/20",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "2062200",
+        "prodDesc": "綜存存本－十二個月　",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "21XXXXXXXXXX30",
+        "rate": "1.425",
+        "endDate": "2023/04/20",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "2000000",
+        "prodDesc": "綜存存本－十二個月　",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "21SSSSSSSS646",
+        "rate": "1.425",
+        "endDate": "2023/04/20",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "2000000",
+        "prodDesc": "綜存存本－十二個月　",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "21CCCCCCCC651",
+        "rate": "1.425",
+        "endDate": "2023/04/20",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "2000000",
+        "prodDesc": "綜存存本－十二個月　",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "21EEEEEEEEE668",
+        "rate": "1.425",
+        "endDate": "2023/04/20",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "2000000",
+        "prodDesc": "綜存存本－十二個月　",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "21CCCCCCCCC861",
+        "rate": "1.425",
+        "endDate": "2023/05/09",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "3000000",
+        "prodDesc": "綜存存本－十二個月　",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "217EEEEEEEEE113",
+        "rate": "1.755",
+        "endDate": "2024/01/18",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "1000000",
+        "prodDesc": "福虎二　－１年專案Ｂ",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "21FFFFFFFFF20",
+        "rate": "1.755",
+        "endDate": "2024/01/18",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "1000000",
+        "prodDesc": "福虎二　－１年專案Ｂ",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "217CCCCCCC0135",
+        "rate": "1.755",
+        "endDate": "2024/01/18",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "1000000",
+        "prodDesc": "福虎二　－１年專案Ｂ",
+        "depositNoCert": "N"
+      },
+      {
+        "branchCode": "0172",
+        "acctNo": "21EEEEEEEEE141",
+        "rate": "1.755",
+        "endDate": "2024/01/18",
+        "closable": true,
+        "branchName": "澄清",
+        "amt": "1000000",
+        "prodDesc": "福虎二　－１年專案Ｂ",
+        "depositNoCert": "N"
+      }
+    ]
+  },
+  "isThreshold": false,
+  "status": "OK",
+  "statusCode": 200
+}

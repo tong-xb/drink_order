@@ -1,0 +1,84 @@
+{
+  "RsData": {
+    "demandDeposit": [
+      {
+        "endDate": "0001/01/01",
+        "branchName": "營業部",
+        "Purpose": "N",
+        "prodType": "2005",
+        "depositNoCert": "N",
+        "WithdrawNoICCard": "N",
+        "branchCode": "0099",
+        "acctNo": "209CCCCCCC631",
+        "prodCate": "0001",
+        "rate": "6.435",
+        "ccy": "TWD",
+        "lcyBalance": "490459",
+        "fycBalance": "490459",
+        "openDate": "2020/11/09",
+        "prodDesc": "行員存款－一般戶",
+        "status": "正常"
+      },
+      {
+        "endDate": "0001/01/01",
+        "branchName": "營業部",
+        "Purpose": "N",
+        "prodType": "2004",
+        "depositNoCert": "N",
+        "WithdrawNoICCard": "N",
+        "branchCode": "0099",
+        "acctNo": "209DDDDD4648",
+        "prodCate": "0007",
+        "rate": "0",
+        "ccy": "TWD",
+        "lcyBalance": "2394",
+        "fycBalance": "2394",
+        "openDate": "2020/11/09",
+        "prodDesc": "綜合活儲－員工薪轉戶",
+        "status": "正常"
+      }
+    ],
+    "overdraftDeposit": [],
+    "twdAcctInfoList": [
+      {
+        "endDate": "0001/01/01",
+        "branchName": "營業部",
+        "Purpose": "N",
+        "prodType": "2005",
+        "depositNoCert": "N",
+        "WithdrawNoICCard": "N",
+        "branchCode": "0099",
+        "acctNo": "209CCCCCCC631",
+        "prodCate": "0001",
+        "rate": "6.435",
+        "ccy": "TWD",
+        "lcyBalance": "490459",
+        "fycBalance": "490459",
+        "openDate": "2020/11/09",
+        "prodDesc": "行員存款－一般戶",
+        "status": "正常"
+      },
+      {
+        "endDate": "0001/01/01",
+        "branchName": "營業部",
+        "Purpose": "N",
+        "prodType": "2004",
+        "depositNoCert": "N",
+        "WithdrawNoICCard": "N",
+        "branchCode": "0099",
+        "acctNo": "209DDDDD4648",
+        "prodCate": "0007",
+        "rate": "0",
+        "ccy": "TWD",
+        "lcyBalance": "2394",
+        "fycBalance": "2394",
+        "openDate": "2020/11/09",
+        "prodDesc": "綜合活儲－員工薪轉戶",
+        "status": "正常"
+      }
+    ],
+    "fixedDeposit": [],
+    "checkDeposit": []
+  },
+  "isThreshold": false
+}

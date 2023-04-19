@@ -1,0 +1,44 @@
+{
+  "RsData": {
+    "crdt_Summery": "18874",
+    "overdraft_Sum": "0",
+    "dci_Detail": [[]],
+    "fund_SumBond": "0",
+    "fund_TotalRefAmount": "2267951",
+    "structNote_Detail": [],
+    "insure_Sum": "0",
+    "insure_SumTranditional": "1733935",
+    "twd_FixedDeposit_LcyBalance": "3689698",
+    "overallAcctStatus": {
+      "getCrdtcardSummeryStatus": { "errorMessage": null, "errorCode": null, "status": "1" },
+      "fceAcctStatus": { "errorMessage": null, "errorCode": null, "status": "1" },
+      "fceLoanAcctStatus": { "errorMessage": "", "errorCode": "", "status": "0" },
+      "twdAcctStatus": { "errorMessage": null, "errorCode": null, "status": "1" },
+      "dcisummeryStatus": { "errorMessage": null, "errorCode": null, "status": "1" },
+      "overviewFundStatus": { "errorMessage": null, "errorCode": null, "status": "1" },
+      "insuranceSummeryStatus": { "errorMessage": null, "errorCode": null, "status": "1" },
+      "loanAcctStatus": { "errorMessage": "", "errorCode": "", "status": "0" },
+      "moneyMarketFundOverviewStatus": {
+        "errorMessage": "交易狀態不明，如有任何交易問題，請電洽本行客服中心專線(02)21821988、0800688168，由專人為您服務，謝謝!!",
+        "errorCode": "BKF_E402",
+        "status": "2"
+      },
+      "bondOverviewStatus": { "errorMessage": null, "errorCode": null, "status": "1" },
+      "goldAcctStatus": { "errorMessage": "", "errorCode": "", "status": "0" }
+    },
+    "twd_CheckDeposit_LcyBalance": "0",
+    "fund_SumOthers": "0",
+    "fce_DemandfceDeposit_TwEquiv": "188554",
+    "twd_DemandDeposit_LcyBalance": "1082834",
+    "fund_MoneyMarketSum": "0",
+    "fund_SumEtf": "0",
+    "dci_Sum": "0",
+    "fund_SumStock": "0",
+    "etf_Detail": [],
+    "fce_FixedfceDeposit_TwEquiv": "0",
+    "overseasStock_Detail": [],
+    "fce_loan_lcyBalance": "0",
+    "gold_Asset": "0",
+    "loan_lcyBalance": "0"
+  }
+}

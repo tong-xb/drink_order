@@ -1,0 +1,21 @@
+{
+  "isSuccessful": true,
+  "responseTime": 336,
+  "totalTime": 336,
+  "RsData": {
+    "depositPeriod": "0012",
+    "depositAmount": "2062200",
+    "depositRolloverType": "N",
+    "rateType": "L",
+    "prodCate": "0012",
+    "acctNo": "0000016CCCCC9311",
+    "rate": "1.425",
+    "depositStartDate": "2022/04/20",
+    "depositEndDate": "2023/04/20",
+    "prodType": "3304",
+    "interestMethod": "T",
+    "interestPeriod": "1A"
+  },
+  "status": "OK",
+  "statusCode": 200
+}

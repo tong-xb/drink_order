@@ -1,0 +1,530 @@
+{
+  "signData": "75520E8B748F944284EA07E0EB469E39F2153D329A682DF28A2317CA54EB0379CDFAA321591E09DCEEAAEDD9354789E734D74C816C6D3AC0CA3B2AB23FD5296E553ECC2F3EA2F2A4DCBF1F2ABCB8FD1CE5CE85268B71BD7B8478F47AD4224FF0B398F1EF5213BEB40CDD00621FD9AC0BE2DAF76138AEA80B439C345B73D2D9B2",
+  "luckyDrawInfo": null,
+  "responseTime": 2028,
+  "totalTime": 2074,
+  "RsData": {
+    "fixRefRate": -8.32,
+    "fundDetailList": [
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "10C7",
+        "fundRefList": [
+          {
+            "income": 8010.54,
+            "invType": "1",
+            "refAmount": 25723.34,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "8.05",
+            "refPayback": -14.26,
+            "fornotbuy": null,
+            "refAmountTwd": 787674,
+            "rate": 30.57,
+            "incomeRefPayback": 12.45,
+            "incomeRefProfit": 3733.88,
+            "twnnotbuy": null,
+            "refProfit": -4276.66,
+            "totalCost": 30000
+          }
+        ],
+        "fundName": "聯博全球非投債ＡＡ穩定月配美"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "1",
+        "fundNo": "1248",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "1",
+            "refAmount": 269997,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "14.9542",
+            "refPayback": 170,
+            "fornotbuy": null,
+            "refAmountTwd": 269997,
+            "rate": 30.57,
+            "incomeRefPayback": 170,
+            "incomeRefProfit": 169997,
+            "twnnotbuy": null,
+            "refProfit": 169997,
+            "totalCost": 100000
+          }
+        ],
+        "fundName": "施羅德環球能源基金Ａ１美元"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "6703",
+        "fundRefList": [
+          {
+            "income": 2086.92,
+            "invType": "1",
+            "refAmount": 22052.47,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "11.49",
+            "refPayback": -26.49,
+            "fornotbuy": null,
+            "refAmountTwd": 675269,
+            "rate": 30.57,
+            "incomeRefPayback": -19.54,
+            "incomeRefProfit": -5860.61,
+            "twnnotbuy": null,
+            "refProfit": -7947.53,
+            "totalCost": 30000
+          }
+        ],
+        "fundName": "聯博亞洲股票基金ＥＤ月配美元"
+      },
+      {
+        "fundCurr": "澳幣",
+        "invType": "1",
+        "fundNo": "6708",
+        "fundRefList": [
+          {
+            "income": 5164.26,
+            "invType": "1",
+            "refAmount": 16411.53,
+            "totalCostTwd": null,
+            "investfundCurr": "AUD",
+            "netValue": "9.87",
+            "refPayback": -17.94,
+            "fornotbuy": null,
+            "refAmountTwd": 338898,
+            "rate": 20.31,
+            "incomeRefPayback": 7.88,
+            "incomeRefProfit": 1575.79,
+            "twnnotbuy": null,
+            "refProfit": -3588.47,
+            "totalCost": 20000
+          }
+        ],
+        "fundName": "聯博全非投債ＥＡ穩定月配澳幣"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "6717",
+        "fundRefList": [
+          {
+            "income": 376.56,
+            "invType": "1",
+            "refAmount": 8597.89,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "15.9",
+            "refPayback": -14.02,
+            "fornotbuy": null,
+            "refAmountTwd": 263276,
+            "rate": 30.57,
+            "incomeRefPayback": -10.26,
+            "incomeRefProfit": -1025.55,
+            "twnnotbuy": null,
+            "refProfit": -1402.11,
+            "totalCost": 10000
+          }
+        ],
+        "fundName": "聯博優化波動股票ＥＤ月配美元"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "1",
+        "fundNo": "7128",
+        "fundRefList": [
+          {
+            "income": 283642,
+            "invType": "1",
+            "refAmount": 290239,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "30.01",
+            "refPayback": -41.95,
+            "fornotbuy": null,
+            "refAmountTwd": 290239,
+            "rate": 30.57,
+            "incomeRefPayback": 14.78,
+            "incomeRefProfit": 73881,
+            "twnnotbuy": null,
+            "refProfit": -209761,
+            "totalCost": 500000
+          }
+        ],
+        "fundName": "鋒裕匯理環球非投等債券Ａ美月"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "7307",
+        "fundRefList": [
+          {
+            "income": 2022.37,
+            "invType": "1",
+            "refAmount": 24396.36,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "64.35",
+            "refPayback": -18.68,
+            "fornotbuy": null,
+            "refAmountTwd": 747041,
+            "rate": 30.57,
+            "incomeRefPayback": -11.94,
+            "incomeRefProfit": -3581.27,
+            "twnnotbuy": null,
+            "refProfit": -5603.64,
+            "totalCost": 30000
+          }
+        ],
+        "fundName": "鋒裕匯理環球生態ＥＳＧ股Ｕ美"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "7310",
+        "fundRefList": [
+          {
+            "income": 2440.64,
+            "invType": "1",
+            "refAmount": 25157.08,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "88.84",
+            "refPayback": -16.14,
+            "fornotbuy": null,
+            "refAmountTwd": 770335,
+            "rate": 30.57,
+            "incomeRefPayback": -8.01,
+            "incomeRefProfit": -2402.28,
+            "twnnotbuy": null,
+            "refProfit": -4842.92,
+            "totalCost": 30000
+          }
+        ],
+        "fundName": "鋒裕匯理基金美國鋒裕股票Ｕ美"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "7311",
+        "fundRefList": [
+          {
+            "income": 1622.73,
+            "invType": "1",
+            "refAmount": 25095.42,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "40.99",
+            "refPayback": -37.26,
+            "fornotbuy": null,
+            "refAmountTwd": 768447,
+            "rate": 30.57,
+            "incomeRefPayback": -33.2,
+            "incomeRefProfit": -13281.85,
+            "twnnotbuy": null,
+            "refProfit": -14904.58,
+            "totalCost": 40000
+          }
+        ],
+        "fundName": "鋒裕匯理基金中國股票Ｕ２美元"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "7701",
+        "fundRefList": [
+          {
+            "income": 1389.53,
+            "invType": "1",
+            "refAmount": 25050.73,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "10.25",
+            "refPayback": -16.5,
+            "fornotbuy": null,
+            "refAmountTwd": 767078,
+            "rate": 30.57,
+            "incomeRefPayback": -11.87,
+            "incomeRefProfit": -3559.74,
+            "twnnotbuy": null,
+            "refProfit": -4949.27,
+            "totalCost": 30000
+          }
+        ],
+        "fundName": "安聯主題趨勢ＢＴ累積類股美元"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "7706",
+        "fundRefList": [
+          {
+            "income": 7399.7,
+            "invType": "1",
+            "refAmount": 61211.39,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "7.87",
+            "refPayback": -23.49,
+            "fornotbuy": null,
+            "refAmountTwd": 1874354,
+            "rate": 30.57,
+            "incomeRefPayback": -14.24,
+            "incomeRefProfit": -11388.91,
+            "twnnotbuy": null,
+            "refProfit": -18788.61,
+            "totalCost": 80000
+          }
+        ],
+        "fundName": "安聯收益成長ＢＭｇ月收總收益"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "Q104",
+        "fundRefList": [
+          {
+            "income": 1808.82,
+            "invType": "1",
+            "refAmount": 17618.54,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "8.61",
+            "refPayback": -11.91,
+            "fornotbuy": null,
+            "refAmountTwd": 539497,
+            "rate": 30.57,
+            "incomeRefPayback": -2.86,
+            "incomeRefProfit": -572.64,
+            "twnnotbuy": null,
+            "refProfit": -2381.46,
+            "totalCost": 20000
+          }
+        ],
+        "fundName": "鋒裕實質收息多重ＮＤ配息美金"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "Y128",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "1",
+            "refAmount": 29919,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "9.917",
+            "refPayback": -0.27,
+            "fornotbuy": null,
+            "refAmountTwd": 916150,
+            "rate": 30.57,
+            "incomeRefPayback": -0.27,
+            "incomeRefProfit": -81,
+            "twnnotbuy": null,
+            "refProfit": -81,
+            "totalCost": 30000
+          }
+        ],
+        "fundName": "元大全球優質龍頭平衡基金美累"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "1",
+        "fundNo": "YT01",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "1",
+            "refAmount": 448534,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "75.68",
+            "refPayback": -10.29,
+            "fornotbuy": null,
+            "refAmountTwd": 448534,
+            "rate": 1,
+            "incomeRefPayback": -10.29,
+            "incomeRefProfit": -51466,
+            "twnnotbuy": null,
+            "refProfit": -51466,
+            "totalCost": 500000
+          }
+        ],
+        "fundName": "元大多福基金"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "1",
+        "fundNo": "YT74",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "1",
+            "refAmount": 513000,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "16.77",
+            "refPayback": 71,
+            "fornotbuy": null,
+            "refAmountTwd": 513000,
+            "rate": 1,
+            "incomeRefPayback": 71,
+            "incomeRefProfit": 213000,
+            "twnnotbuy": null,
+            "refProfit": 213000,
+            "totalCost": 300000
+          }
+        ],
+        "fundName": "元大台灣卓越５０ＥＴＦ累積型"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "1",
+        "fundNo": "YT77",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "1",
+            "refAmount": 1182000,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "11.63",
+            "refPayback": 18.2,
+            "fornotbuy": null,
+            "refAmountTwd": 1182000,
+            "rate": 1,
+            "incomeRefPayback": 18.2,
+            "incomeRefProfit": 182000,
+            "twnnotbuy": null,
+            "refProfit": 182000,
+            "totalCost": 1000000
+          },
+          {
+            "income": 0,
+            "invType": "2",
+            "refAmount": 85260,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "11.63",
+            "refPayback": -8.32,
+            "fornotbuy": null,
+            "refAmountTwd": 85260,
+            "rate": 1,
+            "incomeRefPayback": -8.32,
+            "incomeRefProfit": -7740,
+            "twnnotbuy": null,
+            "refProfit": -7740,
+            "totalCost": 93000
+          }
+        ],
+        "fundName": "元大台灣高股息優質龍頭不配息"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "1",
+        "fundNo": "YT78",
+        "fundRefList": [
+          {
+            "income": 404868,
+            "invType": "1",
+            "refAmount": 855000,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "8.38",
+            "refPayback": -14.5,
+            "fornotbuy": null,
+            "refAmountTwd": 855000,
+            "rate": 1,
+            "incomeRefPayback": 25.99,
+            "incomeRefProfit": 259868,
+            "twnnotbuy": null,
+            "refProfit": -145000,
+            "totalCost": 1000000
+          }
+        ],
+        "fundName": "元大台灣高股息優質龍頭配息"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "1",
+        "fundNo": "YT81",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "1",
+            "refAmount": 2008000,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "10.04",
+            "refPayback": 0.4,
+            "fornotbuy": null,
+            "refAmountTwd": 2008000,
+            "rate": 1,
+            "incomeRefPayback": 0.4,
+            "incomeRefProfit": 8000,
+            "twnnotbuy": null,
+            "refProfit": 8000,
+            "totalCost": 2000000
+          }
+        ],
+        "fundName": "元大全球優質龍頭平衡基金台累"
+      }
+    ],
+    "fundTotalRefProfit": -1906337,
+    "nowTotalPay": 16010930,
+    "fundTotalIncRefPayback": -1.77,
+    "midOut": false,
+    "fundTotalRefPayback": -11.93,
+    "fundTotalFixAmount": 85260,
+    "fundTotalRefAmount": 14100049,
+    "singleRefRate": -1.74,
+    "fundTotalIncRefProfit": -282726,
+    "fundTotalSingleAmount": 14014789,
+    "fundCCYList": [
+      {
+        "fundCurr": "TWD",
+        "fundCCYRefPL": 159030,
+        "totalCostTwd": 5493000,
+        "fundCCYInvAmt": 5652030,
+        "fundCCYRefPRe": 847540,
+        "fundCCYRefReturn": 15.43,
+        "totalCost": 5493000
+      },
+      {
+        "fundCurr": "AUD",
+        "fundCCYRefPL": -3588.47,
+        "totalCostTwd": 413000,
+        "fundCCYInvAmt": 16411.53,
+        "fundCCYRefPRe": 1575.79,
+        "fundCCYRefReturn": 7.88,
+        "totalCost": 20000
+      },
+      {
+        "fundCurr": "USD",
+        "fundCCYRefPL": -65177.78,
+        "totalCostTwd": 10104930,
+        "fundCCYInvAmt": 264822.22,
+        "fundCCYRefPRe": -38019.97,
+        "fundCCYRefReturn": -11.52,
+        "totalCost": 330000
+      }
+    ]
+  },
+  "ticketDrawInfo": null,
+  "statusReason": "OK",
+  "responseHeaders": {
+    "Transfer-Encoding": "chunked",
+    "Server": "Apache-Coyote/1.1",
+    "Date": "Thu, 16 Mar 2023 09:10:25 GMT",
+    "Content-Type": "application/json;charset=UTF-8"
+  },
+  "isSuccessful": true,
+  "serverTime": "2023/03/16 17:10:25.320+0800",
+  "isThreshold": false,
+  "status": "OK",
+  "statusCode": 200
+}

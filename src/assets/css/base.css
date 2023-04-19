@@ -1,0 +1,57 @@
+:root {
+  --yt-c-white: #ffffff;
+  --yt-c-dove-gray: #707070;
+  --yt-c-dusty-gray: #959595;
+  --yt-c-trinidad: #e53d00;
+  --yt-c-surfie-green: #13887b;
+  --yt-c-endeavour: #005bac;
+  --yt-c-midnight-blue: #002e73;
+  --yt-c--pacific-blue: #009fcc;
+  --yt-c--allports: #007799;
+  --yt-c--cobalt: #0044bb;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+  font-family: verdana, Times New Roman, Calibri, 微軟正黑體, 新細明體;
+  font-size: 16px;
+  background: var(--yt-c-white);
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+ol {
+  margin: 0;
+  list-style: decimal;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a:link {
+  color: var(--yt-c--pacific-blue);
+}
+a:visited {
+  color: var(--yt-c--pacific-blue);
+}
+a:hover {
+  color: var(--yt-c--allports);
+}
+a:active {
+  color: var(--yt-c--cobalt);
+}

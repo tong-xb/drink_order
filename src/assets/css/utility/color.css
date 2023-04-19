@@ -1,0 +1,31 @@
+.color-white {
+  color: var(--yt-c-white);
+}
+
+.color-dove-gray {
+  color: var(--yt-c-dove-gray);
+}
+
+.color-dusty-gray {
+  color: #959595;
+}
+
+.color-trinidad {
+  color: var(--yt-c-trinidad);
+}
+
+.color-surfie-green {
+  color: var(--yt-c-surfie-green);
+}
+
+.color-midnight-blue {
+  color: var(--yt-c-midnight-blue);
+}
+
+.color-endeavour {
+  color: var(--yt-c-endeavour);
+}
+
+.bg-color-endeavour {
+  background-color: var(--yt-c-endeavour);
+}

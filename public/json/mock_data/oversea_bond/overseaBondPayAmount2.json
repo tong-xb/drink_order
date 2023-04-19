@@ -1,0 +1,22 @@
+{
+  "RsData": [
+    {
+      "trustName": "蘋果公司美元債－７",
+      "netValue": "972.5",
+      "payeName": "USD",
+      "buyDate": "2022-11-07 00:00:00.0",
+      "percValue": "97.25",
+      "netValueInvest": "19450",
+      "infoupdate_invest": "2023/03/15",
+      "payAmount": "335",
+      "totalPay": "19498",
+      "paperno": "FS00345171",
+      "rate": "30.621",
+      "trustNo": "SBHBBD2206",
+      "buyNetvalue": "97.49",
+      "totalUnit": "20"
+    }
+  ],
+  "status": "OK",
+  "statusCode": 200
+}

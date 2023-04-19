@@ -1,0 +1,14 @@
+{
+  "RsData": {
+    "fundBranchList": [
+      {
+        "branchCode": "0699",
+        "hasMark": false,
+        "openDate": "2008/08/21"
+      }
+    ]
+  },
+  "isThreshold": false,
+  "status": "OK",
+  "statusCode": 200
+}

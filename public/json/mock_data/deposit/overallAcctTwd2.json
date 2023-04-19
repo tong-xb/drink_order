@@ -1,0 +1,15 @@
+{
+  "RsData": {
+    "twd_FixedDeposit_LcyBalance": "121965925",
+    "twd_All_LcyBalance": "137667633",
+    "twd_CheckDeposit_LcyBalance": "790",
+    "twdAcctStatus": {
+      "errorMessage": null,
+      "errorCode": null,
+      "status": "1"
+    },
+    "twd_DemandDeposit_LcyBalance": "15700918"
+  },
+  "ticketDrawInfo": null,
+  "statusReason": "OK"
+}

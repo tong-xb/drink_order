@@ -1,0 +1,54 @@
+{
+  "RsData": [
+    {
+      "trustName": "專十年美元軟銀集團",
+      "netValue": "984.6",
+      "payeName": "USD",
+      "buyDate": "2020-11-25 00:00:00.0",
+      "percValue": "98.46",
+      "netValueInvest": "196920",
+      "infoupdate_invest": "2023/03/24",
+      "payAmount": "30000",
+      "totalPay": "229500",
+      "paperno": "FS00265169",
+      "rate": "30.621",
+      "trustNo": "SBR2BD1601",
+      "buyNetvalue": "114.75",
+      "totalUnit": "200"
+    },
+    {
+      "trustName": "專－法國電力美債３",
+      "netValue": "962.2",
+      "payeName": "USD",
+      "buyDate": "2020-12-16 00:00:00.0",
+      "percValue": "96.22",
+      "netValueInvest": "105842",
+      "infoupdate_invest": "2023/03/24",
+      "payAmount": "16500",
+      "totalPay": "167420",
+      "paperno": "FS00267704",
+      "rate": "30.621",
+      "trustNo": "SBBZBD2003",
+      "buyNetvalue": "152.2",
+      "totalUnit": "110"
+    },
+    {
+      "trustName": "專－高特利美元債３",
+      "netValue": "961",
+      "payeName": "USD",
+      "buyDate": "2022-04-22 00:00:00.0",
+      "percValue": "96.1",
+      "netValueInvest": "48050",
+      "infoupdate_invest": "2023/03/24",
+      "payAmount": "2687.5",
+      "totalPay": "50640",
+      "paperno": "FS00316713",
+      "rate": "30.621",
+      "trustNo": "SBAWBD1906",
+      "buyNetvalue": "101.28",
+      "totalUnit": "50"
+    }
+  ],
+  "status": "OK",
+  "statusCode": 200
+}

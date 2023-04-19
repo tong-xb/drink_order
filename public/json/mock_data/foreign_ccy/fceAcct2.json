@@ -1,0 +1,79 @@
+{
+  "RsData": {
+    "fixedfceDeposit": [],
+    "demandfceDeposit": [
+      {
+        "netBankFlag": true,
+        "branchCode": "0099",
+        "digitalFlag": "0",
+        "acctNo": "0998280039766",
+        "kind": "02",
+        "twEquiv": "113923",
+        "ccy": "AUD",
+        "branchName": "營業部",
+        "canTransOut": true,
+        "lcyBalance": "5779.95",
+        "fycBalance": "5779.95",
+        "status": "0"
+      },
+      {
+        "netBankFlag": true,
+        "branchCode": "0099",
+        "digitalFlag": "0",
+        "acctNo": "0998280039766",
+        "kind": "02",
+        "twEquiv": "14739",
+        "ccy": "GBP",
+        "branchName": "營業部",
+        "canTransOut": true,
+        "lcyBalance": "392.82",
+        "fycBalance": "392.82",
+        "status": "0"
+      },
+      {
+        "netBankFlag": true,
+        "branchCode": "0099",
+        "digitalFlag": "0",
+        "acctNo": "0998280039766",
+        "kind": "02",
+        "twEquiv": "73558",
+        "ccy": "JPY",
+        "branchName": "營業部",
+        "canTransOut": true,
+        "lcyBalance": "305220",
+        "fycBalance": "305220",
+        "status": "0"
+      },
+      {
+        "netBankFlag": true,
+        "branchCode": "0099",
+        "digitalFlag": "0",
+        "acctNo": "0998280039766",
+        "kind": "02",
+        "twEquiv": "9586290",
+        "ccy": "USD",
+        "branchName": "營業部",
+        "canTransOut": true,
+        "lcyBalance": "278473.51",
+        "fycBalance": "343989.16",
+        "status": "0"
+      },
+      {
+        "netBankFlag": true,
+        "branchCode": "0099",
+        "digitalFlag": "0",
+        "acctNo": "0998280039766",
+        "kind": "02",
+        "twEquiv": "1774200",
+        "ccy": "ZAR",
+        "branchName": "營業部",
+        "canTransOut": true,
+        "lcyBalance": "1000000",
+        "fycBalance": "1000000",
+        "status": "0"
+      }
+    ]
+  },
+  "status": "OK",
+  "statusCode": 200
+}

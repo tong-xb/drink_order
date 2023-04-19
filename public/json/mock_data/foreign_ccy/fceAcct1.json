@@ -1,0 +1,92 @@
+{
+  "RsData": {
+    "fixedfceDeposit": [
+      {
+        "payInterestType": "2",
+        "acctStatus": "0",
+        "projCode": "",
+        "endDate": "2022-08-04",
+        "depositTimes": "2",
+        "rateType": "2",
+        "depositedTimes": "1",
+        "acctNo": "8099380006183669",
+        "acctCcy": "USD",
+        "rate": "0.16",
+        "twEquiv": "27869",
+        "rateName": "固定利率",
+        "kind": "02",
+        "projName": "",
+        "branchName": "營業部",
+        "inAcctNo": "0998280053681",
+        "depositLength": "7d",
+        "acctBal": "1000.03",
+        "branchCode": "0099",
+        "cycleType": "2",
+        "paperNo": "",
+        "openDate": "2022-07-21",
+        "cycleTypeName": "本息自動續存",
+        "payInterestTypeName": "到期領息",
+        "startDate": "2022-07-28"
+      },
+      {
+        "payInterestType": "2",
+        "acctStatus": "0",
+        "projCode": "",
+        "endDate": "2022-08-04",
+        "depositTimes": "2",
+        "rateType": "2",
+        "depositedTimes": "1",
+        "acctNo": "8099380006183673",
+        "acctCcy": "USD",
+        "rate": "0.16",
+        "twEquiv": "27869",
+        "rateName": "固定利率",
+        "kind": "02",
+        "projName": "",
+        "branchName": "營業部",
+        "inAcctNo": "0998280053681",
+        "depositLength": "7d",
+        "acctBal": "1000.03",
+        "branchCode": "0099",
+        "cycleType": "2",
+        "paperNo": "",
+        "openDate": "2022-07-21",
+        "cycleTypeName": "本息自動續存",
+        "payInterestTypeName": "到期領息",
+        "startDate": "2022-07-28"
+      }
+    ],
+    "demandfceDeposit": [
+      {
+        "netBankFlag": true,
+        "branchCode": "0099",
+        "digitalFlag": "0",
+        "acctNo": "0998280053681",
+        "kind": "02",
+        "twEquiv": "4613352",
+        "ccy": "EUR",
+        "branchName": "營業部",
+        "canTransOut": true,
+        "lcyBalance": "146828.51",
+        "fycBalance": "146828.51",
+        "status": "0"
+      },
+      {
+        "netBankFlag": true,
+        "branchCode": "0099",
+        "digitalFlag": "0",
+        "acctNo": "0998280053681",
+        "kind": "02",
+        "twEquiv": "12838627",
+        "ccy": "USD",
+        "branchName": "營業部",
+        "canTransOut": true,
+        "lcyBalance": "460694.22",
+        "fycBalance": "460694.22",
+        "status": "0"
+      }
+    ]
+  },
+  "status": "OK",
+  "statusCode": 200
+}

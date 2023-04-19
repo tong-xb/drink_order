@@ -1,0 +1,204 @@
+{
+  "signData": "727580CD7496BAF527130413936C22DFFA4464940FB6CE85E59B8D423629C0A8DB7D4D92FE0248492D1191F88D413FDF09DCAD44ED99885AEE64CCFC528CA3ABC4521C5258838273F0C07BA64DE95458007E890567D5A98BC38A02D09C74EB115412A7A38365933AFA275A5C3658E3DF87E4AE33906AC5E75541DC329F311D76",
+  "luckyDrawInfo": null,
+  "responseTime": 381,
+  "totalTime": 438,
+  "RsData": {
+    "fixRefRate": -9.93,
+    "fundDetailList": [
+      {
+        "fundCurr": "台幣",
+        "invType": "2",
+        "fundNo": "0958",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "2",
+            "refAmount": 17827,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "22.15",
+            "refPayback": -40.58,
+            "fornotbuy": null,
+            "refAmountTwd": 17827,
+            "rate": 30.57,
+            "incomeRefPayback": -40.58,
+            "incomeRefProfit": -12173,
+            "twnnotbuy": null,
+            "refProfit": -12173,
+            "totalCost": 30000
+          }
+        ],
+        "fundName": "富蘭坦伯頓大中華基金－再投資"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "7706",
+        "fundRefList": [
+          {
+            "income": 644.68,
+            "invType": "1",
+            "refAmount": 17468.17,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "7.87",
+            "refPayback": 0.38,
+            "fornotbuy": null,
+            "refAmountTwd": 534893,
+            "rate": 30.57,
+            "incomeRefPayback": 4.08,
+            "incomeRefProfit": 710.02,
+            "twnnotbuy": null,
+            "refProfit": 65.34,
+            "totalCost": 17402.83
+          }
+        ],
+        "fundName": "安聯收益成長ＢＭｇ月收總收益"
+      },
+      {
+        "fundCurr": "美金",
+        "invType": "1",
+        "fundNo": "7707",
+        "fundRefList": [
+          {
+            "income": 468.84,
+            "invType": "1",
+            "refAmount": 16325.21,
+            "totalCostTwd": null,
+            "investfundCurr": "USD",
+            "netValue": "5.31",
+            "refPayback": -34.7,
+            "fornotbuy": null,
+            "refAmountTwd": 499894,
+            "rate": 30.57,
+            "incomeRefPayback": -32.82,
+            "incomeRefProfit": -8205.95,
+            "twnnotbuy": null,
+            "refProfit": -8674.79,
+            "totalCost": 25000
+          }
+        ],
+        "fundName": "安聯ＡＩ人工智慧ＢＴ累積美元"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "2",
+        "fundNo": "KY21",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "2",
+            "refAmount": 30944,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "107.12",
+            "refPayback": 10.51,
+            "fornotbuy": null,
+            "refAmountTwd": 30944,
+            "rate": 1,
+            "incomeRefPayback": 10.51,
+            "incomeRefProfit": 2944,
+            "twnnotbuy": null,
+            "refProfit": 2944,
+            "totalCost": 28000
+          }
+        ],
+        "fundName": "元大二○○一基金"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "1",
+        "fundNo": "YT01",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "1",
+            "refAmount": 81722,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "75.68",
+            "refPayback": -18.28,
+            "fornotbuy": null,
+            "refAmountTwd": 81722,
+            "rate": 1,
+            "incomeRefPayback": -18.28,
+            "incomeRefProfit": -18278,
+            "twnnotbuy": null,
+            "refProfit": -18278,
+            "totalCost": 100000
+          }
+        ],
+        "fundName": "元大多福基金"
+      },
+      {
+        "fundCurr": "台幣",
+        "invType": "2",
+        "fundNo": "YT77",
+        "fundRefList": [
+          {
+            "income": 0,
+            "invType": "2",
+            "refAmount": 98042,
+            "totalCostTwd": null,
+            "investfundCurr": "TWD",
+            "netValue": "11.63",
+            "refPayback": -6.63,
+            "fornotbuy": null,
+            "refAmountTwd": 98042,
+            "rate": 1,
+            "incomeRefPayback": -6.63,
+            "incomeRefProfit": -6958,
+            "twnnotbuy": null,
+            "refProfit": -6958,
+            "totalCost": 105000
+          }
+        ],
+        "fundName": "元大台灣高股息優質龍頭不配息"
+      }
+    ],
+    "fundTotalRefProfit": -297656,
+    "nowTotalPay": 1561417,
+    "fundTotalIncRefPayback": -16.91,
+    "midOut": false,
+    "fundTotalRefPayback": -19.09,
+    "fundTotalFixAmount": 146813,
+    "fundTotalRefAmount": 1263322,
+    "singleRefRate": -17.72,
+    "fundTotalIncRefProfit": -263616,
+    "fundTotalSingleAmount": 1116509,
+    "fundCCYList": [
+      {
+        "fundCurr": "TWD",
+        "fundCCYRefPL": -34465,
+        "totalCostTwd": 263000,
+        "fundCCYInvAmt": 228535,
+        "fundCCYRefPRe": -34465,
+        "fundCCYRefReturn": -13.1,
+        "totalCost": 263000
+      },
+      {
+        "fundCurr": "USD",
+        "fundCCYRefPL": -8609.45,
+        "totalCostTwd": 1298417,
+        "fundCCYInvAmt": 33793.38,
+        "fundCCYRefPRe": -7495.93,
+        "fundCCYRefReturn": -17.68,
+        "totalCost": 42402.83
+      }
+    ]
+  },
+  "ticketDrawInfo": null,
+  "statusReason": "OK",
+  "responseHeaders": {
+    "Transfer-Encoding": "chunked",
+    "Server": "Apache-Coyote/1.1",
+    "Date": "Thu, 16 Mar 2023 09:00:15 GMT",
+    "Content-Type": "application/json;charset=UTF-8"
+  },
+  "isSuccessful": true,
+  "serverTime": "2023/03/16 17:00:15.666+0800",
+  "isThreshold": false,
+  "status": "OK",
+  "statusCode": 200
+}

@@ -1,0 +1,216 @@
+{
+  "RsData": {
+    "ccyDetailList": [
+      {
+        "detailList": [
+          {
+            "bookDate": "2023/02/09",
+            "txtime": "18221180",
+            "txnRate": "1",
+            "inAmt": "0",
+            "outAmt": "2010",
+            "remark": "安東方入零",
+            "txnDate": "2023/02/09",
+            "txnCcy": "USD",
+            "acctBal": "343989.16",
+            "desc": "基金扣帳"
+          },
+          {
+            "bookDate": "2023/01/12",
+            "txtime": "15003489",
+            "txnRate": "0.69",
+            "inAmt": "0",
+            "outAmt": "600",
+            "remark": "轉帳(0998280039766)",
+            "txnDate": "2023/01/12",
+            "txnCcy": "USD",
+            "acctBal": "345999.16",
+            "desc": "留單幣轉"
+          },
+          {
+            "bookDate": "2022/12/23",
+            "txtime": "15160553",
+            "txnRate": "0.68187",
+            "inAmt": "0",
+            "outAmt": "888",
+            "remark": "轉帳(0998280039766)",
+            "txnDate": "2022/12/23",
+            "txnCcy": "USD",
+            "acctBal": "346599.16",
+            "desc": "行動幣轉"
+          },
+          {
+            "bookDate": "2022/12/22",
+            "txtime": "18505182",
+            "txnRate": "30.651",
+            "inAmt": "0",
+            "outAmt": "200",
+            "remark": "00415220312890",
+            "txnDate": "2022/12/22",
+            "txnCcy": "USD",
+            "acctBal": "347487.16",
+            "desc": "行動結售"
+          },
+          {
+            "bookDate": "2022/12/21",
+            "txtime": "12570754",
+            "txnRate": "1",
+            "inAmt": "1002.53",
+            "outAmt": "0",
+            "remark": "8099380006182146",
+            "txnDate": "2022/12/21",
+            "txnCcy": "USD",
+            "acctBal": "347687.16",
+            "desc": "自動解約"
+          },
+          {
+            "bookDate": "2022/12/19",
+            "txtime": "10301708",
+            "txnRate": "30.74",
+            "inAmt": "100",
+            "outAmt": "0",
+            "remark": "00415220312890",
+            "txnDate": "2022/12/19",
+            "txnCcy": "USD",
+            "acctBal": "346684.63",
+            "desc": "定期結購"
+          },
+          {
+            "bookDate": "2022/12/07",
+            "txtime": "10302702",
+            "txnRate": "30.685",
+            "inAmt": "100",
+            "outAmt": "0",
+            "remark": "00415220312890",
+            "txnDate": "2022/12/07",
+            "txnCcy": "USD",
+            "acctBal": "346584.63",
+            "desc": "定期結購"
+          },
+          {
+            "bookDate": "2022/11/07",
+            "txtime": "10302249",
+            "txnRate": "30.585",
+            "inAmt": "100",
+            "outAmt": "0",
+            "remark": "00415220312890",
+            "txnDate": "2022/11/07",
+            "txnCcy": "USD",
+            "acctBal": "346484.63",
+            "desc": "定期結購"
+          },
+          {
+            "bookDate": "2022/10/19",
+            "txtime": "14560317",
+            "txnRate": "1",
+            "inAmt": "0",
+            "outAmt": "1005",
+            "remark": "富達全主機",
+            "txnDate": "2022/10/19",
+            "txnCcy": "USD",
+            "acctBal": "346384.63",
+            "desc": "小額扣款"
+          },
+          {
+            "bookDate": "2022/10/19",
+            "txtime": "14560292",
+            "txnRate": "1",
+            "inAmt": "0",
+            "outAmt": "201",
+            "remark": "摩歐洲美元",
+            "txnDate": "2022/10/19",
+            "txnCcy": "USD",
+            "acctBal": "347389.63",
+            "desc": "小額扣款"
+          },
+          {
+            "bookDate": "2022/10/17",
+            "txtime": "10302101",
+            "txnRate": "30.585",
+            "inAmt": "100",
+            "outAmt": "0",
+            "remark": "00415220312890",
+            "txnDate": "2022/10/17",
+            "txnCcy": "USD",
+            "acctBal": "347590.63",
+            "desc": "定期結購"
+          },
+          {
+            "bookDate": "2022/09/19",
+            "txtime": "10301597",
+            "txnRate": "30.585",
+            "inAmt": "100",
+            "outAmt": "0",
+            "remark": "00415220312890",
+            "txnDate": "2022/09/19",
+            "txnCcy": "USD",
+            "acctBal": "347490.63",
+            "desc": "定期結購"
+          }
+        ],
+        "txnCcy": "USD"
+      },
+      {
+        "detailList": [
+          {
+            "bookDate": "2023/01/12",
+            "txtime": "15003493",
+            "txnRate": "0.69",
+            "inAmt": "869.57",
+            "outAmt": "0",
+            "remark": "轉帳(0998280039766)",
+            "txnDate": "2023/01/12",
+            "txnCcy": "AUD",
+            "acctBal": "5779.95",
+            "desc": "留單幣轉"
+          },
+          {
+            "bookDate": "2022/12/23",
+            "txtime": "15160559",
+            "txnRate": "0.68187",
+            "inAmt": "1302.3",
+            "outAmt": "0",
+            "remark": "轉帳(0998280039766US",
+            "txnDate": "2022/12/23",
+            "txnCcy": "AUD",
+            "acctBal": "4910.38",
+            "desc": "行動幣轉"
+          }
+        ],
+        "txnCcy": "AUD"
+      },
+      {
+        "detailList": [
+          {
+            "bookDate": "2022/12/20",
+            "txtime": "18460742",
+            "txnRate": "0.2257",
+            "inAmt": "132920",
+            "outAmt": "0",
+            "remark": "00415220312890",
+            "txnDate": "2022/12/20",
+            "txnCcy": "JPY",
+            "acctBal": "305220",
+            "desc": "行動結購"
+          },
+          {
+            "bookDate": "2022/12/20",
+            "txtime": "15233069",
+            "txnRate": "0.2257",
+            "inAmt": "172300",
+            "outAmt": "0",
+            "remark": "00415230312810",
+            "txnDate": "2022/12/20",
+            "txnCcy": "JPY",
+            "acctBal": "172300",
+            "desc": "網銀結購"
+          }
+        ],
+        "txnCcy": "JPY"
+      }
+    ]
+  },
+  "isThreshold": false,
+  "status": "OK",
+  "statusCode": 200
+}

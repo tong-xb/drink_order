@@ -1,0 +1,63 @@
+{
+  "RsData": {
+    "ccyDetailList": [
+      {
+        "detailList": [
+          {
+            "bookDate": "2022/10/05",
+            "txtime": "12494221",
+            "txnRate": "30.535",
+            "inAmt": "327.49",
+            "outAmt": "0",
+            "remark": "20992000102761",
+            "txnDate": "2022/10/05",
+            "txnCcy": "USD",
+            "acctBal": "460694.22",
+            "desc": "行動結購"
+          },
+          {
+            "bookDate": "2022/09/21",
+            "txtime": "10440460",
+            "txnRate": "1",
+            "inAmt": "0",
+            "outAmt": "3673.7",
+            "remark": "NNAH2GDW000449",
+            "txnDate": "2022/09/21",
+            "txnCcy": "USD",
+            "acctBal": "460366.73",
+            "desc": "買進黃金"
+          },
+          {
+            "bookDate": "2022/09/21",
+            "txtime": "10382862",
+            "txnRate": "1",
+            "inAmt": "1819.35",
+            "outAmt": "0",
+            "remark": "NNAH2GDW000448",
+            "txnDate": "2022/09/21",
+            "txnCcy": "USD",
+            "acctBal": "464040.43",
+            "desc": "黃金回售"
+          },
+          {
+            "bookDate": "2022/09/21",
+            "txtime": "10315103",
+            "txnRate": "1",
+            "inAmt": "0",
+            "outAmt": "1836.85",
+            "remark": "NNAH2GDW000447",
+            "txnDate": "2022/09/21",
+            "txnCcy": "USD",
+            "acctBal": "462221.08",
+            "desc": "買進黃金"
+          }
+        ],
+        "txnCcy": "USD"
+      }
+    ]
+  },
+  "serverTime": "2023/03/15 10:29:42.331+0800",
+  "isThreshold": false,
+  "status": "OK",
+  "statusCode": 200
+}

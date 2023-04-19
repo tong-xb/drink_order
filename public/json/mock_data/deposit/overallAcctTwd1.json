@@ -1,0 +1,17 @@
+{
+  "signData": null,
+  "luckyDrawInfo": null,
+  "ticketDrawInfo": null,
+  "isThreshold": false,
+  "RsData": {
+    "twdAcctStatus": {
+      "status": "1",
+      "errorCode": null,
+      "errorMessage": null
+    },
+    "twd_CheckDeposit_LcyBalance": "0",
+    "twd_DemandDeposit_LcyBalance": "492853",
+    "twd_FixedDeposit_LcyBalance": "0",
+    "twd_All_LcyBalance": "492853"
+  }
+}

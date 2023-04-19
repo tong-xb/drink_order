@@ -1,0 +1,37 @@
+{
+  "RsData": [
+    {
+      "midOutUnit": "0",
+      "invType": "1",
+      "netvalue": "96.07",
+      "buyDate": "2022-11-07",
+      "trustKind": "Y",
+      "buyrate": "32.003",
+      "buyacctno": "0200236249315",
+      "denomination": "20000",
+      "preinterest": "0",
+      "acctNo": "31722715918507",
+      "rate": "30.621",
+      "prefee": "0",
+      "netvaluedate": "2023-03-14",
+      "buyValue": "97.49",
+      "fixbuy": "19498",
+      "unitsign": "+",
+      "fixfee": "0",
+      "totAmt": "19498",
+      "payAmt": "335",
+      "certNo": "FS00345171",
+      "receivedate": "2022-11-08",
+      "trustname": "蘋果公司美元債－７　",
+      "totUnit": "20",
+      "paysign": "+",
+      "trustNo": "SBHBBD2206",
+      "valCur": "USD",
+      "asset": "19214",
+      "invCur": "USD"
+    }
+  ],
+  "isThreshold": false,
+  "status": "OK",
+  "statusCode": 200
+}
