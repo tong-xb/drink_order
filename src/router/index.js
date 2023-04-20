@@ -5,13 +5,25 @@ export const routes = [
     path: '/',
     name: 'home',
     meta: { showHeader: false },
-    redirect: { name: 'TotalAssets' },
+    redirect: { name: 'HomeView' },
   },
   {
     path: '/index.html',
     name: 'index',
     meta: { showHeader: false },
-    redirect: { name: 'TotalAssets' },
+    redirect: { name: 'HomeView' },
+  },
+  {
+    path: '/login-view',
+    name: 'loginView', //order system登入頁
+    meta: { showHeader: false },
+    component: () => import('../views/order_system/LoginView.vue'),
+  },
+  {
+    path: '/home-view',
+    name: 'HomeView', //order system首頁
+    meta: { showHeader: false },
+    component: () => import('../views/order_system/HomeView.vue'),
   },
   {
     path: '/fido-example',
