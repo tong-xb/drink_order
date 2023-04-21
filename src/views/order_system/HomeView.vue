@@ -1,76 +1,64 @@
 <template>
-  <div class="header">
-    <h1>HOME</h1>
-    <div class="user">
-      <a v-if="localStorageUser.isAdmin">管理員</a>
-      <a v-else-if="!localStorageUser.isAdmin">hi! {{ localStorageUser.userName }}</a>
-    </div>
-  </div>
-  <div class="body">
-    <div class="card-container">
-      <div class="card-head">
-        <h2>主餐</h2>
-        <div>
-          <a>4/19(三)</a>
-          <a>10:00-11:00</a>
-        </div>
-      </div>
-      <div class="card-content">
-        <h1>麥當勞</h1>
-      </div>
-    </div>
-    <div class="card-container">
-      <div class="card-head">
-        <h2>飲料</h2>
-        <div>
-          <a>4/19(三)</a>
-          <a>10:00-11:00</a>
-        </div>
-      </div>
-      <div class="card-content">
-        <h1>50嵐</h1>
-      </div>
-    </div>
-  </div>
-  <div class="footer">
-    <a>首頁</a>
-    <a>訂單</a>
-    <a>帳戶</a>
+  <div v-for="menuItem in menus.menu" :key="menuItem.key">
+    <MenuCard
+      :id="menuItem.id"
+      :storeName="menuItem.storeName"
+      :storeType="menuItem.storeType"
+      :openTimeFrom="menuItem.openTimeFrom"
+      :openTimeTo="menuItem.openTimeTo"
+      :arrivalTime="menuItem.arrivalTime"
+    />
   </div>
 </template>
 <script setup>
-// import { reactive } from 'vue';
+import MenuCard from '@/components/order_system/card/MenuCard.vue';
+import { reactive } from 'vue';
 // import users from '@/api/json/users.json';
-const localStorageUser = JSON.parse(localStorage.getItem('user'));
-console.log(localStorageUser.userName);
+// import { useRouter } from 'vue-router';
+
+const menus = reactive({
+  menu: [
+    {
+      id: '001',
+      storeName: '50嵐',
+      storeType: '飲料',
+      openTimeFrom: '4/19 (三) 10:00',
+      openTimeTo: '4/19 (三) 11:00',
+      arrivalTime: '4/19 (三) 12:00',
+    },
+    {
+      id: '002',
+      storeName: '龜記',
+      storeType: '飲料',
+      openTimeFrom: '4/20 (四) 10:00',
+      openTimeTo: '4/20 (四) 11:00',
+      arrivalTime: '4/20 (四) 12:00',
+    },
+    {
+      id: '003',
+      storeName: '麥當勞',
+      storeType: '主食',
+      openTimeFrom: '4/19 (三) 10:00',
+      openTimeTo: '4/19 (三) 11:00',
+      arrivalTime: '4/19 (三) 12:00',
+    },
+  ],
+});
+
+// const router = useRouter();
+
+// const toLogin = () => {
+//   router.push({ name: 'LoginView' });
+// };
+
+// const localStorageUser = JSON.parse(localStorage.getItem('user'));
+// console.log(localStorageUser);
+
+// onBeforeMount(() => {
+//   if (!localStorageUser) {
+//     // alert('請先登入!');
+//     router.push({ name: 'LoginView' });
+//     toLogin();
+//   }
+// });
 </script>
-<style>
-.card-container {
-  padding: 16px;
-  background-color: rgb(91 193 197);
-  border: 2px solid;
-  border-radius: 20px;
-  margin: 8px 20px;
-}
-.card-head {
-  display: flex;
-}
-.card-head a {
-  display: block;
-  font-size: 1px;
-}
-.card-content h1 {
-  text-align: center;
-}
-.header a {
-  text-align: right;
-}
-.user {
-  text-align: right;
-  padding-right: 10px;
-}
-.footer {
-  display: inline-block;
-  text-align: justify;
-}
-</style>
