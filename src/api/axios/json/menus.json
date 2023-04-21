@@ -1,0 +1,31 @@
+{
+  "menus": [
+    {
+      "id": "001",
+      "storeName": "50嵐",
+      "storeType": "飲料",
+      "openTimeFrom": "4/19 (三) 10:00",
+      "openTimeTo": "4/19 (三) 11:00",
+      "arrivalTime": "4/19 (三) 12:00",
+      "menuIsOpen": true
+    },
+    {
+      "id": "002",
+      "storeName": "龜記",
+      "storeType": "飲料",
+      "openTimeFrom": "4/20 (四) 10:00",
+      "openTimeTo": "4/20 (四) 11:00",
+      "arrivalTime": "4/20 (四) 12:00",
+      "menuIsOpen": true
+    },
+    {
+      "id": "003",
+      "storeName": "麥當勞",
+      "storeType": "主食",
+      "openTimeFrom": "4/19 (三) 10:00",
+      "openTimeTo": "4/19 (三) 11:00",
+      "arrivalTime": "4/19 (三) 12:00",
+      "menuIsOpen": true
+    }
+  ]
+}
