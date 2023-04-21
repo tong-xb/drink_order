@@ -15,15 +15,33 @@ export const routes = [
   },
   {
     path: '/login-view',
-    name: 'loginView', //order system登入頁
+    name: 'LoginView', //order system登入頁
     meta: { showHeader: false },
     component: () => import('../views/order_system/LoginView.vue'),
+  },
+  {
+    path: '/over-view',
+    name: 'OverView', //order system首頁
+    meta: { showHeader: false },
+    component: () => import('../views/order_system/OverView.vue'),
   },
   {
     path: '/home-view',
     name: 'HomeView', //order system首頁
     meta: { showHeader: false },
     component: () => import('../views/order_system/HomeView.vue'),
+  },
+  {
+    path: '/my-order-view',
+    name: 'MyOrderView', //order system首頁
+    meta: { showHeader: false },
+    component: () => import('../views/order_system/MyOrderView.vue'),
+  },
+  {
+    path: '/my-account-view',
+    name: 'MyAccountView', //order system首頁
+    meta: { showHeader: false },
+    component: () => import('../views/order_system/MyAccountView.vue'),
   },
   {
     path: '/fido-example',
