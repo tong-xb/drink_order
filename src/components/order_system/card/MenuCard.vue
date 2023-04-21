@@ -1,0 +1,81 @@
+<template>
+  <div class="card-container" :class="backgroundColor(props.storeType)">
+    <div class="card-head">
+      <h2>{{ props.storeType }}</h2>
+      <div>
+        <a>訂餐時間:{{ props.openTimeFrom }} ~ {{ props.openTimeTo }}</a>
+        <a>取餐時間:{{ props.arrivalTime }}</a>
+      </div>
+    </div>
+    <div class="card-content">
+      <h1>{{ props.storeName }}</h1>
+    </div>
+  </div>
+</template>
+<script setup>
+const props = defineProps({
+  id: {
+    type: String,
+  },
+  storeName: {
+    type: String,
+  },
+  storeType: {
+    type: String,
+  },
+  openTimeFrom: {
+    type: String,
+  },
+  openTimeTo: {
+    type: String,
+  },
+  arrivalTime: {
+    type: String,
+  },
+});
+
+const backgroundColor = (type) => {
+  let menuType = '';
+  switch (type) {
+    case '主食':
+      menuType = 'type-main';
+      break;
+    case '飲料':
+      menuType = 'type-drink';
+      break;
+    case '甜點':
+      menuType = 'type-dessert';
+      break;
+  }
+  return menuType;
+};
+</script>
+
+<style>
+.card-container {
+  padding: 16px;
+  background-color: rgb(91 193 197);
+  border: 2px solid;
+  border-radius: 20px;
+  margin: 8px 20px;
+}
+.card-head {
+  display: flex;
+}
+.card-head a {
+  display: block;
+  font-size: 1px;
+}
+.card-content h1 {
+  text-align: center;
+}
+.type-drink {
+  background-color: rgb(91 193 197);
+}
+.type-main {
+  background-color: rgb(225 233 52);
+}
+.type-dessert {
+  background-color: rgb(83 209 96);
+}
+</style>
