@@ -1,5 +1,5 @@
 {
-  "name": "bank-fido",
+  "name": "order-system",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -11,8 +11,8 @@
     "test:unit:ui": "vitest --ui",
     "test:unit:coverage": "vitest run --coverage",
     "test:unit:ci": "vitest run",
-    "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' :4173/bank-fido/ 'cypress open --e2e'",
-    "test:e2e:ci": "start-server-and-test preview :4173/bank-fido/ 'cypress run --e2e'",
+    "test:e2e:dev": "start-server-and-test 'vite dev --port 4173' :4173/order-system/ 'cypress open --e2e'",
+    "test:e2e:ci": "start-server-and-test preview :4173/order-system/ 'cypress run --e2e'",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .eslintignore",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|html|jsonc|vue)\"",
     "svgo": "npx svgo --recursive src/assets"
