@@ -20,27 +20,21 @@ export const routes = [
     component: () => import('../views/order_system/LoginView.vue'),
   },
   {
-    path: '/over-view',
-    name: 'OverView', //order system首頁
-    meta: { showHeader: false },
-    component: () => import('../views/order_system/OverView.vue'),
-  },
-  {
     path: '/home-view',
-    name: 'HomeView', //order system首頁
-    meta: { showHeader: false },
+    name: 'HomeView', //order system
+    meta: { showHeader: true },
     component: () => import('../views/order_system/HomeView.vue'),
   },
   {
     path: '/my-order-view',
-    name: 'MyOrderView', //order system首頁
-    meta: { showHeader: false },
+    name: 'MyOrderView', //order system
+    meta: { showHeader: true },
     component: () => import('../views/order_system/MyOrderView.vue'),
   },
   {
     path: '/my-account-view',
-    name: 'MyAccountView', //order system首頁
-    meta: { showHeader: false },
+    name: 'MyAccountView', //order system
+    meta: { showHeader: true },
     component: () => import('../views/order_system/MyAccountView.vue'),
   },
   {
@@ -173,7 +167,7 @@ const router = createRouter({
   routes: routes,
 });
 
-import { watch } from 'vue';
+// import { watch } from 'vue';
 import { useEventListener } from '@vueuse/core';
 import { useCommonStore } from '../stores/common';
 import { useUserStore } from '../stores/user';
