@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <header>
-      <BasicHeader />
+      <BasicHeader v-if="route.meta.showHeader" />
     </header>
     <main>
       <RouterView />
@@ -16,37 +16,22 @@
 import BasicHeader from './components/order_system/header/BasicHeader.vue';
 import BasicFooter from './components/order_system/footer/BasicFooter.vue';
 import { useLoginStore } from '@/stores/loginState';
-import { onMounted, watchEffect } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRouter, useRoute } from 'vue-router';
 
 const store = useLoginStore();
 const router = useRouter();
+const route = useRoute();
 
-const checkLogin = () => {
-  //1. check local storage
+// check login IIFE Arrow function
+(() => {
   if (store.isLogin) {
-    // console.log('登入狀態:' + store.isLogin);
+    console.log('router.push to HomeView');
+    router.push({ name: 'HomeView' });
   } else {
+    console.log('router.push to LoginView');
     router.push({ name: 'LoginView' });
   }
-
-  if (!store.isLogin) {
-    let localStorageUser = JSON.parse(localStorage.getItem('user'));
-    ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    ////!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    console.log(localStorageUser.userName);
-    router.push({ name: 'LoginView' });
-  }
-};
-
-onMounted(() => {
-  checkLogin();
-});
-
-watchEffect(() => {
-  console.log('登入狀態:' + store.isLogin);
-});
+})();
 </script>
 
 <style></style>

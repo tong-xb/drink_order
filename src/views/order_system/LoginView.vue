@@ -30,7 +30,6 @@
 
 <script setup>
 import { reactive } from 'vue';
-// import users from '@/api/json/users.json';
 import { useRouter } from 'vue-router';
 import { useLoginStore } from '@/stores/loginState';
 
@@ -47,9 +46,9 @@ const user = reactive({
 });
 
 const localStorageUser = reactive({
-  id: '',
-  userName: 'unknown',
-  isAdmin: '',
+  userid: '',
+  userName: '',
+  isAdmin: null,
 });
 const usersList = reactive({
   users: [
@@ -64,16 +63,16 @@ const login = () => {
   usersList.users.forEach((usersListItem) => {
     if (usersListItem.account === user.userAccount) {
       if (usersListItem.accountPassword === user.userPassword) {
+        localStorageUser.userid = usersListItem.id;
         localStorageUser.userName = usersListItem.userName;
         localStorageUser.isAdmin = usersListItem.isAdmin;
-        localStorageUser.id = usersListItem.id;
         store.isLogin = true;
+        store.user = localStorageUser;
         localStorage.setItem('user', JSON.stringify(localStorageUser));
         toHome();
       }
     }
   });
-  console.log('userName:' + localStorageUser.userName + ', isAdmin:' + localStorageUser.isAdmin);
 };
 </script>
 
