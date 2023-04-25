@@ -15,7 +15,7 @@
 <script setup>
 import BasicHeader from './components/order_system/header/BasicHeader.vue';
 import BasicFooter from './components/order_system/footer/BasicFooter.vue';
-import { useLoginStore } from '@/stores/loginState';
+import { useLoginStore } from '@/stores/order_system/loginState';
 import { useRouter, useRoute } from 'vue-router';
 
 const store = useLoginStore();

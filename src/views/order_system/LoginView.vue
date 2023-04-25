@@ -31,7 +31,7 @@
 <script setup>
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
-import { useLoginStore } from '@/stores/loginState';
+import { useLoginStore } from '@/stores/order_system/loginState';
 
 const router = useRouter();
 const store = useLoginStore();

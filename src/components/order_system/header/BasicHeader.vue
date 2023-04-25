@@ -9,21 +9,21 @@
 </template>
 
 <script setup>
-import { useLoginStore } from '@/stores/loginState';
+import { useLoginStore } from '@/stores/order_system/loginState';
 
 const store = useLoginStore();
 </script>
 
 <style>
 .header {
-  border-bottom: solid rgb(91 193 197) 0.5px;
+  border-bottom: solid rgb(8 72 135) 0.5px;
   padding-bottom: 5px;
   height: 100%;
 }
 .header h1 {
   text-align: center;
   margin: 0;
-  padding: 20px 0;
+  padding: 40px 0 20px 0;
 }
 .header a {
   text-align: right;
