@@ -10,11 +10,11 @@
 .footer {
   display: flex;
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0px;
   justify-content: space-around;
   align-items: center;
-  height: 10%;
+  height: 100%;
   border-top: solid rgb(91 193 197) 0.5px;
 }
 p {

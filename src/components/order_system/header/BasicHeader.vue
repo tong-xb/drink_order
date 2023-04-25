@@ -18,9 +18,12 @@ const store = useLoginStore();
 .header {
   border-bottom: solid rgb(91 193 197) 0.5px;
   padding-bottom: 5px;
+  height: 100%;
 }
 .header h1 {
   text-align: center;
+  margin: 0;
+  padding: 20px 0;
 }
 .header a {
   text-align: right;
