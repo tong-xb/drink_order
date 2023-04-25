@@ -11,14 +11,18 @@
           <div class="orderBody-content">
             <h3>大小</h3>
             <div class="radioSelector">
-              <div>
-                <input type="radio" name="size" />
-                <label for="M">M</label>
+              <div class="radioSelector_container">
+                <div>
+                  <input type="radio" name="size" value="M" v-model="bag.size" />
+                  <label for="M">M</label>
+                </div>
                 <label for="M">{{ props.product.drinkPrice.M }}</label>
               </div>
-              <div>
-                <input type="radio" name="size" />
-                <label for="L">L</label>
+              <div class="radioSelector_container">
+                <div>
+                  <input type="radio" name="size" value="L" v-model="bag.size" />
+                  <label for="L">L</label>
+                </div>
                 <label for="L">{{ props.product.drinkPrice.L }}</label>
               </div>
             </div>
@@ -27,27 +31,27 @@
             <h3>冰塊</h3>
             <div class="radioSelector">
               <div>
-                <input type="radio" name="ice" />
+                <input type="radio" name="ice" value="多冰" v-model="bag.ice" />
                 <label for="ice1">多冰</label>
               </div>
               <div>
-                <input type="radio" name="ice" />
+                <input type="radio" name="ice" value="少冰" v-model="bag.ice" />
                 <label for="ice2">少冰</label>
               </div>
               <div>
-                <input type="radio" name="ice" />
+                <input type="radio" name="ice" value="微冰" v-model="bag.ice" />
                 <label for="ice3">微冰</label>
               </div>
               <div>
-                <input type="radio" name="ice" />
+                <input type="radio" name="ice" value="去冰" v-model="bag.ice" />
                 <label for="ice4">去冰</label>
               </div>
               <div>
-                <input type="radio" name="ice" />
+                <input type="radio" name="ice" value="溫" v-model="bag.ice" />
                 <label for="ice5">溫</label>
               </div>
               <div>
-                <input type="radio" name="ice" />
+                <input type="radio" name="ice" value="熱" v-model="bag.ice" />
                 <label for="ice6">熱</label>
               </div>
             </div>
@@ -56,38 +60,38 @@
             <h3>甜度</h3>
             <div class="radioSelector">
               <div>
-                <input type="radio" name="sugar" />
+                <input type="radio" name="sugar" value="多糖" v-model="bag.sugar" />
                 <label for="sugar1">多糖</label>
               </div>
               <div>
-                <input type="radio" name="sugar" />
+                <input type="radio" name="sugar" value="正常" v-model="bag.sugar" />
                 <label for="sugar2">正常</label>
               </div>
               <div>
-                <input type="radio" name="sugar" />
+                <input type="radio" name="sugar" value="少糖" v-model="bag.sugar" />
                 <label for="sugar3">少糖</label>
               </div>
               <div>
-                <input type="radio" name="sugar" />
+                <input type="radio" name="sugar" value="半糖" v-model="bag.sugar" />
                 <label for="sugar4">半糖</label>
               </div>
               <div>
-                <input type="radio" name="sugar" />
+                <input type="radio" name="sugar" value="微糖" v-model="bag.sugar" />
                 <label for="sugar5">微糖</label>
               </div>
               <div>
-                <input type="radio" name="sugar" />
+                <input type="radio" name="sugar" value="淺糖" v-model="bag.sugar" />
                 <label for="sugar6">淺糖</label>
               </div>
               <div>
-                <input type="radio" name="sugar" />
+                <input type="radio" name="sugar" value="無糖" v-model="bag.sugar" />
                 <label for="sugar7">無糖</label>
               </div>
             </div>
           </div>
         </div>
         <div class="orderFooter">
-          <button>加入購物車</button>
+          <button @click="addToCart">加入購物車 - ${{ total }}</button>
           <button @click="closeWindow">取消</button>
         </div>
       </div>
@@ -96,6 +100,22 @@
 </template>
 
 <script setup>
+import { reactive, computed } from 'vue';
+import { useCart } from '@/stores/order_system/cart';
+
+const store = useCart();
+// const test = reactive([
+//   {
+//     size: '',
+//     ice: '',
+//     sugar: '',
+//   },
+// ]);
+
+const addToCart = () => {
+  store.push(bag);
+};
+
 const props = defineProps({
   product: {
     type: Object,
@@ -106,6 +126,22 @@ const emit = defineEmits('emitWindowOpen');
 const closeWindow = () => {
   emit('emitWindowOpen', false);
 };
+const bag = reactive({
+  size: '',
+  ice: '',
+  sugar: '',
+});
+
+const total = computed(() => {
+  let price = 0;
+  if (bag.size === 'M') {
+    price = props.product.drinkPrice.M;
+  } else if (bag.size === 'L') {
+    price = props.product.drinkPrice.L;
+  }
+
+  return price;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -152,6 +188,10 @@ const closeWindow = () => {
 }
 .orderBody-content h3 {
   padding: 5px 0;
+}
+.radioSelector_container {
+  display: flex;
+  justify-content: space-between;
 }
 .radioSelector input {
   margin: 0 5px 0 0;
