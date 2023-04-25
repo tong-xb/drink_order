@@ -25,13 +25,22 @@ const route = useRoute();
 // check login IIFE Arrow function
 (() => {
   if (store.isLogin) {
-    console.log('router.push to HomeView');
     router.push({ name: 'HomeView' });
   } else {
-    console.log('router.push to LoginView');
     router.push({ name: 'LoginView' });
   }
 })();
 </script>
 
-<style></style>
+<style>
+header {
+  height: 15vh;
+}
+main {
+  height: 75vh;
+  overflow-x: scroll;
+}
+footer {
+  height: 10vh;
+}
+</style>
