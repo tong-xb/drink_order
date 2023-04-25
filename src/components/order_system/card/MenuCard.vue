@@ -54,10 +54,11 @@ const backgroundColor = (type) => {
 <style>
 .card-container {
   padding: 16px;
-  background-color: rgb(91 193 197);
-  border: 2px solid;
+  background-color: rgb(249 171 85);
+  border: 2px solid rgb(245 138 7);
   border-radius: 20px;
   margin: 8px 20px;
+  max-width: 450px;
 }
 .card-head {
   display: flex;
@@ -70,7 +71,7 @@ const backgroundColor = (type) => {
   text-align: center;
 }
 .type-drink {
-  background-color: rgb(91 193 197);
+  background-color: rgb(249 171 85);
 }
 .type-main {
   background-color: rgb(225 233 52);

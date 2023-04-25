@@ -15,13 +15,13 @@
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  border-top: solid rgb(91 193 197) 0.5px;
+  border-top: solid rgb(8 72 135) 0.5px;
 }
 p {
   display: inline-block;
   padding: 10px 20px;
 }
-.content {
-  background-color: blue;
-}
+/* .content {
+  background-color: rgb(8 72 135);
+} */
 </style>

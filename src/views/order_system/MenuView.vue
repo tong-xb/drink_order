@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="menuContainer">
     <div class="titleContainer">
       <h1>{{ selectedStore.storeName }}</h1>
       <h1></h1>
@@ -25,7 +25,6 @@
 <script setup>
 import { ref, reactive, computed } from 'vue';
 import OrderWindow from '@/components/order_system/OrderWindow.vue';
-
 const props = defineProps({
   menuId: {
     type: String,
@@ -810,12 +809,14 @@ const menus = reactive({
 </script>
 
 <style>
+.menuContainer {
+}
 .titleContainer {
   padding: 10px 20px;
 }
 .productContainer {
   padding: 10px 20px;
-  /* border: 1px solid black; */
+  background-color: #f3f3f3;
 }
 .typeContainer {
   inset: 0 0 0 0;
@@ -835,6 +836,11 @@ const menus = reactive({
   justify-content: space-between;
   margin: 10px 0;
   padding: 5px 5px;
-  border: 1px solid black;
+  box-shadow: rgb(197, 197, 197) 0px 2px 4px;
+  font-size: 1em;
+  line-height: 1.2em;
+  font-family: Arial, verdana, 'Times New Roman', 微軟正黑體, 新細明體;
+  border-radius: 10px;
+  background-color: #ffffff;
 }
 </style>
