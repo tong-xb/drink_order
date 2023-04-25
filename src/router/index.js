@@ -38,6 +38,13 @@ export const routes = [
     component: () => import('../views/order_system/MyAccountView.vue'),
   },
   {
+    path: '/menu-view/:menuId',
+    name: 'MenuView', //order system
+    meta: { showHeader: true },
+    component: () => import('../views/order_system/MenuView.vue'),
+    props: true,
+  },
+  {
     path: '/fido-example',
     name: 'FidoExampleView', //集團資產測試頁
     meta: { showHeader: false },
