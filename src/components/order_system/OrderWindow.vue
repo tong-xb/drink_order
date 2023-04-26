@@ -91,7 +91,7 @@
           </div>
         </div>
         <div class="orderFooter">
-          <button @click="addToCart">加入購物車 - ${{ total }}</button>
+          <button @click="addToCart">加入訂單 - ${{ total }}</button>
           <button @click="closeWindow">取消</button>
         </div>
       </div>
@@ -100,20 +100,22 @@
 </template>
 
 <script setup>
-import { reactive, computed } from 'vue';
+import { reactive, computed, watch } from 'vue';
 import { useCart } from '@/stores/order_system/cart';
 
-const store = useCart();
-// const test = reactive([
-//   {
-//     size: '',
-//     ice: '',
-//     sugar: '',
-//   },
-// ]);
+const storeCart = useCart();
 
-const addToCart = () => {
-  store.push(bag);
+const addToCart = async () => {
+  const bagToPush = {
+    menuId: props.menuId,
+    productId: bag.productId,
+    size: bag.size,
+    ice: bag.ice,
+    sugar: bag.sugar,
+    price: total.value,
+  };
+  storeCart.cart.all.push(bagToPush);
+  closeWindow();
 };
 
 const props = defineProps({
@@ -121,15 +123,37 @@ const props = defineProps({
     type: Object,
     required: true,
   },
+  menuId: {
+    type: String,
+    required: true,
+  },
 });
 const emit = defineEmits('emitWindowOpen');
 const closeWindow = () => {
+  clearSheet();
   emit('emitWindowOpen', false);
 };
+const clearSheet = () => {
+  let radio = document.querySelectorAll('input[type=radio]:checked');
+  if (radio) {
+    console.log(radio);
+    radio.forEach((item) => {
+      item.checked = false;
+    });
+  }
+  bag.size = '';
+  bag.ice = '';
+  bag.sugar = '';
+};
 const bag = reactive({
+  productId: '',
   size: '',
   ice: '',
   sugar: '',
+});
+
+watch(props, (newVal) => {
+  bag.productId = newVal.product.drinkId;
 });
 
 const total = computed(() => {
@@ -139,7 +163,6 @@ const total = computed(() => {
   } else if (bag.size === 'L') {
     price = props.product.drinkPrice.L;
   }
-
   return price;
 });
 </script>
