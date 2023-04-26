@@ -1,0 +1,9 @@
+[
+  {
+    "all": [
+      { "menuId": "m001", "productId": "d001", "size": "M", "ice": "多冰", "sugar": "多糖", "price": 20 },
+      { "menuId": "m001", "productId": "d001", "size": "M", "ice": "去冰", "sugar": "正常", "price": 20 },
+      { "menuId": "m001", "productId": "d001", "size": "M", "ice": "多冰", "sugar": "多糖", "price": 20 }
+    ]
+  }
+]
