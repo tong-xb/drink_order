@@ -1,8 +1,8 @@
-import { defineStore } from 'pinia';
-import { ref, reactive, watch } from 'vue';
+import { defineStore, acceptHMRUpdate } from 'pinia';
+import { reactive, ref, watch } from 'vue';
 
 export const useLoginStore = defineStore('loginState', () => {
-  let user = reactive({
+  const user = reactive({
     userid: '',
     userName: '',
     isAdmin: false,
@@ -11,7 +11,7 @@ export const useLoginStore = defineStore('loginState', () => {
   const isLogin = ref(false);
 
   if (localStorage.getItem('user')) {
-    user = JSON.parse(localStorage.getItem('user'));
+    user.value = JSON.parse(localStorage.getItem('user'));
     console.log(1);
     isLogin.value = true;
   }
@@ -29,3 +29,7 @@ export const useLoginStore = defineStore('loginState', () => {
     isLogin,
   };
 });
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useLoginStore, import.meta.hot));
+}

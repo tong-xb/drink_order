@@ -1,16 +1,14 @@
-import { defineStore } from 'pinia';
+import { defineStore, acceptHMRUpdate } from 'pinia';
 import { reactive } from 'vue';
 
 export const useCart = defineStore('cart', () => {
-  let product = reactive([
-    {
-      size: '',
-      ice: '',
-      sugar: '',
-    },
-  ]);
+  const cart = reactive({ all: [] });
 
   return {
-    product,
+    cart,
   };
 });
+
+if (import.meta.hot) {
+  import.meta.hot.accept(acceptHMRUpdate(useCart, import.meta.hot));
+}
