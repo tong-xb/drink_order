@@ -18,7 +18,7 @@
         <a>{{ drink.drinkPrice.M }}起 ></a>
       </div>
     </div>
-    <OrderWindow :product="selectedProduct" v-show="windowOpen" @emitWindowOpen="closeMenu" />
+    <OrderWindow :product="selectedProduct" :menuId="props.menuId" v-show="windowOpen" @emitWindowOpen="closeMenu" />
   </div>
 </template>
 
@@ -222,7 +222,7 @@ const stores = reactive({
           drinkType: '找拿鐵 (鮮奶)',
           drinks: [
             {
-              drinkId: 'd001',
+              drinkId: 'd017',
               drinkName: '紅茶拿鐵',
               drinkPrice: {
                 M: 40,
@@ -230,7 +230,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd002',
+              drinkId: 'd018',
               drinkName: '抹茶拿鐵',
               drinkPrice: {
                 M: 45,
@@ -238,7 +238,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd003',
+              drinkId: 'd019',
               drinkName: '珍珠紅茶拿鐵',
               drinkPrice: {
                 M: 40,
@@ -246,7 +246,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd004',
+              drinkId: 'd020',
               drinkName: '波霸紅茶拿鐵',
               drinkPrice: {
                 M: 40,
@@ -254,7 +254,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd005',
+              drinkId: 'd021',
               drinkName: '波霸抹茶拿鐵',
               drinkPrice: {
                 M: 45,
@@ -262,7 +262,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd006',
+              drinkId: 'd022',
               drinkName: '阿華田拿鐵',
               drinkPrice: {
                 M: 45,
@@ -270,7 +270,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd007',
+              drinkId: 'd023',
               drinkName: '冰淇淋紅茶拿鐵',
               drinkPrice: {
                 M: 50,
@@ -284,7 +284,7 @@ const stores = reactive({
           drinkType: '找奶茶 (奶精)',
           drinks: [
             {
-              drinkId: 'd001',
+              drinkId: 'd024',
               drinkName: '奶茶',
               drinkPrice: {
                 M: 30,
@@ -292,7 +292,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd002',
+              drinkId: 'd025',
               drinkName: '奶綠',
               drinkPrice: {
                 M: 30,
@@ -300,7 +300,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd003',
+              drinkId: 'd026',
               drinkName: '烏龍奶',
               drinkPrice: {
                 M: 30,
@@ -308,7 +308,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd004',
+              drinkId: 'd027',
               drinkName: '珍珠奶茶',
               drinkPrice: {
                 M: 30,
@@ -316,7 +316,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd005',
+              drinkId: 'd028',
               drinkName: '珍珠奶綠',
               drinkPrice: {
                 M: 30,
@@ -324,7 +324,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd006',
+              drinkId: 'd029',
               drinkName: '波霸奶茶',
               drinkPrice: {
                 M: 30,
@@ -332,7 +332,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd007',
+              drinkId: 'd030',
               drinkName: '波霸奶綠',
               drinkPrice: {
                 M: 30,
@@ -340,7 +340,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd008',
+              drinkId: 'd031',
               drinkName: '紅茶瑪奇朵 (鮮奶油)',
               drinkPrice: {
                 M: 30,
@@ -348,7 +348,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd009',
+              drinkId: 'd032',
               drinkName: '阿華田',
               drinkPrice: {
                 M: 35,
@@ -356,7 +356,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd010',
+              drinkId: 'd033',
               drinkName: '冰淇淋奶茶',
               drinkPrice: {
                 M: 40,
@@ -370,7 +370,7 @@ const stores = reactive({
           drinkType: '找新鮮 (無咖啡因)',
           drinks: [
             {
-              drinkId: 'd001',
+              drinkId: 'd034',
               drinkName: '8冰茶',
               drinkPrice: {
                 M: 30,
@@ -378,7 +378,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd002',
+              drinkId: 'd035',
               drinkName: '檸檬汁',
               drinkPrice: {
                 M: 40,
@@ -386,7 +386,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd003',
+              drinkId: 'd036',
               drinkName: '葡萄柚汁',
               drinkPrice: {
                 M: 40,
@@ -394,7 +394,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd004',
+              drinkId: 'd037',
               drinkName: '金桔檸檬',
               drinkPrice: {
                 M: 40,
@@ -402,7 +402,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd005',
+              drinkId: 'd038',
               drinkName: '檸檬梅汁',
               drinkPrice: {
                 M: 40,
@@ -410,7 +410,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd006',
+              drinkId: 'd039',
               drinkName: '檸檬多多',
               drinkPrice: {
                 M: 45,
@@ -418,7 +418,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd007',
+              drinkId: 'd040',
               drinkName: '葡萄柚多多',
               drinkPrice: {
                 M: 45,
@@ -574,7 +574,7 @@ const stores = reactive({
           drinkType: '龜記找拿鐵 (鮮奶)',
           drinks: [
             {
-              drinkId: 'd001',
+              drinkId: 'd017',
               drinkName: '紅茶拿鐵',
               drinkPrice: {
                 M: 40,
@@ -582,7 +582,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd002',
+              drinkId: 'd018',
               drinkName: '抹茶拿鐵',
               drinkPrice: {
                 M: 45,
@@ -590,7 +590,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd003',
+              drinkId: 'd019',
               drinkName: '珍珠紅茶拿鐵',
               drinkPrice: {
                 M: 40,
@@ -598,7 +598,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd004',
+              drinkId: 'd020',
               drinkName: '波霸紅茶拿鐵',
               drinkPrice: {
                 M: 40,
@@ -606,7 +606,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd005',
+              drinkId: 'd021',
               drinkName: '波霸抹茶拿鐵',
               drinkPrice: {
                 M: 45,
@@ -614,7 +614,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd006',
+              drinkId: 'd022',
               drinkName: '阿華田拿鐵',
               drinkPrice: {
                 M: 45,
@@ -622,7 +622,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd007',
+              drinkId: 'd023',
               drinkName: '冰淇淋紅茶拿鐵',
               drinkPrice: {
                 M: 50,
@@ -636,7 +636,7 @@ const stores = reactive({
           drinkType: '龜記找奶茶 (奶精)',
           drinks: [
             {
-              drinkId: 'd001',
+              drinkId: 'd024',
               drinkName: '奶茶',
               drinkPrice: {
                 M: 30,
@@ -644,7 +644,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd002',
+              drinkId: 'd025',
               drinkName: '奶綠',
               drinkPrice: {
                 M: 30,
@@ -652,7 +652,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd003',
+              drinkId: 'd026',
               drinkName: '烏龍奶',
               drinkPrice: {
                 M: 30,
@@ -660,7 +660,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd004',
+              drinkId: 'd027',
               drinkName: '珍珠奶茶',
               drinkPrice: {
                 M: 30,
@@ -668,7 +668,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd005',
+              drinkId: 'd028',
               drinkName: '珍珠奶綠',
               drinkPrice: {
                 M: 30,
@@ -676,7 +676,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd006',
+              drinkId: 'd029',
               drinkName: '波霸奶茶',
               drinkPrice: {
                 M: 30,
@@ -684,7 +684,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd007',
+              drinkId: 'd030',
               drinkName: '波霸奶綠',
               drinkPrice: {
                 M: 30,
@@ -692,7 +692,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd008',
+              drinkId: 'd031',
               drinkName: '紅茶瑪奇朵 (鮮奶油)',
               drinkPrice: {
                 M: 30,
@@ -700,7 +700,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd009',
+              drinkId: 'd032',
               drinkName: '阿華田',
               drinkPrice: {
                 M: 35,
@@ -708,7 +708,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd010',
+              drinkId: 'd033',
               drinkName: '冰淇淋奶茶',
               drinkPrice: {
                 M: 40,
@@ -722,7 +722,7 @@ const stores = reactive({
           drinkType: '龜記找新鮮 (無咖啡因)',
           drinks: [
             {
-              drinkId: 'd001',
+              drinkId: 'd034',
               drinkName: '8冰茶',
               drinkPrice: {
                 M: 30,
@@ -730,7 +730,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd002',
+              drinkId: 'd035',
               drinkName: '檸檬汁',
               drinkPrice: {
                 M: 40,
@@ -738,7 +738,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd003',
+              drinkId: 'd036',
               drinkName: '葡萄柚汁',
               drinkPrice: {
                 M: 40,
@@ -754,7 +754,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd005',
+              drinkId: 'd037',
               drinkName: '檸檬梅汁',
               drinkPrice: {
                 M: 40,
@@ -762,7 +762,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd006',
+              drinkId: 'd038',
               drinkName: '檸檬多多',
               drinkPrice: {
                 M: 45,
@@ -770,7 +770,7 @@ const stores = reactive({
               },
             },
             {
-              drinkId: 'd007',
+              drinkId: 'd039',
               drinkName: '葡萄柚多多',
               drinkPrice: {
                 M: 45,
