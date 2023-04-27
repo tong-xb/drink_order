@@ -809,8 +809,6 @@ const menus = reactive({
 </script>
 
 <style>
-.menuContainer {
-}
 .titleContainer {
   padding: 10px 20px;
 }

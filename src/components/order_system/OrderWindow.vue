@@ -105,7 +105,7 @@ import { useCart } from '@/stores/order_system/cart';
 
 const storeCart = useCart();
 
-const addToCart = async () => {
+const addToCart = () => {
   const bagToPush = {
     menuId: props.menuId,
     productId: bag.productId,
