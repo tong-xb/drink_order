@@ -1,13 +1,13 @@
 <template>
   <div class="order_container">
-    <div class="order_container_title">
+    <div class="order_container_title" @click="toggle">
       <h1>{{ thisMenu.storeName }}</h1>
       <p v-if="!open">{{ thisMenu.arrivalTime }}</p>
-      <a @click="toggle">></a>
+      <a :class="[open ? 'rotate' : '']">></a>
     </div>
     <div class="toggle_container" v-if="open">
       <p>預計送達時間: {{ thisMenu.arrivalTime }}</p>
-      <div class="order_container_content" v-for="item in thisCart" :key="item.productId">
+      <div class="order_container_content" v-for="item in thisCart.product" :key="item.productId">
         <div class="left">
           <a>1</a>
         </div>
@@ -26,7 +26,8 @@
           <div class="total">${{ total }}</div>
         </div>
         <div class="button_container">
-          <button>刪除</button>
+          <button @click="sendMenu()">送出</button>
+          <button @click="deleteMenu()">刪除</button>
         </div>
       </div>
     </div>
@@ -36,6 +37,7 @@
 <script setup>
 import { ref, reactive, defineProps, computed } from 'vue';
 import { useCart } from '@/stores/order_system/cart';
+// import { send } from 'vite';
 
 const storeCart = useCart();
 // console.log(props.menuId);
@@ -44,7 +46,35 @@ const props = defineProps({
     type: String,
     require: true,
   },
+  cartType: {
+    type: String,
+    require: true,
+  },
 });
+
+const sendMenu = () => {
+  if (confirm('確定送出 ' + thisMenu.value.storeName + ' 訂單?') == true) {
+    console.log('已送出');
+    storeCart.addToSentCart(props.menuId);
+  } else {
+    console.log('取消送出');
+  }
+};
+
+const deleteMenu = () => {
+  if (confirm('確定刪除 ' + thisMenu.value.storeName + ' 訂單?') == true) {
+    console.log('已刪除');
+    let listName = props.cartType;
+    storeCart[listName].forEach((item, idx) => {
+      if (item.menuId === props.menuId) {
+        // delete storeCart[listName][idx];
+        storeCart[listName].splice(idx, 1);
+      }
+    });
+  } else {
+    console.log('取消刪除');
+  }
+};
 
 const open = ref(false);
 
@@ -58,745 +88,30 @@ const thisMenu = computed(() => {
 });
 
 const thisCart = computed(() => {
-  let list = storeCart.cart.all.filter((item) => {
-    return item.menuId === thisMenu.value.menuId;
+  let listName = props.cartType;
+  let obj = {};
+  storeCart[listName].forEach((item) => {
+    if (item.menuId === props.menuId) {
+      obj = item;
+    }
   });
-
-  // storeCart.cart.all加入ProductName
-  list.forEach((thisProductItem) => {
-    let thisProductName = '';
-    stores.stores.forEach((storeItem) => {
-      if (storeItem.storeId === thisMenu.value.storeId) {
-        storeItem.product.forEach((productItem) => {
-          productItem.drinks.forEach((drinkItem) => {
-            if (drinkItem.drinkId === thisProductItem.productId) {
-              thisProductName = drinkItem.drinkName;
-            }
-          });
-        });
-      }
-    });
-    thisProductItem.productName = thisProductName;
-  });
-
-  return list;
+  return obj;
+  // {
+  //   menuId: 'm001',
+  //   product: [
+  //     { productId: 'd001',productName: '麥香紅茶', size: 'M', ice: '多冰', sugar: '多糖', price: 20 },
+  //     { productId: 'd002',productName: '麥香紅茶', size: 'L', ice: '溫', sugar: '正常', price: 20 },
+  //     { productId: 'd003',productName: '麥香紅茶', size: 'M', ice: '熱', sugar: '無糖', price: 20 },
+  //   ],
+  // },
 });
 
 const total = computed(() => {
   let price = 0;
-  thisCart.value.forEach((item) => {
+  thisCart.value.product.forEach((item) => {
     price += item.price;
   });
   return price;
-});
-
-const stores = reactive({
-  stores: [
-    {
-      storeId: 's001',
-      storeName: '50嵐',
-      storeType: '飲料',
-      storeAddress: '台北市松山區北寧路26號',
-      product: [
-        {
-          drinkTypeId: 't001',
-          drinkType: '找好茶',
-          drinks: [
-            {
-              drinkId: 'd001',
-              drinkName: '茉莉綠茶',
-              drinkPrice: {
-                M: 20,
-                L: 25,
-              },
-            },
-            {
-              drinkId: 'd002',
-              drinkName: '阿薩姆紅茶',
-              drinkPrice: {
-                M: 20,
-                L: 25,
-              },
-            },
-            {
-              drinkId: 'd003',
-              drinkName: '四季春青茶',
-              drinkPrice: {
-                M: 20,
-                L: 25,
-              },
-            },
-            {
-              drinkId: 'd004',
-              drinkName: '黃金烏龍',
-              drinkPrice: {
-                M: 20,
-                L: 25,
-              },
-            },
-            {
-              drinkId: 'd005',
-              drinkName: '波霸綠',
-              drinkPrice: {
-                M: 25,
-                L: 35,
-              },
-            },
-            {
-              drinkId: 'd006',
-              drinkName: '波霸紅',
-              drinkPrice: {
-                M: 25,
-                L: 35,
-              },
-            },
-            {
-              drinkId: 'd007',
-              drinkName: '微檸檬紅',
-              drinkPrice: {
-                M: 25,
-                L: 35,
-              },
-            },
-            {
-              drinkId: 'd008',
-              drinkName: '微檸檬青',
-              drinkPrice: {
-                M: 25,
-                L: 35,
-              },
-            },
-            {
-              drinkId: 'd009',
-              drinkName: '檸檬綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd010',
-              drinkName: '檸檬青',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd011',
-              drinkName: '梅子綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd012',
-              drinkName: '8冰綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd013',
-              drinkName: '多多綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd014',
-              drinkName: '冰淇淋紅茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd015',
-              drinkName: '旺來紅',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd016',
-              drinkName: '鮮柚綠',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-          ],
-        },
-        {
-          drinkTypeId: 't002',
-          drinkType: '找拿鐵 (鮮奶)',
-          drinks: [
-            {
-              drinkId: 'd017',
-              drinkName: '紅茶拿鐵',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd018',
-              drinkName: '抹茶拿鐵',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-            {
-              drinkId: 'd019',
-              drinkName: '珍珠紅茶拿鐵',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd020',
-              drinkName: '波霸紅茶拿鐵',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd021',
-              drinkName: '波霸抹茶拿鐵',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-            {
-              drinkId: 'd022',
-              drinkName: '阿華田拿鐵',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-            {
-              drinkId: 'd023',
-              drinkName: '冰淇淋紅茶拿鐵',
-              drinkPrice: {
-                M: 50,
-                L: 70,
-              },
-            },
-          ],
-        },
-        {
-          drinkTypeId: 't003',
-          drinkType: '找奶茶 (奶精)',
-          drinks: [
-            {
-              drinkId: 'd024',
-              drinkName: '奶茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd025',
-              drinkName: '奶綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd026',
-              drinkName: '烏龍奶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd027',
-              drinkName: '珍珠奶茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd028',
-              drinkName: '珍珠奶綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd029',
-              drinkName: '波霸奶茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd030',
-              drinkName: '波霸奶綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd031',
-              drinkName: '紅茶瑪奇朵 (鮮奶油)',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd032',
-              drinkName: '阿華田',
-              drinkPrice: {
-                M: 35,
-                L: 50,
-              },
-            },
-            {
-              drinkId: 'd033',
-              drinkName: '冰淇淋奶茶',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-          ],
-        },
-        {
-          drinkTypeId: 't004',
-          drinkType: '找新鮮 (無咖啡因)',
-          drinks: [
-            {
-              drinkId: 'd034',
-              drinkName: '8冰茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd035',
-              drinkName: '檸檬汁',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd036',
-              drinkName: '葡萄柚汁',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd037',
-              drinkName: '金桔檸檬',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd038',
-              drinkName: '檸檬梅汁',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd039',
-              drinkName: '檸檬多多',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-            {
-              drinkId: 'd040',
-              drinkName: '葡萄柚多多',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-          ],
-        },
-      ],
-    },
-    {
-      storeId: 's002',
-      storeName: '龜記',
-      storeType: '飲料',
-      storeAddress: '台北市松山區八德路三段74巷4號',
-      product: [
-        {
-          drinkTypeId: 't001',
-          drinkType: '龜記找好茶',
-          drinks: [
-            {
-              drinkId: 'd001',
-              drinkName: '茉莉綠茶',
-              drinkPrice: {
-                M: 20,
-                L: 25,
-              },
-            },
-            {
-              drinkId: 'd002',
-              drinkName: '阿薩姆紅茶',
-              drinkPrice: {
-                M: 20,
-                L: 25,
-              },
-            },
-            {
-              drinkId: 'd003',
-              drinkName: '四季春青茶',
-              drinkPrice: {
-                M: 20,
-                L: 25,
-              },
-            },
-            {
-              drinkId: 'd004',
-              drinkName: '黃金烏龍',
-              drinkPrice: {
-                M: 20,
-                L: 25,
-              },
-            },
-            {
-              drinkId: 'd005',
-              drinkName: '波霸綠',
-              drinkPrice: {
-                M: 25,
-                L: 35,
-              },
-            },
-            {
-              drinkId: 'd006',
-              drinkName: '波霸紅',
-              drinkPrice: {
-                M: 25,
-                L: 35,
-              },
-            },
-            {
-              drinkId: 'd007',
-              drinkName: '微檸檬紅',
-              drinkPrice: {
-                M: 25,
-                L: 35,
-              },
-            },
-            {
-              drinkId: 'd008',
-              drinkName: '微檸檬青',
-              drinkPrice: {
-                M: 25,
-                L: 35,
-              },
-            },
-            {
-              drinkId: 'd009',
-              drinkName: '檸檬綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd010',
-              drinkName: '檸檬青',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd011',
-              drinkName: '梅子綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd012',
-              drinkName: '8冰綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd013',
-              drinkName: '多多綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd014',
-              drinkName: '冰淇淋紅茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd015',
-              drinkName: '旺來紅',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd016',
-              drinkName: '鮮柚綠',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-          ],
-        },
-        {
-          drinkTypeId: 't002',
-          drinkType: '龜記找拿鐵 (鮮奶)',
-          drinks: [
-            {
-              drinkId: 'd017',
-              drinkName: '紅茶拿鐵',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd018',
-              drinkName: '抹茶拿鐵',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-            {
-              drinkId: 'd019',
-              drinkName: '珍珠紅茶拿鐵',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd020',
-              drinkName: '波霸紅茶拿鐵',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd021',
-              drinkName: '波霸抹茶拿鐵',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-            {
-              drinkId: 'd022',
-              drinkName: '阿華田拿鐵',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-            {
-              drinkId: 'd023',
-              drinkName: '冰淇淋紅茶拿鐵',
-              drinkPrice: {
-                M: 50,
-                L: 70,
-              },
-            },
-          ],
-        },
-        {
-          drinkTypeId: 't003',
-          drinkType: '龜記找奶茶 (奶精)',
-          drinks: [
-            {
-              drinkId: 'd024',
-              drinkName: '奶茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd025',
-              drinkName: '奶綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd026',
-              drinkName: '烏龍奶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd027',
-              drinkName: '珍珠奶茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd028',
-              drinkName: '珍珠奶綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd029',
-              drinkName: '波霸奶茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd030',
-              drinkName: '波霸奶綠',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd031',
-              drinkName: '紅茶瑪奇朵 (鮮奶油)',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd032',
-              drinkName: '阿華田',
-              drinkPrice: {
-                M: 35,
-                L: 50,
-              },
-            },
-            {
-              drinkId: 'd033',
-              drinkName: '冰淇淋奶茶',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-          ],
-        },
-        {
-          drinkTypeId: 't004',
-          drinkType: '龜記找新鮮 (無咖啡因)',
-          drinks: [
-            {
-              drinkId: 'd034',
-              drinkName: '8冰茶',
-              drinkPrice: {
-                M: 30,
-                L: 45,
-              },
-            },
-            {
-              drinkId: 'd035',
-              drinkName: '檸檬汁',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd036',
-              drinkName: '葡萄柚汁',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd004',
-              drinkName: '金桔檸檬',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd037',
-              drinkName: '檸檬梅汁',
-              drinkPrice: {
-                M: 40,
-                L: 55,
-              },
-            },
-            {
-              drinkId: 'd038',
-              drinkName: '檸檬多多',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-            {
-              drinkId: 'd039',
-              drinkName: '葡萄柚多多',
-              drinkPrice: {
-                M: 45,
-                L: 65,
-              },
-            },
-          ],
-        },
-      ],
-    },
-  ],
 });
 
 const menus = reactive({
@@ -883,5 +198,8 @@ const menus = reactive({
 .button_container {
   display: flex;
   justify-content: center;
+}
+.rotate {
+  transform: rotate(90deg);
 }
 </style>

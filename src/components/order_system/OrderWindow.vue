@@ -105,19 +105,6 @@ import { useCart } from '@/stores/order_system/cart';
 
 const storeCart = useCart();
 
-const addToCart = () => {
-  const bagToPush = {
-    menuId: props.menuId,
-    productId: bag.productId,
-    size: bag.size,
-    ice: bag.ice,
-    sugar: bag.sugar,
-    price: total.value,
-  };
-  storeCart.cart.all.push(bagToPush);
-  closeWindow();
-};
-
 const props = defineProps({
   product: {
     type: Object,
@@ -128,11 +115,34 @@ const props = defineProps({
     required: true,
   },
 });
+
 const emit = defineEmits('emitWindowOpen');
 const closeWindow = () => {
   clearSheet();
   emit('emitWindowOpen', false);
 };
+
+const bag = reactive({
+  productId: '',
+  size: '',
+  ice: '',
+  sugar: '',
+});
+
+const addToCart = () => {
+  const bagToPush = {
+    menuId: props.menuId,
+    productId: bag.productId,
+    productName: props.product.drinkName,
+    size: bag.size,
+    ice: bag.ice,
+    sugar: bag.sugar,
+    price: total.value,
+  };
+  storeCart.addToUnsentCart(bagToPush);
+  closeWindow();
+};
+
 const clearSheet = () => {
   let radio = document.querySelectorAll('input[type=radio]:checked');
   if (radio) {
@@ -145,12 +155,6 @@ const clearSheet = () => {
   bag.ice = '';
   bag.sugar = '';
 };
-const bag = reactive({
-  productId: '',
-  size: '',
-  ice: '',
-  sugar: '',
-});
 
 watch(props, (newVal) => {
   bag.productId = newVal.product.drinkId;
