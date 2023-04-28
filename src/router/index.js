@@ -28,8 +28,26 @@ export const routes = [
   {
     path: '/my-order-view',
     name: 'MyOrderView', //order system
+    redirect: { name: 'Confirm' },
     meta: { showHeader: true },
     component: () => import('../views/order_system/MyOrderView.vue'),
+    children: [
+      {
+        path: 'confirm',
+        name: 'Confirm', //confirm
+        component: () => import('../views/order_system/MyOrderViewConfirm.vue'),
+      },
+      {
+        path: 'change',
+        name: 'Change', //change
+        component: () => import('../views/order_system/MyOrderViewChange.vue'),
+      },
+      {
+        path: 'complete',
+        name: 'Complete', //complete
+        component: () => import('../views/order_system/MyOrderViewComplete.vue'),
+      },
+    ],
   },
   {
     path: '/my-account-view',

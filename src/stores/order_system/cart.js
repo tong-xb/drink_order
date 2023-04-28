@@ -79,11 +79,8 @@ export const useCart = defineStore('cart', () => {
   };
 
   const addToSentCart = (id) => {
-    console.log(id);
     unsentCart.forEach((item, idx) => {
-      console.log(item.menuId);
       if (item.menuId === id) {
-        console.log(2);
         sentCart.push(item);
         unsentCart.splice(idx, 1);
       }
