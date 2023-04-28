@@ -26,7 +26,7 @@
           <div class="total">${{ total }}</div>
         </div>
         <div class="button_container">
-          <button @click="sendMenu()">送出</button>
+          <button v-if="props.cartType == 'unsentCart'" @click="sendMenu()">送出</button>
           <button @click="deleteMenu()">刪除</button>
         </div>
       </div>
@@ -37,6 +37,9 @@
 <script setup>
 import { ref, reactive, defineProps, computed } from 'vue';
 import { useCart } from '@/stores/order_system/cart';
+
+console.log(props.cartType);
+console.log(props.cartType === 'unsentCart');
 // import { send } from 'vite';
 
 const storeCart = useCart();
