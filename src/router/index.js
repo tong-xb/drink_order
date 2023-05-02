@@ -16,20 +16,20 @@ export const routes = [
   {
     path: '/login-view',
     name: 'LoginView', //order system登入頁
-    meta: { showHeader: false },
+    meta: { showHeader: false, showFooter: false },
     component: () => import('../views/order_system/LoginView.vue'),
   },
   {
     path: '/home-view',
     name: 'HomeView', //order system
-    meta: { showHeader: true },
+    meta: { showHeader: true, showFooter: true },
     component: () => import('../views/order_system/HomeView.vue'),
   },
   {
     path: '/my-order-view',
     name: 'MyOrderView', //order system
     redirect: { name: 'Confirm' },
-    meta: { showHeader: true },
+    meta: { showHeader: true, showFooter: true },
     component: () => import('../views/order_system/MyOrderView.vue'),
     children: [
       {
@@ -52,14 +52,21 @@ export const routes = [
   {
     path: '/my-account-view',
     name: 'MyAccountView', //order system
-    meta: { showHeader: true },
+    meta: { showHeader: true, showFooter: true },
     component: () => import('../views/order_system/MyAccountView.vue'),
   },
   {
     path: '/menu-view/:menuId',
     name: 'MenuView', //order system
-    meta: { showHeader: true },
+    meta: { showHeader: true, showFooter: true },
     component: () => import('../views/order_system/MenuView.vue'),
+    props: true,
+  },
+  {
+    path: '/open-order-view',
+    name: 'OpenOrderView', //order system
+    meta: { showHeader: true, showFooter: true },
+    component: () => import('../views/order_system/OpenOrderView.vue'),
     props: true,
   },
   {
