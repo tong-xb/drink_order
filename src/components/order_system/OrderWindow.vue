@@ -91,7 +91,7 @@
           </div>
         </div>
         <div class="orderFooter">
-          <button @click="addToCart">加入訂單 - ${{ total }}</button>
+          <button @click="addToCart">加入訂單 ${{ total }}</button>
           <button @click="closeWindow">取消</button>
         </div>
       </div>
