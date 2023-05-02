@@ -1,9 +1,9 @@
 <template>
   <div class="header">
-    <h1>This is header</h1>
+    <h1>訂餐系統</h1>
     <div class="user">
       <a v-if="store.user.isAdmin">管理員</a>
-      <a v-else-if="!store.user.isAdmin">hi! {{ store.user.userName }}</a>
+      <a v-else-if="!store.user.user.isAdmin">hi! {{ store.user.user.userName }}</a>
     </div>
   </div>
 </template>
