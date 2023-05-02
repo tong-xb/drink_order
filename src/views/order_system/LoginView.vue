@@ -1,27 +1,29 @@
 <template>
   <div>
-    <h1>訂餐系統</h1>
-    <div>
-      <div class="container">
-        <h2>登入</h2>
-        <div>
-          <label for="useraccount">
-            <b>User Account</b>
-          </label>
-          <input type="text" placeholder="Enter User Account" name="useraccount" v-model="user.userAccount" />
-        </div>
-        <div>
-          <label for="useraccount">
-            <b>User Password</b>
-          </label>
-          <input
-            type="text"
-            placeholder="Enter User Password"
-            name="userpassword"
-            v-model="user.userPassword"
-            @keyup.enter="login"
-          />
-        </div>
+    <div class="header-container">
+      <h1>訂餐系統</h1>
+    </div>
+    <div class="container">
+      <h2 class="item">登入</h2>
+      <div class="item">
+        <label for="userAccount">
+          <b>User Account</b>
+        </label>
+        <input type="text" placeholder="Enter User Account" name="userAccount" v-model="user.userAccount" />
+      </div>
+      <div class="item">
+        <label for="userAccount">
+          <b>User Password</b>
+        </label>
+        <input
+          type="text"
+          placeholder="Enter User Password"
+          name="userPassWord"
+          v-model="user.userPassword"
+          @keyup.enter="login"
+        />
+      </div>
+      <div class="item">
         <button @click="login">Login</button>
       </div>
     </div>
@@ -32,9 +34,10 @@
 import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import { useLoginStore } from '@/stores/order_system/loginState';
+import { useLocalStorage } from '@vueuse/core';
 
 const router = useRouter();
-const store = useLoginStore();
+const userStore = useLoginStore();
 
 const toHome = () => {
   router.push({ name: 'HomeView' });
@@ -46,10 +49,11 @@ const user = reactive({
 });
 
 const localStorageUser = reactive({
-  userid: '',
+  userId: '',
   userName: '',
   isAdmin: null,
 });
+
 const usersList = reactive({
   users: [
     { id: '001', account: 'user1@yuanta.com', accountPassword: '0000', userName: '張明宏', isAdmin: false },
@@ -63,12 +67,12 @@ const login = () => {
   usersList.users.forEach((usersListItem) => {
     if (usersListItem.account === user.userAccount) {
       if (usersListItem.accountPassword === user.userPassword) {
-        localStorageUser.userid = usersListItem.id;
+        localStorageUser.userId = usersListItem.id;
         localStorageUser.userName = usersListItem.userName;
         localStorageUser.isAdmin = usersListItem.isAdmin;
-        store.isLogin = true;
-        store.user = localStorageUser;
-        localStorage.setItem('user', JSON.stringify(localStorageUser));
+        userStore.isLogin = true;
+        userStore.user.user = localStorageUser;
+        useLocalStorage('user', localStorageUser);
         toHome();
       }
     }
@@ -76,11 +80,11 @@ const login = () => {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
 button {
   background-color: #04aa6d;
   color: white;
-  padding: 14px 20ppx;
+  padding: 14px 20px;
   margin: 8px 0;
   border: none;
   width: 100%;
@@ -95,5 +99,12 @@ input[type='text'] {
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+}
+.header-container {
+  display: flex;
+  justify-content: center;
+}
+.item {
+  padding: 14px 20px;
 }
 </style>
