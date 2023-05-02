@@ -2,37 +2,6 @@ import { defineStore, acceptHMRUpdate } from 'pinia';
 import { reactive, computed } from 'vue';
 
 export const useCart = defineStore('cart', () => {
-  const unsentCart = reactive([
-    // {
-    //   menuId: 'm001',
-    //   product: [
-    //     { productId: 'd001',productName: '麥香紅茶', size: 'M', ice: '多冰', sugar: '多糖', price: 20 },
-    //     { productId: 'd002',productName: '麥香紅茶', size: 'L', ice: '溫', sugar: '正常', price: 20 },
-    //     { productId: 'd003',productName: '麥香紅茶', size: 'M', ice: '熱', sugar: '無糖', price: 20 },
-    //   ],
-    // },
-    // {
-    //   menuId: 'm002',
-    //   isSend: false,
-    //   product: [{ productId: 'd003', size: 'M', ice: '熱', sugar: '無糖', price: 20 }],
-    // },
-  ]);
-  const sentCart = reactive([
-    // {
-    //   menuId: 'm001',
-    //   product: [
-    //     { productId: 'd001',productName: '麥香紅茶', size: 'M', ice: '多冰', sugar: '多糖', price: 20 },
-    //     { productId: 'd002',productName: '麥香紅茶', size: 'L', ice: '溫', sugar: '正常', price: 20 },
-    //     { productId: 'd003',productName: '麥香紅茶', size: 'M', ice: '熱', sugar: '無糖', price: 20 },
-    //   ],
-    // },
-    // {
-    //   menuId: 'm002',
-    //   isSend: false,
-    //   product: [{ productId: 'd003', size: 'M', ice: '熱', sugar: '無糖', price: 20 }],
-    // },
-  ]);
-
   const cart = reactive({
     all: [
       // { cart: '001', menuId: 'm001', productId: 'd001', size: 'M', ice: '多冰', sugar: '多糖', price: 20 ,isSend: false},
@@ -45,13 +14,25 @@ export const useCart = defineStore('cart', () => {
       isSend: false,
       product: [{ productId: '', size: '', ice: '正常', sugar: '正常', price: 0 }],
     }),
+    // {
+    //   menuId: 'm001',
+    //   product: [
+    //     { productId: 'd001',productName: '麥香紅茶', size: 'M', ice: '多冰', sugar: '多糖', price: 20 },
+    //     { productId: 'd002',productName: '麥香紅茶', size: 'L', ice: '溫', sugar: '正常', price: 20 },
+    //     { productId: 'd003',productName: '麥香紅茶', size: 'M', ice: '熱', sugar: '無糖', price: 20 },
+    //   ],
+    // },
+    unsentCart: reactive([]),
+    sentCart: reactive([]),
+    completeCart: reactive([]),
   });
 
   const addToUnsentCart = (input) => {
     // input :{ menuId: 'm001', productId: 'd001', size: 'M', ice: '多冰', sugar: '多糖', price: 20},
     //menuId存在
     let isExist = false;
-    unsentCart.forEach((item) => {
+    cart.unsentCart.forEach((item) => {
+      console.log(1);
       if (item.menuId === input.menuId) {
         //menuId存在，加入product
         isExist = true;
@@ -60,6 +41,7 @@ export const useCart = defineStore('cart', () => {
       }
     });
     if (!isExist) {
+      console.log(2);
       //menuId不存在，新增一筆object
       let obj = {
         menuId: input.menuId,
@@ -74,15 +56,18 @@ export const useCart = defineStore('cart', () => {
           },
         ],
       };
-      unsentCart.push(obj);
+
+      console.log(3);
+      cart.unsentCart.push(obj);
+      console.log(cart.unsentCart);
     }
   };
 
   const addToSentCart = (id) => {
-    unsentCart.forEach((item, idx) => {
+    cart.unsentCart.forEach((item, idx) => {
       if (item.menuId === id) {
-        sentCart.push(item);
-        unsentCart.splice(idx, 1);
+        cart.sentCart.push(item);
+        cart.unsentCart.splice(idx, 1);
       }
     });
   };
@@ -121,8 +106,6 @@ export const useCart = defineStore('cart', () => {
     menuList,
     addToUnsentCart,
     addToSentCart,
-    unsentCart,
-    sentCart,
   };
 });
 

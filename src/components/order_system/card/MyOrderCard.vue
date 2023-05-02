@@ -68,10 +68,10 @@ const deleteMenu = () => {
   if (confirm('確定刪除 ' + thisMenu.value.storeName + ' 訂單?') == true) {
     console.log('已刪除');
     let listName = props.cartType;
-    storeCart[listName].forEach((item, idx) => {
+    storeCart.cart[listName].forEach((item, idx) => {
       if (item.menuId === props.menuId) {
         // delete storeCart[listName][idx];
-        storeCart[listName].splice(idx, 1);
+        storeCart.cart[listName].splice(idx, 1);
       }
     });
   } else {
@@ -93,7 +93,7 @@ const thisMenu = computed(() => {
 const thisCart = computed(() => {
   let listName = props.cartType;
   let obj = {};
-  storeCart[listName].forEach((item) => {
+  storeCart.cart[listName].forEach((item) => {
     if (item.menuId === props.menuId) {
       obj = item;
     }
@@ -146,7 +146,8 @@ const menus = reactive({
   padding: 10px 20px;
   border: #939393 solid 2px;
   border-radius: 15px;
-  max-width: 450px;
+  width: 450px;
+  margin-top: 10px;
 }
 .order_container h1 {
   margin: 15px 0;
