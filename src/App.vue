@@ -33,7 +33,6 @@ if (userStore.isLogin) {
 watch(
   () => userStore.isLogin,
   (newVal) => {
-    // console.log('watch isLogin', isLogin);
     if (!newVal) {
       router.push({ name: 'LoginView' });
     }

@@ -79,8 +79,8 @@ const login = () => {
       localStorageUser.userId = usersListItem.id;
       localStorageUser.userName = usersListItem.userName;
       localStorageUser.isAdmin = usersListItem.isAdmin;
-      userStore.isLogin = true;
       userStore.user.user = localStorageUser;
+      // console.log(userStore.user.user);
       useLocalStorage('user', localStorageUser);
       toHome();
     }

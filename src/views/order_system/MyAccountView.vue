@@ -38,8 +38,7 @@ const userStore = useLoginStore();
 
 const logout = () => {
   if (confirm('確定要登出嗎?') == true) {
-    userStore.isLogin = false;
-    userStore.user.user = { userId: '', userName: '', isAdmin: false };
+    userStore.user.user = {};
     localStorage.removeItem('user');
   }
 };
