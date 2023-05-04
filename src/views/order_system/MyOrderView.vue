@@ -22,6 +22,8 @@
   height: 30px;
 }
 .myOrder_container {
+  height: 100%;
+  overflow-y: auto;
   padding: 20px;
 }
 .myOrder_container select {
@@ -60,6 +62,10 @@ li a:hover:not(.active) {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  position: sticky;
+  top: -30px;
+  background-color: white;
+  z-index: 99;
   > header {
     width: 90%;
     height: 100%;

@@ -101,7 +101,7 @@
 
 <script setup>
 import { reactive, computed, watch } from 'vue';
-import { useCart } from '@/stores/order_system/cart';
+import { useCart } from '@/stores/cart';
 
 const storeCart = useCart();
 

@@ -1,76 +1,75 @@
 <template>
   <div class="layout">
-    <LoadingView></LoadingView>
-    <header class="layout-header" :style="{ height: route.meta.showHeader ? '6vh' : '0vh' }">
-      <BasicHeader :header-title="common.headerTitle" v-if="route.meta.showHeader" />
+    <header v-if="route.meta.showHeader">
+      <BasicHeader />
     </header>
-    <main class="layout-content" :style="{ height: route.meta.showHeader ? 'calc(100vh - 6vh)' : 'calc(100vh)' }">
+    <main class="main-container">
       <RouterView />
     </main>
+    <footer v-if="route.meta.showFooter">
+      <BasicFooter />
+    </footer>
   </div>
 </template>
 
 <script setup>
-import LoadingView from './components/public_components/loader/LoadingView.vue';
-import BasicHeader from './components/public_components/header/BasicHeader.vue';
+import BasicHeader from './components/order_system/header/BasicHeader.vue';
+import BasicFooter from './components/order_system/footer/BasicFooter.vue';
+import { useLoginStore } from '@/stores/loginState';
+import { useRouter, useRoute } from 'vue-router';
+import { watch } from 'vue';
 
-import { onMounted, watchEffect } from 'vue';
-import { useEventListener } from '@vueuse/core';
-import { RouterView, useRoute, useRouter } from 'vue-router';
-import { useCommonStore } from '@/stores/common';
-
-const common = useCommonStore();
-
+const userStore = useLoginStore();
 const router = useRouter();
 const route = useRoute();
 
-watchEffect(() => {
-  if (route.name) {
-    common.routerName = route.name;
-    console.log(common.routerName);
-  }
-});
+if (userStore.isLogin) {
+  router.push({ name: 'HomeView' });
+} else {
+  router.push({ name: 'LoginView' });
+}
 
-onMounted(() => {
-  //偵測是否要上一頁
-  useEventListener(window, 'message', (e) => {
-    if (e.data.action) {
-      if (e.data.action === 'goBack') {
-        console.log(common.routerName);
-        if (common.routerName === 'TotalAssets') {
-          window.parent.postMessage(
-            {
-              action: 'goBack',
-              fidoAuthorizationCode: 'ASSET_BANK',
-              status: false,
-              result: 'is first page',
-            },
-            e.origin
-          );
-        } else {
-          router.go(-1);
-          window.parent.postMessage(
-            {
-              action: 'goBack',
-              fidoAuthorizationCode: 'ASSET_BANK',
-              status: true,
-              result: 'ok',
-            },
-            e.origin
-          );
-        }
-      }
+// reactive需透過函式監控,只能監控單一的值
+watch(
+  () => userStore.isLogin,
+  (newVal) => {
+    // console.log('watch isLogin', isLogin);
+    if (!newVal) {
+      router.push({ name: 'LoginView' });
     }
-  });
-});
+  },
+  { deep: true }
+);
 </script>
 
 <style lang="scss" scoped>
 .layout {
   height: 100vh;
-  overflow: hidden;
-  .layout-content {
-    overflow: auto;
+  header {
+    height: 130px;
+    width: 100%;
   }
+  .main-container {
+    padding-bottom: 100px;
+    height: calc(100vh - 230px);
+  }
+  footer {
+    position: absolute;
+    bottom: 0px;
+    height: 100px;
+    width: 100%;
+  }
+}
+</style>
+
+<style lang="scss">
+body {
+  margin: 0;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
 }
 </style>

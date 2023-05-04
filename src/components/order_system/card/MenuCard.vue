@@ -69,7 +69,6 @@ const backgroundColor = (type) => {
   border: 2px solid rgb(245 138 7);
   border-radius: 20px;
   margin: 8px 20px;
-  width: 450px;
 }
 .card-head {
   display: flex;

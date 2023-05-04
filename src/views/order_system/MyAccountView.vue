@@ -1,35 +1,37 @@
 <template>
-  <div ref="infoCard" class="info-card">
-    <div class="card-header">
-      <div class="item-first">
-        <div>個人資料</div>
+  <div class="infoCard-container">
+    <div ref="infoCard" class="info-card">
+      <div class="card-header">
+        <div class="item-first">
+          <div>個人資料</div>
+        </div>
       </div>
+      <div class="card-body">
+        <div class="item">
+          <div>姓名</div>
+          <div>張雅婷</div>
+        </div>
+        <div class="item">
+          <div>身分</div>
+          <div>一般使用者</div>
+        </div>
+        <div class="item">
+          <div>帳號</div>
+          <div>user1@yuanta.com</div>
+        </div>
+        <div class="item">
+          <div>密碼</div>
+          <div>0000</div>
+        </div>
+      </div>
+      <div class="card-footer"><button @click="logout">登出</button></div>
     </div>
-    <div class="card-body">
-      <div class="item">
-        <div>姓名</div>
-        <div>張雅婷</div>
-      </div>
-      <div class="item">
-        <div>身分</div>
-        <div>一般使用者</div>
-      </div>
-      <div class="item">
-        <div>帳號</div>
-        <div>user1@yuanta.com</div>
-      </div>
-      <div class="item">
-        <div>密碼</div>
-        <div>0000</div>
-      </div>
-    </div>
-    <div class="card-footer"><button @click="logout">登出</button></div>
   </div>
 </template>
 
 <script setup>
 // import { useRouter } from 'vue-router';
-import { useLoginStore } from '@/stores/order_system/loginState';
+import { useLoginStore } from '@/stores/loginState';
 
 const userStore = useLoginStore();
 // const router = useRouter();
@@ -44,12 +46,22 @@ const logout = () => {
 </script>
 
 <style lang="scss" scoped>
+.infoCard-container {
+  display: flex;
+  justify-content: center;
+}
 .info-card {
   box-shadow: 0px 2px 4px #c5c5c5;
   margin: 15px;
   border-radius: 10px;
   font-size: 1em;
   line-height: 1.425em;
+  min-width: 300px;
+
+  //651-
+  @media screen and (min-width: 650px) {
+    width: 500px;
+  }
 
   .card-header {
     padding-top: 15px;

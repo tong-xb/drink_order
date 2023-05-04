@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { useCart } from '@/stores/order_system/cart';
+import { useCart } from '@/stores/cart';
 import { computed } from 'vue';
 const storeCart = useCart();
 
@@ -19,7 +19,7 @@ const count = computed(() => {
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
 .footer {
   display: flex;
   width: 100%;
@@ -28,7 +28,7 @@ const count = computed(() => {
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  border-top: solid rgb(8 72 135) 0.5px;
+  background-color: antiquewhite;
 }
 p {
   display: inline-block;

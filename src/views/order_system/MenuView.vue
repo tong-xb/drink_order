@@ -808,7 +808,11 @@ const menus = reactive({
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
+.menuContainer {
+  height: 100%;
+  overflow-y: auto;
+}
 .titleContainer {
   padding: 10px 20px;
 }

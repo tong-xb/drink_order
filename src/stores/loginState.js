@@ -8,12 +8,10 @@ export const useLoginStore = defineStore('loginState', () => {
 
   const isLogin = ref(false);
 
-  (() => {
-    if (localStorage.getItem('user')) {
-      user.user = JSON.parse(localStorage.getItem('user'));
-      isLogin.value = true;
-    }
-  })();
+  if (localStorage.getItem('user')) {
+    user.user = JSON.parse(localStorage.getItem('user'));
+    isLogin.value = true;
+  }
 
   return {
     user,

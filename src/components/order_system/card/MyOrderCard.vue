@@ -36,7 +36,7 @@
 
 <script setup>
 import { ref, reactive, defineProps, computed } from 'vue';
-import { useCart } from '@/stores/order_system/cart';
+import { useCart } from '@/stores/cart';
 
 console.log(props.cartType);
 console.log(props.cartType === 'unsentCart');
@@ -141,13 +141,27 @@ const menus = reactive({
 });
 </script>
 
-<style>
+<style lang="scss" scoped>
 .order_container {
   padding: 10px 20px;
-  border: #939393 solid 2px;
-  border-radius: 15px;
-  width: 450px;
+  min-width: 250px;
   margin-top: 10px;
+  box-shadow: 0px 2px 4px #c5c5c5;
+  border-radius: 10px;
+  font-size: 1em;
+  line-height: 1.425em;
+  //0-430
+  @media screen and (max-width: 430px) {
+    width: 250px;
+  }
+  //431-650
+  @media screen and (min-width: 431px) {
+    width: 300px;
+  }
+  //651-
+  @media screen and (min-width: 650px) {
+    width: 500px;
+  }
 }
 .order_container h1 {
   margin: 15px 0;
@@ -169,7 +183,16 @@ const menus = reactive({
 }
 .order_container_content .left a {
   background-color: #d3d3d3;
-  padding: 2px;
+  top: 5px;
+  position: relative;
+  //0-650
+  @media screen and (max-width: 650px) {
+    padding: 0px;
+  }
+  //651-
+  @media screen and (min-width: 651px) {
+    padding: 2px;
+  }
 }
 .order_container_content .middle {
   width: 80%;

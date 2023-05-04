@@ -11,7 +11,7 @@
 
 <script setup>
 import MyOrderCard from '@/components/order_system/card/MyOrderCard.vue';
-import { useCart } from '@/stores/order_system/cart';
+import { useCart } from '@/stores/cart';
 import { computed } from 'vue';
 const storeCart = useCart();
 

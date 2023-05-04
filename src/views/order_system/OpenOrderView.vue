@@ -23,25 +23,25 @@ const closeMenu = (el) => {
   windowOpen.value = el;
 };
 
-const store = reactive({
-  store: [
-    {
-      storeId: 's001',
-      storeName: '50嵐',
-      storeType: '飲料',
-    },
-    {
-      storeId: 's002',
-      storeName: '龜記',
-      storeType: '飲料',
-    },
-    {
-      storeId: 's003',
-      storeName: '可不可',
-      storeType: '飲料',
-    },
-  ],
-});
+// const store = reactive({
+//   store: [
+//     {
+//       storeId: 's001',
+//       storeName: '50嵐',
+//       storeType: '飲料',
+//     },
+//     {
+//       storeId: 's002',
+//       storeName: '龜記',
+//       storeType: '飲料',
+//     },
+//     {
+//       storeId: 's003',
+//       storeName: '可不可',
+//       storeType: '飲料',
+//     },
+//   ],
+// });
 </script>
 
 <style lang="scss" scoped>
