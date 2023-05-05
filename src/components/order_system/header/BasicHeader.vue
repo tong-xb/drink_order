@@ -2,8 +2,8 @@
   <div class="header">
     <h1>訂餐系統</h1>
     <div class="user">
-      <a v-if="store.user.isAdmin">管理員</a>
-      <a v-else-if="!store.user.user.isAdmin">hi! {{ store.user.user.userName }}</a>
+      <a v-if="loginStore.isAdmin">管理員</a>
+      <a v-else-if="!loginStore.isAdmin">hi! {{ loginStore.loginState.user.userName }}</a>
     </div>
   </div>
 </template>
@@ -11,13 +11,14 @@
 <script setup>
 import { useLoginStore } from '@/stores/loginState';
 
-const store = useLoginStore();
+const loginStore = useLoginStore();
 </script>
 
 <style lang="scss" scoped>
 .header {
   height: 100%;
-  background-color: aliceblue;
+  box-shadow: 0px 2px 4px #c5c5c5;
+  background: linear-gradient(to bottom, white, aliceblue);
 }
 .header h1 {
   text-align: center;

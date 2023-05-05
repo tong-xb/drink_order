@@ -19,11 +19,11 @@ import { useLoginStore } from '@/stores/loginState';
 import { useRouter, useRoute } from 'vue-router';
 import { watch } from 'vue';
 
-const userStore = useLoginStore();
+const loginStore = useLoginStore();
 const router = useRouter();
 const route = useRoute();
 
-if (userStore.isLogin) {
+if (loginStore.isLogin) {
   router.push({ name: 'HomeView' });
 } else {
   router.push({ name: 'LoginView' });
@@ -31,7 +31,7 @@ if (userStore.isLogin) {
 
 // reactive需透過函式監控,只能監控單一的值
 watch(
-  () => userStore.isLogin,
+  () => loginStore.isLogin,
   (newVal) => {
     if (!newVal) {
       router.push({ name: 'LoginView' });

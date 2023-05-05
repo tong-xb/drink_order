@@ -12,10 +12,10 @@
 <script setup>
 import { useCart } from '@/stores/cart';
 import { computed } from 'vue';
-const storeCart = useCart();
+const cartStore = useCart();
 
 const count = computed(() => {
-  return storeCart.cart.unsentCart.length;
+  return cartStore.cart.unsentCart.length;
 });
 </script>
 

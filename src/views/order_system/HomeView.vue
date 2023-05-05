@@ -1,13 +1,13 @@
 <template>
   <main>
     <!-- <div class="card-container">
-      <MenuCard :storeName="'開放訂餐'" @click.prevent.stop="openOrder()" />
+      <MenuCard :vendorName="'開放訂餐'" @click.prevent.stop="openOrder()" />
     </div> -->
-    <div class="card-container" v-for="menuItem in drinkShopMenu" :key="menuItem.key">
+    <div class="card-container" v-for="menuItem in onSchedule" :key="menuItem.key">
       <MenuCard
         :id="menuItem.menuId"
-        :storeName="menuItem.storeName"
-        :storeType="menuItem.storeType"
+        :vendorName="menuItem.vendorName"
+        :vendorType="menuItem.vendorType"
         :openTimeFrom="menuItem.openTimeFrom"
         :openTimeTo="menuItem.openTimeTo"
         :arrivalTime="menuItem.arrivalTime"
@@ -17,16 +17,21 @@
   </main>
 </template>
 <script setup>
-import MenuCard from '@/components/order_system/card/MenuCard.vue';
+import { computed } from 'vue';
 import { useRouter } from 'vue-router';
 import menus from '@/api/axios/json/menus.json';
-import { reactive } from 'vue';
-
-console.log(menus);
-
-const drinkShopMenu = reactive(menus.drinkShop);
+import MenuCard from '@/components/order_system/card/MenuCard.vue';
+import { formatDate } from '@/common/method_common/formatDate.js';
 
 const router = useRouter();
+
+const today = computed(() => {
+  return formatDate(new Date(), 'YYYY/MM/DD HH:mm');
+});
+
+const onSchedule = computed(() => {
+  return menus.menu.filter((item) => item.openTimeFrom < today.value && item.openTimeTo > today.value);
+});
 
 // const openOrder = () => {
 //   router.push({ name: 'OpenOrderView' });

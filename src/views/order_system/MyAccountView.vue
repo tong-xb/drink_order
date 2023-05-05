@@ -9,19 +9,26 @@
       <div class="card-body">
         <div class="item">
           <div>姓名</div>
-          <div>張雅婷</div>
+          <div>{{ thisUser.userName }}</div>
         </div>
         <div class="item">
           <div>身分</div>
-          <div>一般使用者</div>
+          <div v-if="thisUser.isAdmin">管理員</div>
+          <div v-else>一般使用者</div>
         </div>
         <div class="item">
           <div>帳號</div>
-          <div>user1@yuanta.com</div>
+          <div>{{ thisUser.account }}</div>
         </div>
         <div class="item">
-          <div>密碼</div>
-          <div>0000</div>
+          <div class="psd_container">
+            <div>
+              <div>密碼</div>
+              <div v-if="eye_Open">{{ thisUser.password }}</div>
+              <div v-else>****</div>
+            </div>
+            <div class="outlineDisplay" :class="{ active: eye_Open }" @click="eye_Open = !eye_Open"></div>
+          </div>
         </div>
       </div>
       <div class="card-footer"><button @click="logout">登出</button></div>
@@ -30,15 +37,27 @@
 </template>
 
 <script setup>
-// import { useRouter } from 'vue-router';
+import { ref, computed } from 'vue';
 import { useLoginStore } from '@/stores/loginState';
+import users from '@/api/axios/json/users.json';
 
-const userStore = useLoginStore();
-// const router = useRouter();
+const loginStore = useLoginStore();
+
+const thisUser = computed(() => {
+  let obj = {};
+  users.user.forEach((item) => {
+    if (item.id === loginStore.loginState.user.userId) {
+      obj = item;
+    }
+  });
+  return obj;
+});
+
+const eye_Open = ref(false);
 
 const logout = () => {
   if (confirm('確定要登出嗎?') == true) {
-    userStore.user.user = {};
+    loginStore.loginState.user = {};
     localStorage.removeItem('user');
   }
 };
@@ -89,6 +108,23 @@ const logout = () => {
       padding-right: 15px;
       div {
         white-space: nowrap;
+      }
+      .psd_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .outlineDisplay {
+        width: 1.5em;
+        height: 1.5em;
+        margin-left: 0.5em;
+        align-content: center;
+        background-image: url(@/assets/images/icon/eye_close.png);
+        background-size: cover;
+        &.active {
+          background-image: url(@/assets/images/icon/eye_open.png);
+        }
       }
     }
   }

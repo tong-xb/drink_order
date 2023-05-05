@@ -32,7 +32,6 @@ export const useCart = defineStore('cart', () => {
     //menuId存在
     let isExist = false;
     cart.unsentCart.forEach((item) => {
-      console.log(1);
       if (item.menuId === input.menuId) {
         //menuId存在，加入product
         isExist = true;
@@ -41,7 +40,6 @@ export const useCart = defineStore('cart', () => {
       }
     });
     if (!isExist) {
-      console.log(2);
       //menuId不存在，新增一筆object
       let obj = {
         menuId: input.menuId,
@@ -56,10 +54,8 @@ export const useCart = defineStore('cart', () => {
           },
         ],
       };
-
-      console.log(3);
       cart.unsentCart.push(obj);
-      console.log(cart.unsentCart);
+      // console.log(cart.unsentCart);
     }
   };
 
@@ -94,7 +90,7 @@ export const useCart = defineStore('cart', () => {
           list.push(cartItem);
         }
       });
-      console.log(id + ':' + list);
+      // console.log(id + ':' + list);
       obj[id] = list;
     });
     return obj;

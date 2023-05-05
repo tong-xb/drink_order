@@ -11,7 +11,7 @@
           <label for="email">Email Address</label>
           <div class="sec-2">
             <!-- <ion-icon></ion-icon> -->
-            <input type="email" name="userAccount" v-model="user.userAccount" placeholder="Username@gmail.com" />
+            <input type="email" name="account" v-model="thisUser.account" placeholder="Username@gmail.com" />
           </div>
         </div>
         <div class="password">
@@ -20,10 +20,10 @@
             <!-- <ion-icon></ion-icon> -->
             <input
               type="password"
-              name="userPassWord"
+              name="passWord"
               placeholder="......"
               class="pas"
-              v-model="user.userPassword"
+              v-model="thisUser.password"
               @keyup.enter="login"
             />
           </div>
@@ -43,17 +43,18 @@ import { reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import { useLoginStore } from '@/stores/loginState';
 import { useLocalStorage } from '@vueuse/core';
+import users from '@/api/axios/json/users.json';
 
 const router = useRouter();
-const userStore = useLoginStore();
+const loginStore = useLoginStore();
 
 const toHome = () => {
   router.push({ name: 'HomeView' });
 };
 
-const user = reactive({
-  userAccount: '',
-  userPassword: '',
+const thisUser = reactive({
+  account: '',
+  password: '',
 });
 
 const localStorageUser = reactive({
@@ -62,25 +63,13 @@ const localStorageUser = reactive({
   isAdmin: null,
 });
 
-const usersList = reactive({
-  users: [
-    { id: '001', account: 'user1@yuanta.com', accountPassword: '0000', userName: '張明宏', isAdmin: false },
-    { id: '002', account: 'user2@yuanta.com', accountPassword: '0000', userName: '張雅婷', isAdmin: false },
-    { id: '003', account: 'user3@yuanta.com', accountPassword: '0000', userName: '陳家豪', isAdmin: false },
-    { id: '004', account: 'user4@yuanta.com', accountPassword: '0000', userName: '林志明', isAdmin: false },
-    { id: '005', account: 'admin1@yuanta.com', accountPassword: '0000', userName: '張明宏', isAdmin: true },
-  ],
-});
 const login = () => {
-  console.log(user.userAccount);
-  console.log(user.userPassword);
-  usersList.users.forEach((usersListItem) => {
-    if (usersListItem.account === user.userAccount && usersListItem.accountPassword === user.userPassword) {
-      localStorageUser.userId = usersListItem.id;
-      localStorageUser.userName = usersListItem.userName;
-      localStorageUser.isAdmin = usersListItem.isAdmin;
-      userStore.user.user = localStorageUser;
-      // console.log(userStore.user.user);
+  users.user.forEach((item) => {
+    if (item.account === thisUser.account && item.password === thisUser.password) {
+      localStorageUser.userId = item.id;
+      localStorageUser.userName = item.userName;
+      localStorageUser.isAdmin = item.isAdmin;
+      loginStore.loginState.user = localStorageUser;
       useLocalStorage('user', localStorageUser);
       toHome();
     }

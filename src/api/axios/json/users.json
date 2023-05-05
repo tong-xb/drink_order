@@ -1,9 +1,9 @@
 {
-  "users": [
-    { "id": "001", "account": "user1@yuanta.com", "accountPassword": "0000", "userName": "張明宏", "isAdmin": false },
-    { "id": "002", "account": "user2@yuanta.com", "accountPassword": "0000", "userName": "張雅婷", "isAdmin": false },
-    { "id": "003", "account": "user3@yuanta.com", "accountPassword": "0000", "userName": "陳家豪", "isAdmin": false },
-    { "id": "004", "account": "user4@yuanta.com", "accountPassword": "0000", "userName": "林志明", "isAdmin": false },
-    { "id": "005", "account": "admin1@yuanta.com", "accountPassword": "0000", "userName": "張明宏", "isAdmin": true }
+  "user": [
+    { "id": "001", "account": "user1@yuanta.com", "password": "0000", "userName": "張明宏", "isAdmin": false },
+    { "id": "002", "account": "user2@yuanta.com", "password": "0000", "userName": "張雅婷", "isAdmin": false },
+    { "id": "003", "account": "user3@yuanta.com", "password": "0000", "userName": "陳家豪", "isAdmin": false },
+    { "id": "004", "account": "user4@yuanta.com", "password": "0000", "userName": "林志明", "isAdmin": false },
+    { "id": "005", "account": "admin1@yuanta.com", "password": "0000", "userName": "張明宏", "isAdmin": true }
   ]
 }

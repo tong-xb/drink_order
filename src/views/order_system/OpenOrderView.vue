@@ -1,17 +1,17 @@
 <template>
   <div>
     <div class="container">
-      <div class="item" v-for="store in store.store" :key="store" @click="openSetting(store.storeId)">
-        <h2>{{ store.storeName }}</h2>
+      <div class="item" v-for="store in store.store" :key="store" @click="openSetting(store.vendorId)">
+        <h2>{{ store.vendorName }}</h2>
       </div>
     </div>
-    <OrderSettingWindow v-show="windowOpen" @emitWindowOpen="closeMenu" />
+    <OrderSettingForm v-show="windowOpen" @emitWindowOpen="closeMenu" />
   </div>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
-import OrderSettingWindow from '@/components/order_system/OrderSettingWindow.vue';
+import OrderSettingForm from '@/components/order_system/OrderSettingForm.vue';
 
 const openSetting = (el) => {
   console.log(el);
@@ -26,19 +26,19 @@ const closeMenu = (el) => {
 // const store = reactive({
 //   store: [
 //     {
-//       storeId: 's001',
-//       storeName: '50嵐',
-//       storeType: '飲料',
+//       vendorId: 's001',
+//       vendorName: '50嵐',
+//       vendorType: '飲料',
 //     },
 //     {
-//       storeId: 's002',
-//       storeName: '龜記',
-//       storeType: '飲料',
+//       vendorId: 's002',
+//       vendorName: '龜記',
+//       vendorType: '飲料',
 //     },
 //     {
-//       storeId: 's003',
-//       storeName: '可不可',
-//       storeType: '飲料',
+//       vendorId: 's003',
+//       vendorName: '可不可',
+//       vendorType: '飲料',
 //     },
 //   ],
 // });

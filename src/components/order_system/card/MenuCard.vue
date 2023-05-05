@@ -1,7 +1,7 @@
 <template>
-  <div class="card-container" :class="(backgroundColor(props.storeType), isOrderCard ? 'order-card' : '')">
+  <div class="card-container" :class="(backgroundColor(props.vendorType), isOrderCard ? 'order-card' : '')">
     <div class="card-head" v-if="!isOrderCard">
-      <h2>{{ props.storeType }}</h2>
+      <h2>{{ props.vendorType }}</h2>
       <div>
         <a>訂餐時間:{{ props.openTimeFrom }} ~ {{ props.openTimeTo }}</a>
         <a>取餐時間:{{ props.arrivalTime }}</a>
@@ -11,7 +11,7 @@
       <h2>+</h2>
     </div>
     <div class="card-content">
-      <h1>{{ props.storeName }}</h1>
+      <h1>{{ props.vendorName }}</h1>
     </div>
   </div>
 </template>
@@ -21,10 +21,10 @@ const props = defineProps({
   id: {
     type: String,
   },
-  storeName: {
+  vendorName: {
     type: String,
   },
-  storeType: {
+  vendorType: {
     type: String,
   },
   openTimeFrom: {
@@ -39,7 +39,7 @@ const props = defineProps({
 });
 
 const isOrderCard = computed(() => {
-  if (props.storeName != '開放訂餐') {
+  if (props.vendorName != '開放訂餐') {
     return false;
   }
   return true;
@@ -66,9 +66,14 @@ const backgroundColor = (type) => {
 .card-container {
   padding: 16px;
   background-color: rgb(249 171 85);
-  border: 2px solid rgb(245 138 7);
+  // border: 2px solid rgb(245 138 7);
   border-radius: 20px;
   margin: 8px 20px;
+
+  box-shadow: 0px 2px 4px #c5c5c5;
+  border-radius: 10px;
+  font-size: 1em;
+  // line-height: 1.425em;
 }
 .card-head {
   display: flex;

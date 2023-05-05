@@ -2,23 +2,23 @@ import { defineStore, acceptHMRUpdate } from 'pinia';
 import { reactive, computed } from 'vue';
 
 export const useLoginStore = defineStore('loginState', () => {
-  const user = reactive({
+  const loginState = reactive({
     user: {},
   });
 
   const isLogin = computed(() => {
-    if (Object.keys(user.user).length === 0) {
+    if (Object.keys(loginState.user).length === 0) {
       return false;
     }
     return true;
   });
 
   if (localStorage.getItem('user')) {
-    user.user = JSON.parse(localStorage.getItem('user'));
+    loginState.user = JSON.parse(localStorage.getItem('user'));
   }
 
   return {
-    user,
+    loginState,
     isLogin,
   };
 });

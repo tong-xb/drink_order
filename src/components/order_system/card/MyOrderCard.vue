@@ -1,7 +1,7 @@
 <template>
   <div class="order_container">
     <div class="order_container_title" @click="toggle">
-      <h1>{{ thisMenu.storeName }}</h1>
+      <h1>{{ thisMenu.vendorName }}</h1>
       <p v-if="!open">{{ thisMenu.arrivalTime }}</p>
       <a :class="[open ? 'rotate' : '']">></a>
     </div>
@@ -35,15 +35,13 @@
 </template>
 
 <script setup>
-import { ref, reactive, defineProps, computed } from 'vue';
+import { ref, defineProps, computed } from 'vue';
 import { useCart } from '@/stores/cart';
+import menus from '@/api/axios/json/menus.json';
 
-console.log(props.cartType);
-console.log(props.cartType === 'unsentCart');
 // import { send } from 'vite';
 
-const storeCart = useCart();
-// console.log(props.menuId);
+const cartStore = useCart();
 const props = defineProps({
   menuId: {
     type: String,
@@ -56,26 +54,20 @@ const props = defineProps({
 });
 
 const sendMenu = () => {
-  if (confirm('確定送出 ' + thisMenu.value.storeName + ' 訂單?') == true) {
-    console.log('已送出');
-    storeCart.addToSentCart(props.menuId);
-  } else {
-    console.log('取消送出');
+  if (confirm('確定送出 ' + thisMenu.value.vendorName + ' 訂單?') == true) {
+    cartStore.addToSentCart(props.menuId);
   }
 };
 
 const deleteMenu = () => {
-  if (confirm('確定刪除 ' + thisMenu.value.storeName + ' 訂單?') == true) {
-    console.log('已刪除');
+  if (confirm('確定刪除 ' + thisMenu.value.vendorName + ' 訂單?') == true) {
     let listName = props.cartType;
-    storeCart.cart[listName].forEach((item, idx) => {
+    cartStore.cart[listName].forEach((item, idx) => {
       if (item.menuId === props.menuId) {
-        // delete storeCart[listName][idx];
-        storeCart.cart[listName].splice(idx, 1);
+        // delete cartStore[listName][idx];
+        cartStore.cart[listName].splice(idx, 1);
       }
     });
-  } else {
-    console.log('取消刪除');
   }
 };
 
@@ -87,13 +79,13 @@ const toggle = () => {
 
 const thisMenu = computed(() => {
   return menus.menu.filter((el) => el.menuId === props.menuId)[0];
-  // {"menuId":"m001","storeId":"s001","storeName":"50嵐","storeType":"飲料","openTimeFrom":"4/19 (三) 10:00","openTimeTo":"4/19 (三) 11:00","arrivalTime":"4/19 (三) 12:00"}
+  // {"menuId":"m001","vendorId":"s001","vendorName":"50嵐","vendorType":"飲料","openTimeFrom":"4/19 (三) 10:00","openTimeTo":"4/19 (三) 11:00","arrivalTime":"4/19 (三) 12:00"}
 });
 
 const thisCart = computed(() => {
   let listName = props.cartType;
   let obj = {};
-  storeCart.cart[listName].forEach((item) => {
+  cartStore.cart[listName].forEach((item) => {
     if (item.menuId === props.menuId) {
       obj = item;
     }
@@ -115,29 +107,6 @@ const total = computed(() => {
     price += item.price;
   });
   return price;
-});
-
-const menus = reactive({
-  menu: [
-    {
-      menuId: 'm001',
-      storeId: 's001',
-      storeName: '50嵐',
-      storeType: '飲料',
-      openTimeFrom: '4/19 (三) 10:00',
-      openTimeTo: '4/19 (三) 11:00',
-      arrivalTime: '4/19 (三) 12:00',
-    },
-    {
-      menuId: 'm002',
-      storeId: 's002',
-      storeName: '龜記',
-      storeType: '飲料',
-      openTimeFrom: '4/20 (四) 10:00',
-      openTimeTo: '4/20 (四) 11:00',
-      arrivalTime: '4/20 (四) 12:00',
-    },
-  ],
 });
 </script>
 

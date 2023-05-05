@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="card_container" v-for="cart in storeCart.cart.sentCart" :key="cart.menuId">
+    <div class="card_container" v-for="cart in cartStore.cart.sentCart" :key="cart.menuId">
       <MyOrderCard :menuId="cart.menuId" :cartType="'sentCart'" />
     </div>
     <div class="empty" v-if="isEmpty">
@@ -13,10 +13,10 @@
 import MyOrderCard from '@/components/order_system/card/MyOrderCard.vue';
 import { useCart } from '@/stores/cart';
 import { computed } from 'vue';
-const storeCart = useCart();
+const cartStore = useCart();
 
 const isEmpty = computed(() => {
-  if (storeCart.cart.sentCart.length === 0) {
+  if (cartStore.cart.sentCart.length === 0) {
     return true;
   }
   return false;
