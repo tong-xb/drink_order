@@ -12,11 +12,15 @@
     </div>
     <div class="card-content">
       <h1>{{ props.vendorName }}</h1>
+      <div v-if="isOrdered" class="isOrderDisplay"></div>
     </div>
   </div>
 </template>
 <script setup>
 import { computed } from 'vue';
+import { useCart } from '@/stores/cart';
+const cartStore = useCart();
+
 const props = defineProps({
   id: {
     type: String,
@@ -36,6 +40,17 @@ const props = defineProps({
   arrivalTime: {
     type: String,
   },
+});
+
+const isOrdered = computed(() => {
+  let bol = false;
+
+  cartStore.cart.sentCart.forEach((item) => {
+    if (item.menuId === props.id) {
+      bol = true;
+    }
+  });
+  return bol;
 });
 
 const isOrderCard = computed(() => {
@@ -81,6 +96,21 @@ const backgroundColor = (type) => {
 .card-head a {
   display: block;
   font-size: 1px;
+}
+.card-content {
+  .isOrderDisplay {
+    // content: '';
+    position: relative;
+    float: right;
+    width: 25px;
+    height: 25px;
+    align-content: center;
+    background-image: url(@/assets/images/icon/accept.png);
+    background-size: cover;
+    border-radius: 50%;
+    top: -15px;
+    right: -10px;
+  }
 }
 .card-content h1 {
   text-align: center;

@@ -82,15 +82,14 @@ export const useCart = defineStore('cart', () => {
   const checkOutOfDate = setInterval(() => {
     let today = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
     //unsentCart
-    //openTimeTo > today:刪除˙
-
+    //openTimeTo <= today:刪除˙
     cart.unsentCart.forEach((item, idx) => {
       let menuInfo = menus.menu.filter((el) => {
         return el.menuId === item.menuId;
       });
 
       if (menuInfo[0].openTimeTo <= today) {
-        // console.log('openTimeTo <= today: unsentCart刪除');
+        console.log('openTimeTo <= today: unsentCart刪除');
         cart.unsentCart.splice(idx, 1);
       }
     });
@@ -101,9 +100,6 @@ export const useCart = defineStore('cart', () => {
       let menuInfo = menus.menu.filter((el) => {
         return el.menuId === item.menuId;
       });
-      console.log('today:', today);
-      console.log('arrivalTime:', menuInfo[0].arrivalTime);
-      console.log(menuInfo[0].arrivalTime <= today);
       if (menuInfo[0].arrivalTime <= today) {
         console.log('arrivalTime <= today:sentCart移到completeCart');
         cart.completeCart.push(item);

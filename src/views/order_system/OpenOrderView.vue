@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 import OrderSettingForm from '@/components/order_system/OrderSettingForm.vue';
 
 const openSetting = (el) => {

@@ -2,8 +2,8 @@
   <div class="header">
     <h1>訂餐系統</h1>
     <div class="user">
-      <a v-if="loginStore.isAdmin">管理員</a>
-      <a v-else-if="!loginStore.isAdmin">hi! {{ loginStore.loginState.user.userName }}</a>
+      <a v-if="loginStore.loginState.user.isAdmin">管理員</a>
+      <a v-else-if="!loginStore.loginState.user.isAdmin">hi! {{ loginStore.loginState.user.userName }}</a>
     </div>
   </div>
 </template>

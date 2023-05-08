@@ -29,12 +29,9 @@ const count = computed(() => {
   align-items: center;
   height: 100%;
   background-color: antiquewhite;
+  a {
+    text-decoration: none;
+    color: black;
+  }
 }
-p {
-  display: inline-block;
-  padding: 10px 20px;
-}
-/* .content {
-  background-color: rgb(8 72 135);
-} */
 </style>

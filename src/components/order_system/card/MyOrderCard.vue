@@ -6,7 +6,10 @@
       <a :class="[open ? 'rotate' : '']">></a>
     </div>
     <div class="toggle_container" v-if="open">
-      <p>預計送達時間: {{ thisMenu.arrivalTime }}</p>
+      <p>訂購時間:</p>
+      <p>{{ thisMenu.openTimeFrom }} ~ {{ thisMenu.openTimeTo }}</p>
+      <p>預計送達時間:</p>
+      <p>{{ thisMenu.arrivalTime }}</p>
       <div class="order_container_content" v-for="item in thisCart.product" :key="item.productId">
         <div class="left">
           <a>1</a>
@@ -26,8 +29,11 @@
           <div class="total">${{ total }}</div>
         </div>
         <div class="button_container">
-          <button v-if="props.cartType == 'unsentCart'" @click="sendMenu()">送出</button>
-          <button @click="deleteMenu()">刪除</button>
+          <button class="sendBtn" v-if="props.cartType == 'unsentCart'" @click="sendMenu()">送出</button>
+          <button class="deleteBtn" v-if="props.cartType == 'unsentCart'" @click="deleteMenu()">刪除</button>
+          <button class="deleteBtn" v-else-if="props.cartType == 'sentCart' && inOpenTime" @click="deleteMenu()">
+            刪除
+          </button>
         </div>
       </div>
     </div>
@@ -38,8 +44,7 @@
 import { ref, defineProps, computed } from 'vue';
 import { useCart } from '@/stores/cart';
 import menus from '@/api/axios/json/menus.json';
-
-// import { send } from 'vite';
+import { formatDate } from '@/common/method_common/formatDate.js';
 
 const cartStore = useCart();
 const props = defineProps({
@@ -52,6 +57,23 @@ const props = defineProps({
     require: true,
   },
 });
+
+const inOpenTime = ref(true);
+
+const checkTime = setInterval(() => {
+  let today = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
+  let menuInfo = menus.menu.filter((el) => {
+    return el.menuId === props.menuId;
+  });
+  // console.log('menuInfo[0].openTimeTo: ' + menuInfo[0].openTimeTo);
+  // console.log('today:' + today);
+  // console.log(menuInfo[0].openTimeTo <= today);
+  if (menuInfo[0].openTimeTo <= today) {
+    inOpenTime.value = false;
+  }
+}, 1000);
+
+checkTime;
 
 const sendMenu = () => {
   if (confirm('確定送出 ' + thisMenu.value.vendorName + ' 訂單?') == true) {
@@ -194,6 +216,18 @@ const total = computed(() => {
 .button_container {
   display: flex;
   justify-content: center;
+  .sendBtn {
+    border: #039be5 1px solid;
+    color: #039be5;
+    border-radius: 0.15rem;
+    background-color: white;
+  }
+  .deleteBtn {
+    border: #e53803 1px solid;
+    color: #e53803;
+    border-radius: 0.15rem;
+    background-color: white;
+  }
 }
 .rotate {
   transform: rotate(90deg);

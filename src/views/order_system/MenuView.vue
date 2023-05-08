@@ -1,19 +1,24 @@
 <template>
-  <div class="menuContainer">
+  <div id="scrollContainer" class="menuContainer">
     <div class="titleContainer">
       <h1>{{ selectedVendor.vendorName }}</h1>
       <p>訂購時間: {{ selectedMenu.openTimeFrom }}~{{ selectedMenu.openTimeTo }}</p>
       <p>預計送達時間: {{ selectedMenu.arrivalTime }}</p>
     </div>
     <div class="typeContainer">
-      <ul>
+      <ul class="nav-bar">
         <li v-for="product in selectedVendor.product" :key="product.drinkType">
           <a @click="scrollTo(product.drinkType)">{{ product.drinkType }}</a>
         </li>
       </ul>
     </div>
-    <div class="productContainer" v-for="product in selectedVendor.product" :key="product.drinkType">
-      <h1 :id="product.drinkType">{{ product.drinkType }}</h1>
+    <div
+      :id="product.drinkType"
+      class="productContainer"
+      v-for="product in selectedVendor.product"
+      :key="product.drinkType"
+    >
+      <h1>{{ product.drinkType }}</h1>
       <div class="drinkContainer" v-for="drink in product.drinks" :key="drink.drinkName" @click="openForm(drink)">
         <a>{{ drink.drinkName }}</a>
         <a>{{ drink.drinkPrice.M }}起 ></a>
@@ -24,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed } from 'vue';
+import { ref, reactive, computed, onMounted } from 'vue';
 import CustomizeForm from '@/components/order_system/CustomizeForm.vue';
 import menus from '@/api/axios/json/menus.json';
 import vendors from '@/api/axios/json/vendors.json';
@@ -45,6 +50,20 @@ const selectedProduct = reactive({
     M: '',
     L: '',
   },
+});
+
+onMounted(() => {
+  // const list = ['找好茶', '找拿鐵 (鮮奶)', '找奶茶 (奶精)', '找新鮮 (無咖啡因)'];
+  // list.forEach((item) => {
+  //   if (document.getElementById(item).getBoundingClientRect().top - 188 > 0) {
+  //     console.log(item);
+  //   }
+  // });
+  const scrollElement = document.getElementById('scrollContainer');
+  console.log(scrollElement);
+  scrollElement.addEventListener('scroll', () => {
+    console.log('test');
+  });
 });
 
 const scrollTo = (drinkType) => {
