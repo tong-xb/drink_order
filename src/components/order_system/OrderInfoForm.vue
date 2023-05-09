@@ -5,26 +5,38 @@
       <!-- Modal content -->
       <div class="modal-content">
         <div class="orderHeader">
-          <h1>{{ thisVendor.vendorName }}</h1>
+          <h1>{{ thisMenu.vendorName }}</h1>
         </div>
         <div class="orderBody">
-          <label class="address">地址:{{ thisVendor.vendorAddress }}</label>
-
-          <div class="item">
-            <label>開始訂購時間:</label>
-            <input type="datetime" placeholder="YYYY/MM/DD HH:MM" v-model="times.openTimeFrom" />
-          </div>
-          <div class="item">
-            <label>截止訂購時間:</label>
-            <input type="datetime" placeholder="YYYY/MM/DD HH:MM" v-model="times.openTimeTo" />
-          </div>
-          <div class="item">
-            <label>預計到達時間:</label>
-            <input type="datetime" placeholder="YYYY/MM/DD HH:MM" v-model="times.arrivalTime" />
+          <label class="title">訂購時間:</label>
+          <label>{{ thisMenu.openTimeFrom }} ~ {{ thisMenu.openTimeTo }}</label>
+          <label class="title">預計送達時間:</label>
+          <label>{{ thisMenu.arrivalTime }}</label>
+          <label class="title">地址:</label>
+          <label>{{ thisVendor.vendorAddress }}</label>
+          <div class="orderContainer">
+            <label>訂單</label>
+            <div>
+              <label>張雅婷</label>
+              <div class="order_container_content">
+                <div class="left">
+                  <a>1</a>
+                </div>
+                <div class="middle">
+                  <p class="name">泡沫紅茶</p>
+                  <div class="customize_container">
+                    <p class="customize">L,微冰,無糖</p>
+                  </div>
+                </div>
+                <div class="right">
+                  <p>$20</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="orderFooter">
-          <button @click="addToCart">加入訂單</button>
+          <button @click="endOrder">提早結束訂單</button>
           <button class="cancelBtn" @click="closeWindow">取消</button>
         </div>
       </div>
@@ -35,10 +47,10 @@
 <script setup>
 import menus from '@/api/axios/json/menus.json';
 import vendors from '@/api/axios/json/vendors.json';
-import { computed, reactive } from 'vue';
+import { computed } from 'vue';
 
 const props = defineProps({
-  vendorId: {
+  menuId: {
     type: String,
     required: true,
   },
@@ -49,24 +61,20 @@ const closeWindow = () => {
   emit('emitWindowOpen', false);
 };
 
-const times = reactive({
-  openTimeFrom: '',
-  openTimeTo: '',
-  arrivalTime: '',
+const thisMenu = computed(() => {
+  let obj = {};
+  menus.menu.forEach((item) => {
+    if (item.menuId === props.menuId) {
+      obj = item;
+    }
+  });
+  return obj;
 });
-
-const addToCart = () => {
-  console.log('addToCart');
-  let length = menus.menu.length;
-  let menuId = 'm' + length;
-  menus.menu.push({ menuId, ...times, ...thisVendor.value });
-  console.log(menus.menu);
-};
 
 const thisVendor = computed(() => {
   let obj = {};
   vendors.vendor.forEach((item) => {
-    if (item.vendorId === props.vendorId) {
+    if (item.vendorId === thisMenu.value.vendorId) {
       obj.vendorId = item.vendorId;
       obj.vendorName = item.vendorName;
       obj.vendorType = item.vendorType;
@@ -75,6 +83,12 @@ const thisVendor = computed(() => {
   });
   return obj;
 });
+
+const endOrder = () => {
+  if (confirm('確定要現在結束嗎?') == true) {
+    console.log('訂單結束');
+  }
+};
 </script>
 
 <style lang="scss" scoped>
@@ -118,25 +132,54 @@ const thisVendor = computed(() => {
     .orderBody {
       overflow: auto;
       height: 70%;
-      .address {
-        margin-bottom: 20px;
-      }
-      label {
+
+      .title {
         font-weight: 600;
+        margin-top: 8px;
+      }
+
+      label {
         display: block;
       }
-      input {
-        font-size: 16px;
-        line-height: 28px;
-        padding: 2px 8px;
-        margin: 3px 1px 20px 1px;
-        border: unset;
-        border-radius: 4px;
-        outline-color: rgb(84 105 212 / 0.5);
-        background-color: rgb(255 255 255);
-        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-          rgba(60, 66, 87, 0.16) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
-          rgba(0, 0, 0, 0) 0px 0px 0px 0px;
+
+      .order_container_content {
+        display: flex;
+        padding: 20px 0 10px 0;
+        .left {
+          width: 5%;
+          a {
+            background-color: #d3d3d3;
+            top: 5px;
+            position: relative;
+            //0-650
+            @media screen and (max-width: 650px) {
+              padding: 0px;
+            }
+            //651-
+            @media screen and (min-width: 651px) {
+              padding: 2px;
+            }
+          }
+        }
+        .middle {
+          width: 80%;
+          display: flex;
+          flex-direction: column;
+          padding: 0;
+          .name {
+            font-size: larger;
+            font-weight: bold;
+          }
+          .customize_container {
+            display: flex;
+            .customize {
+              color: #939393;
+            }
+          }
+        }
+        .right {
+          width: 15%;
+        }
       }
     }
     .orderFooter {

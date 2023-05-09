@@ -89,6 +89,8 @@ export const useCart = defineStore('cart', () => {
       });
 
       if (menuInfo[0].openTimeTo <= today) {
+        console.log('today:', today);
+        console.log('openTimeTo:', menuInfo[0].openTimeTo);
         console.log('openTimeTo <= today: unsentCart刪除');
         cart.unsentCart.splice(idx, 1);
       }
@@ -101,6 +103,8 @@ export const useCart = defineStore('cart', () => {
         return el.menuId === item.menuId;
       });
       if (menuInfo[0].arrivalTime <= today) {
+        console.log('today:', today);
+        console.log('arrivalTime:', menuInfo[0].arrivalTime);
         console.log('arrivalTime <= today:sentCart移到completeCart');
         cart.completeCart.push(item);
         cart.sentCart.splice(idx, 1);

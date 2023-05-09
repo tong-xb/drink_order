@@ -168,42 +168,43 @@ const total = computed(() => {
 .order_container_content {
   display: flex;
   padding: 20px 0 10px 0;
-}
-.order_container_content .left {
-  width: 5%;
-}
-.order_container_content .left a {
-  background-color: #d3d3d3;
-  top: 5px;
-  position: relative;
-  //0-650
-  @media screen and (max-width: 650px) {
-    padding: 0px;
+  .left {
+    width: 5%;
+    a {
+      background-color: #d3d3d3;
+      top: 5px;
+      position: relative;
+      //0-650
+      @media screen and (max-width: 650px) {
+        padding: 0px;
+      }
+      //651-
+      @media screen and (min-width: 651px) {
+        padding: 2px;
+      }
+    }
   }
-  //651-
-  @media screen and (min-width: 651px) {
-    padding: 2px;
+  .middle {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    .name {
+      font-size: larger;
+      font-weight: bold;
+    }
+    .customize_container {
+      display: flex;
+      .customize {
+        color: #939393;
+      }
+    }
+  }
+  .right {
+    width: 15%;
   }
 }
-.order_container_content .middle {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-.order_container_content .right {
-  width: 15%;
-}
-.name {
-  font-size: larger;
-  font-weight: bold;
-}
-.customize_container {
-  display: flex;
-}
-.customize {
-  color: #939393;
-}
+
 .order_container_footer .total {
   width: 15%;
   float: right;

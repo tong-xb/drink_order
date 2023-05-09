@@ -98,7 +98,7 @@
 
         <div class="orderFooter">
           <button @click="addToCart">加入訂單 ${{ total }}</button>
-          <button @click="closeWindow">取消</button>
+          <button class="cancelBtn" @click="closeWindow">取消</button>
         </div>
       </div>
     </div>
@@ -336,10 +336,25 @@ const total = computed(() => {
       align-items: center;
       justify-content: center;
       flex-direction: column;
-    }
-    .orderFooter button {
-      width: 80%;
-      margin: 3px;
+      button {
+        width: 80%;
+        background-color: rgb(84, 105, 212);
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+          rgba(0, 0, 0, 0.12) 0px 1px 1px 0px, rgb(84, 105, 212) 0px 0px 0px 1px, rgba(0, 0, 0, 0) 0px 0px 0px 0px,
+          rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(60, 66, 87, 0.08) 0px 2px 5px 0px;
+        color: #fff;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 2px 8px;
+        margin: 5px 1px 0 1px;
+        border: unset;
+        border-radius: 4px;
+        outline-color: rgb(84 105 212 / 0.5);
+      }
+      .cancelBtn {
+        background-color: rgb(118 118 118 / 23%);
+        box-shadow: 0px 2px 4px #c5c5c5;
+      }
     }
   }
 }

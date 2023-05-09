@@ -83,12 +83,16 @@ const backgroundColor = (type) => {
   background-color: rgb(249 171 85);
   // border: 2px solid rgb(245 138 7);
   border-radius: 20px;
-  margin: 8px 20px;
+  margin: 18px 20px 0 20px;
 
   box-shadow: 0px 2px 4px #c5c5c5;
   border-radius: 10px;
   font-size: 1em;
-  // line-height: 1.425em;
+  width: 300px;
+  // 0-280px
+  @media screen and (max-width: 280px) {
+    width: 200px;
+  }
 }
 .card-head {
   display: flex;
@@ -125,7 +129,7 @@ const backgroundColor = (type) => {
   background-color: rgb(83 209 96);
 }
 .order-card {
-  border: 2px solid rgb(149, 149, 149);
+  // border: 2px solid rgb(149, 149, 149);
   color: rgb(149, 149, 149);
   background-color: white;
 }

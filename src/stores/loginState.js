@@ -3,6 +3,7 @@ import { reactive, computed } from 'vue';
 
 export const useLoginStore = defineStore('loginState', () => {
   const loginState = reactive({
+    // {"userId":"005","userName":"張明宏","isAdmin":true}
     user: {},
   });
 

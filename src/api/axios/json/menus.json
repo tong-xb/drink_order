@@ -6,8 +6,8 @@
       "vendorName": "50嵐",
       "vendorType": "飲料",
       "openTimeFrom": "2023/05/05 00:00",
-      "openTimeTo": "2023/05/08 23:59",
-      "arrivalTime": "2023/05/09 12:00"
+      "openTimeTo": "2023/05/10 23:59",
+      "arrivalTime": "2023/05/11 12:00"
     },
     {
       "menuId": "m002",
@@ -15,8 +15,8 @@
       "vendorName": "龜記",
       "vendorType": "飲料",
       "openTimeFrom": "2023/05/05 00:00",
-      "openTimeTo": "2023/05/05 17:10",
-      "arrivalTime": "2023/05/05 17:50"
+      "openTimeTo": "2023/05/10 23:59",
+      "arrivalTime": "2023/05/11 12:00"
     },
     {
       "menuId": "m003",

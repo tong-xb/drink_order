@@ -29,7 +29,7 @@
 </template>
 
 <script setup>
-import { ref, reactive, computed, onMounted } from 'vue';
+import { ref, reactive, computed } from 'vue';
 import CustomizeForm from '@/components/order_system/CustomizeForm.vue';
 import menus from '@/api/axios/json/menus.json';
 import vendors from '@/api/axios/json/vendors.json';
@@ -50,20 +50,6 @@ const selectedProduct = reactive({
     M: '',
     L: '',
   },
-});
-
-onMounted(() => {
-  // const list = ['找好茶', '找拿鐵 (鮮奶)', '找奶茶 (奶精)', '找新鮮 (無咖啡因)'];
-  // list.forEach((item) => {
-  //   if (document.getElementById(item).getBoundingClientRect().top - 188 > 0) {
-  //     console.log(item);
-  //   }
-  // });
-  const scrollElement = document.getElementById('scrollContainer');
-  console.log(scrollElement);
-  scrollElement.addEventListener('scroll', () => {
-    console.log('test');
-  });
 });
 
 const scrollTo = (drinkType) => {
