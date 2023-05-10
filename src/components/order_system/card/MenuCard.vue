@@ -99,7 +99,7 @@ const backgroundColor = (type) => {
 }
 .card-head a {
   display: block;
-  font-size: 1px;
+  font-size: 10px;
 }
 .card-content {
   .isOrderDisplay {
