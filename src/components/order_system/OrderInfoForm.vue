@@ -7,36 +7,61 @@
         <div class="orderHeader">
           <h1>{{ thisMenu.vendorName }}</h1>
         </div>
-        <div class="orderBody">
-          <label class="title">訂購時間:</label>
-          <label>{{ thisMenu.openTimeFrom }} ~ {{ thisMenu.openTimeTo }}</label>
-          <label class="title">預計送達時間:</label>
-          <label>{{ thisMenu.arrivalTime }}</label>
-          <label class="title">地址:</label>
-          <label>{{ thisVendor.vendorAddress }}</label>
-          <div class="orderContainer">
-            <label>訂單</label>
-            <div>
-              <label>張雅婷</label>
-              <div class="order_container_content">
-                <div class="left">
-                  <a>1</a>
-                </div>
-                <div class="middle">
-                  <p class="name">泡沫紅茶</p>
-                  <div class="customize_container">
-                    <p class="customize">L,微冰,無糖</p>
+        <div class="scroll-container">
+          <div class="orderBody">
+            <div class="title orderTitleContainer" @click="toggle('openTime')">
+              <label>訂購時間:</label>
+              <a :class="[open.openTime ? 'rotate' : '']">></a>
+            </div>
+            <label v-if="open.openTime">{{ thisMenu.openTimeFrom }} ~ {{ thisMenu.openTimeTo }}</label>
+
+            <div class="title orderTitleContainer" @click="toggle('arrivalTime')">
+              <label>預計送達時間:</label>
+              <a :class="[open.arrivalTime ? 'rotate' : '']">></a>
+            </div>
+            <label v-if="open.arrivalTime">{{ thisMenu.arrivalTime }}</label>
+
+            <div class="title orderTitleContainer" @click="toggle('vendorAddress')">
+              <label>店家地址:</label>
+              <a :class="[open.vendorAddress ? 'rotate' : '']">></a>
+            </div>
+            <label v-if="open.vendorAddress">{{ thisVendor.vendorAddress }}</label>
+
+            <div class="title orderTitleContainer" @click="toggle('order')">
+              <label>訂單:</label>
+              <a :class="[open.order ? 'rotate' : '']">></a>
+            </div>
+
+            <div class="orders" v-if="open.order">
+              <div class="orderContainer" v-for="order in orderList" :key="order.consumer">
+                <label>{{ order.consumerName }}</label>
+                <div class="order_container_content" v-for="product in order.product" :key="product.productId">
+                  <div class="left">
+                    <a>1</a>
                   </div>
-                </div>
-                <div class="right">
-                  <p>$20</p>
+                  <div class="middle">
+                    <p class="name">{{ product.productName }}</p>
+                    <div class="customize_container">
+                      <p class="customize">{{ product.size }},{{ product.ice }},{{ product.sugar }}</p>
+                    </div>
+                  </div>
+                  <div class="right">
+                    <p>${{ product.price }}</p>
+                  </div>
                 </div>
               </div>
             </div>
+
+            <div class="title orderTitleContainer" @click="toggle('total')">
+              <label>總價:</label>
+              <a :class="[open.total ? 'rotate' : '']">></a>
+            </div>
+            <label v-if="open.total">${{ total }}</label>
           </div>
         </div>
+
         <div class="orderFooter">
-          <button @click="endOrder">提早結束訂單</button>
+          <button v-if="showTimeOverBtn" @click="endOrder">提早結束訂單</button>
           <button class="cancelBtn" @click="closeWindow">取消</button>
         </div>
       </div>
@@ -47,7 +72,9 @@
 <script setup>
 import menus from '@/api/axios/json/menus.json';
 import vendors from '@/api/axios/json/vendors.json';
-import { computed } from 'vue';
+import orders from '@/api/axios/json/orders.json';
+import { ref, reactive, computed } from 'vue';
+import { formatDate } from '@/common/method_common/formatDate.js';
 
 const props = defineProps({
   menuId: {
@@ -60,6 +87,14 @@ const emit = defineEmits('emitWindowOpen');
 const closeWindow = () => {
   emit('emitWindowOpen', false);
 };
+
+const open = reactive({
+  openTime: true,
+  arrivalTime: true,
+  vendorAddress: true,
+  order: true,
+  total: true,
+});
 
 const thisMenu = computed(() => {
   let obj = {};
@@ -84,11 +119,77 @@ const thisVendor = computed(() => {
   return obj;
 });
 
+const orderList = computed(() => {
+  let list = [];
+  orders.forEach((item) => {
+    if (item.menuId === props.menuId) {
+      list = item.orderList;
+    }
+  });
+  return list;
+});
+
+const total = computed(() => {
+  let val = 0;
+  orderList.value.forEach((order) => {
+    order.product.forEach((item) => {
+      val += item.price;
+    });
+  });
+  return val;
+});
+
 const endOrder = () => {
   if (confirm('確定要現在結束嗎?') == true) {
+    let now = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
+    menus.menu.forEach((item) => {
+      if (item.menuId === props.menuId) {
+        item.openTimeTo = now;
+        thisMenu.value.openTimeTo = now;
+      }
+    });
     console.log('訂單結束');
+    closeWindow();
   }
 };
+
+const toggle = (el) => {
+  switch (el) {
+    case 'openTime':
+      open.openTime = !open.openTime;
+      break;
+    case 'arrivalTime':
+      open.arrivalTime = !open.arrivalTime;
+      break;
+    case 'vendorAddress':
+      open.vendorAddress = !open.vendorAddress;
+      break;
+    case 'order':
+      open.order = !open.order;
+      break;
+    case 'total':
+      open.total = !open.total;
+      break;
+  }
+};
+
+const showTimeOverBtn = ref(false);
+
+const setTime = () => {
+  let now = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
+  // console.log(props.vendorName);
+  // console.log('props.openTimeTo:' + props.openTimeTo);
+  // console.log('now:' + now);
+  if (now < thisMenu.value.openTimeTo) {
+    showTimeOverBtn.value = true;
+  }
+};
+
+setTime();
+
+setInterval(() => {
+  setTime();
+}, 1000);
 </script>
 
 <style lang="scss" scoped>
@@ -129,59 +230,92 @@ const endOrder = () => {
       display: flex;
       justify-content: center;
     }
-    .orderBody {
-      overflow: auto;
-      height: 70%;
 
-      .title {
-        font-weight: 600;
-        margin-top: 8px;
-      }
+    .scroll-container {
+      overflow: hidden;
+      height: 100%;
+      .orderBody {
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        padding-right: 10px;
+        box-sizing: content-box; //so width will be 100%+10px
 
-      label {
-        display: block;
-      }
-
-      .order_container_content {
-        display: flex;
-        padding: 20px 0 10px 0;
-        .left {
-          width: 5%;
-          a {
-            background-color: #d3d3d3;
-            top: 5px;
-            position: relative;
-            //0-650
-            @media screen and (max-width: 650px) {
-              padding: 0px;
-            }
-            //651-
-            @media screen and (min-width: 651px) {
-              padding: 2px;
-            }
-          }
+        .title {
+          font-weight: 600;
+          margin-top: 8px;
+          background-color: rgb(84 105 212 / 36%);
         }
-        .middle {
-          width: 80%;
+
+        label {
+          display: block;
+        }
+
+        .orderTitleContainer {
           display: flex;
-          flex-direction: column;
-          padding: 0;
-          .name {
-            font-size: larger;
-            font-weight: bold;
+          justify-content: space-between;
+          padding-right: 3px;
+          a {
+            display: inline-block;
           }
-          .customize_container {
-            display: flex;
-            .customize {
-              color: #939393;
-            }
+          .rotate {
+            transform: rotate(90deg);
           }
         }
-        .right {
-          width: 15%;
+
+        .orders {
+          .orderContainer {
+            padding-bottom: 10px;
+            border-bottom: 3px solid rgb(84 105 212 / 36%);
+            label {
+              // background-color: rgb(84 105 212 / 36%);
+              border-bottom: 1px solid rgb(84 105 212 / 36%);
+              padding: 2px 0;
+              font-weight: bold;
+              text-align: center;
+            }
+            .order_container_content {
+              display: flex;
+              padding: 5px 3px 0 0;
+              .left {
+                width: 5%;
+                a {
+                  background-color: #d3d3d3;
+                  position: relative;
+                  font-size: 15px;
+                  //0-650
+                  @media screen and (max-width: 650px) {
+                    padding: 0px;
+                  }
+                  //651-
+                  @media screen and (min-width: 651px) {
+                    padding: 2px;
+                  }
+                }
+              }
+              .middle {
+                width: 80%;
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                .customize_container {
+                  display: flex;
+                  .customize {
+                    color: #939393;
+                    font-size: 15px;
+                  }
+                }
+              }
+              .right {
+                width: 15%;
+                text-align: end;
+              }
+            }
+          }
         }
       }
     }
+
     .orderFooter {
       height: 15%;
       display: flex;

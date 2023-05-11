@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container" :class="(backgroundColor(props.vendorType), isOrderCard ? 'order-card' : '')">
+  <div class="card-container" :class="[colorClass, isOrderCard ? 'order-card' : '']">
     <div class="card-head" v-if="!isOrderCard">
       <h2>{{ props.vendorType }}</h2>
       <div>
@@ -12,14 +12,18 @@
     </div>
     <div class="card-content">
       <h1>{{ props.vendorName }}</h1>
-      <div v-if="isOrdered" class="isOrderDisplay"></div>
+      <div v-if="isOrdered && !loginStore.loginState.user.isAdmin" class="isOrderDisplay"></div>
     </div>
   </div>
 </template>
 <script setup>
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { useCart } from '@/stores/cart';
+import { useLoginStore } from '@/stores/loginState';
+import { formatDate } from '@/common/method_common/formatDate.js';
+
 const cartStore = useCart();
+const loginStore = useLoginStore();
 
 const props = defineProps({
   id: {
@@ -60,21 +64,28 @@ const isOrderCard = computed(() => {
   return true;
 });
 
-const backgroundColor = (type) => {
-  let menuType = '';
-  switch (type) {
-    case '主食':
-      menuType = 'type-main';
-      break;
-    case '飲料':
-      menuType = 'type-drink';
-      break;
-    case '甜點':
-      menuType = 'type-dessert';
-      break;
+const colorClass = ref('test');
+
+const setTime = () => {
+  let now = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
+
+  if (now < props.openTimeTo) {
+    // console.log('now < props.openTimeTo');
+    colorClass.value = 'orderOpen';
+  } else if (now >= props.openTimeTo && now < props.arrivalTime) {
+    // console.log('props.openTimeTo >= now && props.arrivalTime <= now');
+    colorClass.value = 'orderClose';
+  } else if (now >= props.arrivalTime) {
+    // console.log('props.arrivalTime <= now');
+    colorClass.value = 'orderFinished';
   }
-  return menuType;
 };
+
+setTime();
+
+setInterval(() => {
+  setTime();
+}, 1000);
 </script>
 
 <style lang="scss" scoped>
@@ -119,14 +130,14 @@ const backgroundColor = (type) => {
 .card-content h1 {
   text-align: center;
 }
-.type-drink {
-  background-color: rgb(249 171 85);
+.orderOpen {
+  background-color: rgb(122 213 131);
 }
-.type-main {
-  background-color: rgb(225 233 52);
+.orderClose {
+  background-color: rgb(239 226 77);
 }
-.type-dessert {
-  background-color: rgb(83 209 96);
+.orderFinished {
+  background-color: rgb(149, 149, 149);
 }
 .order-card {
   // border: 2px solid rgb(149, 149, 149);

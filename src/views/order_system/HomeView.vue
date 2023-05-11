@@ -1,19 +1,35 @@
 <template>
   <main>
-    <div class="card-container" v-if="loginStore.loginState.user.isAdmin">
+    <!-- 一般使用者 -->
+    <div v-if="!loginStore.loginState.user.isAdmin">
+      <div class="card-container" v-for="menuItem in onSchedule" :key="menuItem.key">
+        <MenuCard
+          :id="menuItem.menuId"
+          :vendorName="menuItem.vendorName"
+          :vendorType="menuItem.vendorType"
+          :openTimeFrom="menuItem.openTimeFrom"
+          :openTimeTo="menuItem.openTimeTo"
+          :arrivalTime="menuItem.arrivalTime"
+          @click.prevent.stop="openMenu(menuItem.menuId)"
+        />
+      </div>
+    </div>
+    <!-- 系統管理員 -->
+    <div v-else>
       <MenuCard :vendorName="'開放訂餐'" @click.prevent.stop="openOrder()" />
+      <div class="card-container" v-for="menuItem in menus.menu" :key="menuItem.key">
+        <MenuCard
+          :id="menuItem.menuId"
+          :vendorName="menuItem.vendorName"
+          :vendorType="menuItem.vendorType"
+          :openTimeFrom="menuItem.openTimeFrom"
+          :openTimeTo="menuItem.openTimeTo"
+          :arrivalTime="menuItem.arrivalTime"
+          @click.prevent.stop="openMenu(menuItem.menuId)"
+        />
+      </div>
     </div>
-    <div class="card-container" v-for="menuItem in onSchedule" :key="menuItem.key">
-      <MenuCard
-        :id="menuItem.menuId"
-        :vendorName="menuItem.vendorName"
-        :vendorType="menuItem.vendorType"
-        :openTimeFrom="menuItem.openTimeFrom"
-        :openTimeTo="menuItem.openTimeTo"
-        :arrivalTime="menuItem.arrivalTime"
-        @click.prevent.stop="openMenu(menuItem.menuId)"
-      />
-    </div>
+
     <OrderInfoForm
       :menuId="selectedMenuId"
       v-if="formIsOpen && loginStore.loginState.user.isAdmin"
@@ -62,8 +78,8 @@ const openMenu = (mId) => {
     // 一般使用者
     router.push({ name: 'MenuView', params: { menuId: mId } });
   } else {
+    // 系統管理員
     openOrderInfoForm(mId);
-    // 管理者
   }
 };
 </script>

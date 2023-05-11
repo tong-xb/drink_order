@@ -284,52 +284,53 @@ const total = computed(() => {
     .scroll-container {
       overflow: hidden;
       height: 100%;
-    }
-    .orderBody {
-      height: 100%;
-      width: 100%;
-      overflow-y: auto;
-      padding-right: 10px;
-      box-sizing: content-box; //so width will be 100%+10px
-      .orderBody-content {
-        padding: 5px 0;
-
-        h3 {
+      .orderBody {
+        height: 100%;
+        width: 100%;
+        overflow-y: auto;
+        padding-right: 10px;
+        box-sizing: content-box; //so width will be 100%+10px
+        .orderBody-content {
           padding: 5px 0;
-        }
-        .warning {
-          color: red;
-          font-size: small;
-        }
-        .size_container {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          .size_container_L {
+
+          h3 {
+            padding: 5px 0;
+          }
+          .warning {
+            color: red;
+            font-size: small;
+          }
+          .size_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .size_container_L {
+              display: flex;
+            }
+          }
+          .radioSelector input {
+            margin: 0 5px 0 0;
+          }
+
+          .radioSelector div {
+            padding-top: 5px;
+          }
+
+          .cus-container {
             display: flex;
           }
-        }
-        .radioSelector input {
-          margin: 0 5px 0 0;
-        }
-
-        .radioSelector div {
-          padding-top: 5px;
-        }
-
-        .cus-container {
-          display: flex;
-        }
-        .shadow-container {
-          margin: 10px 3px 0 3px;
-          padding: 0 5px;
-          box-shadow: 0px 2px 4px #c5c5c5;
-          border-radius: 10px;
-          font-size: 1em;
-          line-height: 1.425em;
+          .shadow-container {
+            margin: 10px 3px 0 3px;
+            padding: 0 5px;
+            box-shadow: 0px 2px 4px #c5c5c5;
+            border-radius: 10px;
+            font-size: 1em;
+            line-height: 1.425em;
+          }
         }
       }
     }
+
     .orderFooter {
       height: 15%;
       display: flex;

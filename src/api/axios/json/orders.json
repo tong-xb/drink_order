@@ -1,0 +1,42 @@
+[
+  {
+    "menuId": "m001",
+    "orderList": [
+      {
+        "consumer": "001",
+        "consumerName": "張明宏",
+        "product": [
+          { "productId": "d001", "productName": "茉莉綠茶", "size": "M", "ice": "多冰", "sugar": "多糖", "price": 20 },
+          { "productId": "d002", "productName": "阿薩姆紅茶", "size": "L", "ice": "溫", "sugar": "正常", "price": 25 },
+          { "productId": "d003", "productName": "四季春青茶", "size": "M", "ice": "熱", "sugar": "無糖", "price": 20 }
+        ]
+      },
+      {
+        "consumer": "002",
+        "consumerName": "張雅婷",
+        "product": [
+          { "productId": "d007", "productName": "微檸檬紅", "size": "M", "ice": "多冰", "sugar": "多糖", "price": 25 }
+        ]
+      }
+    ]
+  },
+  {
+    "menuId": "m002",
+    "orderList": [
+      {
+        "consumer": "002",
+        "consumerName": "張雅婷",
+        "product": [
+          { "productId": "d006", "productName": "波霸紅", "size": "M", "ice": "多冰", "sugar": "多糖", "price": 25 }
+        ]
+      },
+      {
+        "consumer": "003",
+        "consumerName": "陳家豪",
+        "product": [
+          { "productId": "d008", "productName": "微檸檬青", "size": "L", "ice": "多冰", "sugar": "多糖", "price": 35 }
+        ]
+      }
+    ]
+  }
+]
