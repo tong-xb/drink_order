@@ -13,7 +13,11 @@
           @click.prevent.stop="openMenu(menuItem.menuId)"
         />
       </div>
+      <div class="empty" v-if="onSchedule.length === 0">
+        <h1>無開放中菜單!</h1>
+      </div>
     </div>
+
     <!-- 系統管理員 -->
     <div v-else>
       <MenuCard :vendorName="'開放訂餐'" @click.prevent.stop="openOrder()" />
@@ -92,5 +96,9 @@ main {
   align-items: center;
   overflow-y: auto;
   height: 100%;
+}
+.empty {
+  color: antiquewhite;
+  margin: 10px;
 }
 </style>

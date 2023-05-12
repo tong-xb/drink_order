@@ -50,6 +50,12 @@ export const routes = [
     ],
   },
   {
+    path: '/my-member-view',
+    name: 'MyMemberView', //order system
+    meta: { showHeader: true, showFooter: true },
+    component: () => import('../views/order_system/MyMemberView.vue'),
+  },
+  {
     path: '/my-account-view',
     name: 'MyAccountView', //order system
     meta: { showHeader: true, showFooter: true },

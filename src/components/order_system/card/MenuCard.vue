@@ -66,7 +66,7 @@ const isOrderCard = computed(() => {
 
 const colorClass = ref('test');
 
-const setTime = () => {
+const setTime = (() => {
   let now = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
 
   if (now < props.openTimeTo) {
@@ -79,12 +79,10 @@ const setTime = () => {
     // console.log('props.arrivalTime <= now');
     colorClass.value = 'orderFinished';
   }
-};
-
-setTime();
+})();
 
 setInterval(() => {
-  setTime();
+  setTime;
 }, 1000);
 </script>
 

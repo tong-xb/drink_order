@@ -175,7 +175,7 @@ const toggle = (el) => {
 
 const showTimeOverBtn = ref(false);
 
-const setTime = () => {
+const setTime = (() => {
   let now = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
   // console.log(props.vendorName);
   // console.log('props.openTimeTo:' + props.openTimeTo);
@@ -183,12 +183,10 @@ const setTime = () => {
   if (now < thisMenu.value.openTimeTo) {
     showTimeOverBtn.value = true;
   }
-};
-
-setTime();
+})();
 
 setInterval(() => {
-  setTime();
+  setTime;
 }, 1000);
 </script>
 

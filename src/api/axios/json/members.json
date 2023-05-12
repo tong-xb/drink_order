@@ -1,0 +1,25 @@
+{
+  "groups": [
+    {
+      "adminId": "005",
+      "memberList": [
+        {
+          "memberId": "001",
+          "account": "user1@yuanta.com",
+          "memberName": "張明宏"
+        },
+        {
+          "memberId": "002",
+          "account": "user2@yuanta.com",
+          "memberName": "張雅婷"
+        },
+        {
+          "memberId": "003",
+          "account": "user3@yuanta.com",
+          "memberName": "陳家豪"
+        },
+        { "memberId": "004", "account": "user4@yuanta.com", "memberName": "林志明" }
+      ]
+    }
+  ]
+}
