@@ -14,7 +14,7 @@
           </div>
           <div class="item">
             <div>姓名</div>
-            <div>{{ thisMember.memberName }}</div>
+            <div class="name">{{ thisMember.memberName }}</div>
           </div>
         </div>
         <div class="orderFooter">
@@ -70,6 +70,7 @@ const addMember = () => {
     alert('此人已經加入群組!');
   } else if (confirm('確定加入' + thisMember.memberName + '嗎?') == true) {
     memberStore.addMember({ ...thisMember });
+    closeWindow();
   }
 };
 
@@ -120,6 +121,18 @@ const closeWindow = () => {
     .orderBody {
       height: 60%;
       padding-top: 20px;
+      .item {
+        margin-bottom: 10px;
+        input {
+          border: 1px solid #ccc;
+          font: 15px/24px 'Lato', Arial, sans-serif;
+          letter-spacing: 1px;
+          margin-top: 5px;
+          .name {
+            font-weight: bold;
+          }
+        }
+      }
     }
 
     .orderFooter {
