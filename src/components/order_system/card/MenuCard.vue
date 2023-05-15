@@ -1,7 +1,7 @@
 <template>
   <div class="card-container" :class="[colorClass, isOrderCard ? 'order-card' : '']">
     <div class="card-head" v-if="!isOrderCard">
-      <h2>{{ props.vendorType }}</h2>
+      <h2>{{ week }}</h2>
       <div>
         <a>訂餐時間:{{ props.openTimeFrom }} ~ {{ props.openTimeTo }}</a>
         <a>取餐時間:{{ props.arrivalTime }}</a>
@@ -21,6 +21,7 @@ import { ref, computed } from 'vue';
 import { useCart } from '@/stores/cart';
 import { useLoginStore } from '@/stores/loginState';
 import { formatDate } from '@/common/method_common/formatDate.js';
+import { weekDay } from '@/common/method_common/weekDay.js';
 
 const cartStore = useCart();
 const loginStore = useLoginStore();
@@ -44,6 +45,13 @@ const props = defineProps({
   arrivalTime: {
     type: String,
   },
+});
+
+const week = computed(() => {
+  let d = new Date(props.arrivalTime);
+  d = d.getDay();
+  // console.log(weekDay(d));
+  return weekDay(d);
 });
 
 const isOrdered = computed(() => {
@@ -92,7 +100,7 @@ setInterval(() => {
   background-color: rgb(249 171 85);
   // border: 2px solid rgb(245 138 7);
   border-radius: 20px;
-  margin: 18px 20px 0 20px;
+  margin: 10px 20px 5px 20px;
 
   box-shadow: 0px 2px 4px #c5c5c5;
   border-radius: 10px;
@@ -105,6 +113,10 @@ setInterval(() => {
 }
 .card-head {
   display: flex;
+  align-items: center;
+  h2 {
+    margin-right: 8px;
+  }
 }
 .card-head a {
   display: block;
