@@ -12,20 +12,19 @@
             <div class="orderBody-content">
               <h3>大小</h3>
               <p class="warning" v-show="!ratioSelect.size">請選擇飲料大小!</p>
+
               <div class="radioSelector">
-                <label for="M" class="size_container shadow-container">
+                <label
+                  :for="key"
+                  class="size_container shadow-container"
+                  v-for="(value, key) in props.product.drinkPrice"
+                  :key="key"
+                >
                   <div class="size_container_L">
-                    <input id="M" type="radio" name="size" value="M" v-model="bag.size" />
-                    <p>M</p>
+                    <input :id="key" type="radio" name="size" :value="key" v-model="bag.size" />
+                    <p>{{ key }}</p>
                   </div>
-                  <p>{{ props.product.drinkPrice.M }}</p>
-                </label>
-                <label for="L" class="size_container shadow-container">
-                  <div class="size_container_L">
-                    <input id="L" type="radio" name="size" value="L" v-model="bag.size" />
-                    <p>L</p>
-                  </div>
-                  <p>{{ props.product.drinkPrice.L }}</p>
+                  <p>{{ value }}</p>
                 </label>
               </div>
             </div>
@@ -61,36 +60,41 @@
             </div>
             <div class="orderBody-content">
               <h3>甜度</h3>
-              <p class="warning" v-show="!ratioSelect.sugar">請選擇飲料甜度!</p>
-              <div class="radioSelector">
-                <label for="sugar1" class="cus-container shadow-container">
-                  <input id="sugar1" type="radio" name="sugar" value="多糖" v-model="bag.sugar" />
-                  <p>多糖</p>
-                </label>
-                <label for="sugar2" class="cus-container shadow-container">
-                  <input id="sugar2" type="radio" name="sugar" value="正常" v-model="bag.sugar" />
-                  <p>正常</p>
-                </label>
-                <label for="sugar3" class="cus-container shadow-container">
-                  <input id="sugar3" type="radio" name="sugar" value="少糖" v-model="bag.sugar" />
-                  <p>少糖</p>
-                </label>
-                <label for="sugar4" class="cus-container shadow-container">
-                  <input id="sugar4" type="radio" name="sugar" value="半糖" v-model="bag.sugar" />
-                  <p>半糖</p>
-                </label>
-                <label for="sugar5" class="cus-container shadow-container">
-                  <input id="sugar5" type="radio" name="sugar" value="微糖" v-model="bag.sugar" />
-                  <p>微糖</p>
-                </label>
-                <label for="sugar6" class="cus-container shadow-container">
-                  <input id="sugar6" type="radio" name="sugar" value="淺糖" v-model="bag.sugar" />
-                  <p>淺糖</p>
-                </label>
-                <label for="sugar7" class="cus-container shadow-container">
-                  <input id="sugar7" type="radio" name="sugar" value="無糖" v-model="bag.sugar" />
-                  <p>無糖</p>
-                </label>
+              <div v-if="!props.product.fixedSweetness">
+                <p class="warning" v-show="!ratioSelect.sugar">請選擇飲料甜度!</p>
+                <div class="radioSelector">
+                  <label for="sugar1" class="cus-container shadow-container">
+                    <input id="sugar1" type="radio" name="sugar" value="多糖" v-model="bag.sugar" />
+                    <p>多糖</p>
+                  </label>
+                  <label for="sugar2" class="cus-container shadow-container">
+                    <input id="sugar2" type="radio" name="sugar" value="正常" v-model="bag.sugar" />
+                    <p>正常</p>
+                  </label>
+                  <label for="sugar3" class="cus-container shadow-container">
+                    <input id="sugar3" type="radio" name="sugar" value="少糖" v-model="bag.sugar" />
+                    <p>少糖</p>
+                  </label>
+                  <label for="sugar4" class="cus-container shadow-container">
+                    <input id="sugar4" type="radio" name="sugar" value="半糖" v-model="bag.sugar" />
+                    <p>半糖</p>
+                  </label>
+                  <label for="sugar5" class="cus-container shadow-container">
+                    <input id="sugar5" type="radio" name="sugar" value="微糖" v-model="bag.sugar" />
+                    <p>微糖</p>
+                  </label>
+                  <label for="sugar6" class="cus-container shadow-container">
+                    <input id="sugar6" type="radio" name="sugar" value="淺糖" v-model="bag.sugar" />
+                    <p>淺糖</p>
+                  </label>
+                  <label for="sugar7" class="cus-container shadow-container">
+                    <input id="sugar7" type="radio" name="sugar" value="無糖" v-model="bag.sugar" />
+                    <p>無糖</p>
+                  </label>
+                </div>
+              </div>
+              <div v-else>
+                <p class="fixed">甜度固定!</p>
               </div>
             </div>
           </div>
@@ -186,7 +190,7 @@ const checkRatioSelect = () => {
   } else {
     ratioSelect.ice = true;
   }
-  if (!bag.sugar) {
+  if (!bag.sugar && !props.product.fixedSweetness) {
     ratioSelect.sugar = false;
     bol = false;
   } else {
@@ -298,6 +302,10 @@ const total = computed(() => {
           }
           .warning {
             color: red;
+            font-size: small;
+          }
+          .fixed {
+            color: rgb(84, 105, 212);
             font-size: small;
           }
           .size_container {

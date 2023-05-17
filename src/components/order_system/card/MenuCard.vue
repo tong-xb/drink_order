@@ -72,26 +72,27 @@ const isOrderCard = computed(() => {
   return true;
 });
 
-const colorClass = ref('test');
+const today = ref(formatDate(new Date(), 'YYYY/MM/DD HH:mm'));
 
-const setTime = (() => {
-  let now = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
-
-  if (now < props.openTimeTo) {
-    // console.log('now < props.openTimeTo');
-    colorClass.value = 'orderOpen';
-  } else if (now >= props.openTimeTo && now < props.arrivalTime) {
-    // console.log('props.openTimeTo >= now && props.arrivalTime <= now');
-    colorClass.value = 'orderClose';
-  } else if (now >= props.arrivalTime) {
-    // console.log('props.arrivalTime <= now');
-    colorClass.value = 'orderFinished';
-  }
+const setToday = (() => {
+  today.value = formatDate(new Date(), 'YYYY/MM/DD HH:mm');
 })();
 
 setInterval(() => {
-  setTime;
+  setToday;
 }, 1000);
+
+const colorClass = computed(() => {
+  let color = 'orderOpen';
+  if (today.value < props.openTimeTo) {
+    color = 'orderOpen';
+  } else if (today.value >= props.openTimeTo && today.value < props.arrivalTime) {
+    color = 'orderClose';
+  } else if (today.value >= props.arrivalTime) {
+    color = 'orderFinished';
+  }
+  return color;
+});
 </script>
 
 <style lang="scss" scoped>

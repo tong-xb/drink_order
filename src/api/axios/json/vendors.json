@@ -360,344 +360,369 @@
       "product": [
         {
           "drinkTypeId": "t001",
-          "drinkType": "龜記找好茶",
+          "drinkType": "醇粹",
           "drinks": [
             {
               "drinkId": "d001",
-              "drinkName": "茉莉綠茶",
+              "drinkName": "極品紅茶",
               "drinkPrice": {
-                "M": 20,
-                "L": 25
+                "L": 30
               }
             },
             {
               "drinkId": "d002",
-              "drinkName": "阿薩姆紅茶",
+              "drinkName": "老權鐵觀音",
               "drinkPrice": {
-                "M": 20,
-                "L": 25
-              }
-            },
-            {
-              "drinkId": "d003",
-              "drinkName": "四季春青茶",
-              "drinkPrice": {
-                "M": 20,
-                "L": 25
-              }
-            },
-            {
-              "drinkId": "d004",
-              "drinkName": "黃金烏龍",
-              "drinkPrice": {
-                "M": 20,
-                "L": 25
-              }
-            },
-            {
-              "drinkId": "d005",
-              "drinkName": "波霸綠",
-              "drinkPrice": {
-                "M": 25,
                 "L": 35
               }
             },
             {
-              "drinkId": "d006",
-              "drinkName": "波霸紅",
+              "drinkId": "d003",
+              "drinkName": "三韻紅萱",
               "drinkPrice": {
-                "M": 25,
+                "L": 40
+              }
+            },
+            {
+              "drinkId": "d004",
+              "drinkName": "翡翠綠茶",
+              "drinkPrice": {
+                "L": 30
+              }
+            },
+            {
+              "drinkId": "d005",
+              "drinkName": "三十三茶王",
+              "drinkPrice": {
+                "L": 40
+              }
+            },
+            {
+              "drinkId": "d006",
+              "drinkName": "四季春清茶",
+              "drinkPrice": {
                 "L": 35
               }
             },
             {
               "drinkId": "d007",
-              "drinkName": "微檸檬紅",
+              "drinkName": "紅水烏龍",
               "drinkPrice": {
-                "M": 25,
-                "L": 35
+                "L": 40
               }
             },
             {
               "drinkId": "d008",
-              "drinkName": "微檸檬青",
+              "drinkName": "蜂蜜綠茶",
               "drinkPrice": {
-                "M": 25,
-                "L": 35
+                "L": 45
               }
             },
             {
               "drinkId": "d009",
-              "drinkName": "檸檬綠",
+              "drinkName": "蜂蜜四季春",
               "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d010",
-              "drinkName": "檸檬青",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d011",
-              "drinkName": "梅子綠",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d012",
-              "drinkName": "8冰綠",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d013",
-              "drinkName": "多多綠",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d014",
-              "drinkName": "冰淇淋紅茶",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d015",
-              "drinkName": "旺來紅",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d016",
-              "drinkName": "鮮柚綠",
-              "drinkPrice": {
-                "M": 40,
-                "L": 55
+                "L": 50
               }
             }
           ]
         },
         {
           "drinkTypeId": "t002",
-          "drinkType": "龜記找拿鐵 (鮮奶)",
+          "drinkType": "小農鮮乳坊",
           "drinks": [
             {
-              "drinkId": "d017",
-              "drinkName": "紅茶拿鐵",
+              "drinkId": "d010",
+              "drinkName": "冬瓜鮮乳",
               "drinkPrice": {
-                "M": 40,
-                "L": 55
+                "L": 65
+              },
+              "fixedSweetness": true
+            },
+            {
+              "drinkId": "d011",
+              "drinkName": "紅烏鮮乳",
+              "drinkPrice": {
+                "L": 69
               }
             },
             {
-              "drinkId": "d018",
-              "drinkName": "抹茶拿鐵",
+              "drinkId": "d012",
+              "drinkName": "巧克鮮乳茶",
               "drinkPrice": {
-                "M": 45,
+                "L": 69
+              }
+            },
+            {
+              "drinkId": "d013",
+              "drinkName": "龜記濃乳茶",
+              "drinkPrice": {
                 "L": 65
               }
             },
             {
-              "drinkId": "d019",
-              "drinkName": "珍珠紅茶拿鐵",
+              "drinkId": "d014",
+              "drinkName": "小農鮮乳茶(紅茶)",
               "drinkPrice": {
-                "M": 40,
-                "L": 55
-              }
-            },
-            {
-              "drinkId": "d020",
-              "drinkName": "波霸紅茶拿鐵",
-              "drinkPrice": {
-                "M": 40,
-                "L": 55
-              }
-            },
-            {
-              "drinkId": "d021",
-              "drinkName": "波霸抹茶拿鐵",
-              "drinkPrice": {
-                "M": 45,
                 "L": 65
               }
             },
             {
-              "drinkId": "d022",
-              "drinkName": "阿華田拿鐵",
+              "drinkId": "d015",
+              "drinkName": "小農鮮乳茶(翡翠)",
               "drinkPrice": {
-                "M": 45,
                 "L": 65
               }
             },
             {
-              "drinkId": "d023",
-              "drinkName": "冰淇淋紅茶拿鐵",
+              "drinkId": "d016",
+              "drinkName": "小農鮮乳茶(鐵觀音)",
               "drinkPrice": {
-                "M": 50,
-                "L": 70
+                "L": 65
               }
             }
           ]
         },
         {
           "drinkTypeId": "t003",
-          "drinkType": "龜記找奶茶 (奶精)",
+          "drinkType": "古早味",
           "drinks": [
             {
-              "drinkId": "d024",
-              "drinkName": "奶茶",
+              "drinkId": "d017",
+              "drinkName": "秀水旺梨春",
               "drinkPrice": {
-                "M": 30,
+                "L": 65
+              }
+            },
+            {
+              "drinkId": "d018",
+              "drinkName": "阿源楊桃(紅茶)",
+              "drinkPrice": {
+                "L": 55
+              }
+            },
+            {
+              "drinkId": "d019",
+              "drinkName": "阿源楊桃(翡翠)",
+              "drinkPrice": {
+                "L": 55
+              }
+            },
+            {
+              "drinkId": "d020",
+              "drinkName": "楊桃雷夢",
+              "drinkPrice": {
+                "L": 60
+              }
+            },
+            {
+              "drinkId": "d021",
+              "drinkName": "冬瓜雷夢",
+              "drinkPrice": {
+                "L": 55
+              },
+              "fixedSweetness": true
+            },
+            {
+              "drinkId": "d022",
+              "drinkName": "冬瓜鐵觀音",
+              "drinkPrice": {
                 "L": 45
+              },
+              "fixedSweetness": true
+            },
+            {
+              "drinkId": "d023",
+              "drinkName": "豆漿紅茶",
+              "drinkPrice": {
+                "L": 40
+              }
+            },
+            {
+              "drinkId": "d024",
+              "drinkName": "珍珠奶茶(紅茶)",
+              "drinkPrice": {
+                "L": 55
               }
             },
             {
               "drinkId": "d025",
-              "drinkName": "奶綠",
+              "drinkName": "珍珠奶茶(翡翠)",
               "drinkPrice": {
-                "M": 30,
-                "L": 45
+                "L": 55
               }
             },
             {
               "drinkId": "d026",
-              "drinkName": "烏龍奶",
+              "drinkName": "珍珠奶茶(鐵觀音)",
               "drinkPrice": {
-                "M": 30,
-                "L": 45
+                "L": 55
               }
             },
             {
               "drinkId": "d027",
-              "drinkName": "珍珠奶茶",
+              "drinkName": "極品奶茶(紅茶)",
               "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d028",
-              "drinkName": "珍珠奶綠",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d029",
-              "drinkName": "波霸奶茶",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d030",
-              "drinkName": "波霸奶綠",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d031",
-              "drinkName": "紅茶瑪奇朵 (鮮奶油)",
-              "drinkPrice": {
-                "M": 30,
-                "L": 45
-              }
-            },
-            {
-              "drinkId": "d032",
-              "drinkName": "阿華田",
-              "drinkPrice": {
-                "M": 35,
                 "L": 50
               }
             },
             {
-              "drinkId": "d033",
-              "drinkName": "冰淇淋奶茶",
+              "drinkId": "d028",
+              "drinkName": "極品奶茶(翡翠)",
               "drinkPrice": {
-                "M": 40,
-                "L": 55
+                "L": 50
+              }
+            },
+            {
+              "drinkId": "d029",
+              "drinkName": "極品奶茶(鐵觀音)",
+              "drinkPrice": {
+                "L": 50
               }
             }
           ]
         },
         {
           "drinkTypeId": "t004",
-          "drinkType": "龜記找新鮮 (無咖啡因)",
+          "drinkType": "冬季限定",
           "drinks": [
             {
-              "drinkId": "d034",
-              "drinkName": "8冰茶",
+              "drinkId": "d030",
+              "drinkName": "黑木耳鮮乳",
               "drinkPrice": {
-                "M": 30,
-                "L": 45
+                "L": 65
+              }
+            },
+            {
+              "drinkId": "d031",
+              "drinkName": "手作薑茶",
+              "drinkPrice": {
+                "L": 55
+              }
+            },
+            {
+              "drinkId": "d032",
+              "drinkName": "桂圓紅棗茶",
+              "drinkPrice": {
+                "L": 55
+              }
+            },
+            {
+              "drinkId": "d033",
+              "drinkName": "薑汁奶茶",
+              "drinkPrice": {
+                "L": 60
+              }
+            },
+            {
+              "drinkId": "d034",
+              "drinkName": "薑汁雷夢",
+              "drinkPrice": {
+                "L": 55
               }
             },
             {
               "drinkId": "d035",
-              "drinkName": "檸檬汁",
+              "drinkName": "薑汁桂圓",
               "drinkPrice": {
-                "M": 40,
                 "L": 55
               }
             },
             {
               "drinkId": "d036",
-              "drinkName": "葡萄柚汁",
+              "drinkName": "擂茶豆漿",
               "drinkPrice": {
-                "M": 40,
-                "L": 55
+                "L": 65
               }
-            },
-            {
-              "drinkId": "d004",
-              "drinkName": "金桔檸檬",
-              "drinkPrice": {
-                "M": 40,
-                "L": 55
-              }
-            },
+            }
+          ]
+        },
+        {
+          "drinkTypeId": "t005",
+          "drinkType": "鮮調",
+          "drinks": [
             {
               "drinkId": "d037",
-              "drinkName": "檸檬梅汁",
+              "drinkName": "紅柚翡翠",
               "drinkPrice": {
-                "M": 40,
-                "L": 55
+                "L": 75
               }
             },
             {
               "drinkId": "d038",
-              "drinkName": "檸檬多多",
+              "drinkName": "金桔拜觀音",
               "drinkPrice": {
-                "M": 45,
-                "L": 65
+                "L": 55
               }
             },
             {
               "drinkId": "d039",
-              "drinkName": "葡萄柚多多",
+              "drinkName": "鮮果百香(紅茶)",
               "drinkPrice": {
-                "M": 45,
+                "L": 55
+              }
+            },
+            {
+              "drinkId": "d040",
+              "drinkName": "鮮果百香(翡翠)",
+              "drinkPrice": {
+                "L": 55
+              }
+            },
+            {
+              "drinkId": "d041",
+              "drinkName": "翡翠雷夢",
+              "drinkPrice": {
+                "L": 55
+              }
+            },
+            {
+              "drinkId": "d042",
+              "drinkName": "香柚雷夢綠",
+              "drinkPrice": {
+                "L": 69
+              }
+            },
+            {
+              "drinkId": "d043",
+              "drinkName": "柳丁翡翠",
+              "drinkPrice": {
+                "L": 55
+              }
+            },
+            {
+              "drinkId": "d044",
+              "drinkName": "蘋果紅萱",
+              "drinkPrice": {
+                "L": 59
+              }
+            },
+            {
+              "drinkId": "d045",
+              "drinkName": "子葡蘆薈春",
+              "drinkPrice": {
+                "L": 69
+              }
+            },
+            {
+              "drinkId": "d046",
+              "drinkName": "蜂蜜雷夢",
+              "drinkPrice": {
+                "L": 60
+              }
+            },
+            {
+              "drinkId": "d047",
+              "drinkName": "雷夢蘆薈蜜",
+              "drinkPrice": {
                 "L": 65
+              }
+            },
+            {
+              "drinkId": "d048",
+              "drinkName": "玉荷包茶王",
+              "drinkPrice": {
+                "L": 80
               }
             }
           ]
