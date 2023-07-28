@@ -12,14 +12,17 @@
 
           <div class="item">
             <label>開始訂購時間:</label>
+            <p class="warning" v-show="!isInput.openTimeFrom">此欄位為必填!</p>
             <input type="datetime" placeholder="YYYY/MM/DD HH:MM" v-model="times.openTimeFrom" />
           </div>
           <div class="item">
             <label>截止訂購時間:</label>
+            <p class="warning" v-show="!isInput.openTimeTo">此欄位為必填!</p>
             <input type="datetime" placeholder="YYYY/MM/DD HH:MM" v-model="times.openTimeTo" />
           </div>
           <div class="item">
             <label>預計到達時間:</label>
+            <p class="warning" v-show="!isInput.arrivalTime">此欄位為必填!</p>
             <input type="datetime" placeholder="YYYY/MM/DD HH:MM" v-model="times.arrivalTime" />
           </div>
         </div>
@@ -35,7 +38,7 @@
 <script setup>
 import menus from '@/api/axios/json/menus.json';
 import vendors from '@/api/axios/json/vendors.json';
-import { computed, reactive } from 'vue';
+import { computed, reactive, watch } from 'vue';
 
 const props = defineProps({
   vendorId: {
@@ -46,8 +49,16 @@ const props = defineProps({
 
 const emit = defineEmits('emitWindowOpen');
 const closeWindow = () => {
+  clearSheet();
   emit('emitWindowOpen', false);
 };
+
+const isInput = reactive({
+  //有沒有選擇
+  openTimeFrom: true,
+  openTimeTo: true,
+  arrivalTime: true,
+});
 
 const times = reactive({
   openTimeFrom: '',
@@ -55,12 +66,77 @@ const times = reactive({
   arrivalTime: '',
 });
 
+// reactive需透過函式監控,只能監控單一的值
+watch(
+  () => times.openTimeFrom,
+  (newVal) => {
+    if (newVal) {
+      isInput.openTimeFrom = true;
+    }
+  },
+  { deep: true }
+);
+
+watch(
+  () => times.openTimeTo,
+  (newVal) => {
+    if (newVal) {
+      isInput.openTimeTo = true;
+    }
+  },
+  { deep: true }
+);
+watch(
+  () => times.arrivalTime,
+  (newVal) => {
+    if (newVal) {
+      isInput.arrivalTime = true;
+    }
+  },
+  { deep: true }
+);
+
+const checkIsInput = () => {
+  let bol = true;
+  if (!times.openTimeFrom) {
+    isInput.openTimeFrom = false;
+    bol = false;
+  } else {
+    isInput.openTimeFrom = true;
+  }
+  if (!times.openTimeTo) {
+    isInput.openTimeTo = false;
+    bol = false;
+  } else {
+    isInput.openTimeTo = true;
+  }
+  if (!times.arrivalTime) {
+    isInput.arrivalTime = false;
+    bol = false;
+  } else {
+    isInput.arrivalTime = true;
+  }
+  return bol;
+};
+
 const addToCart = () => {
-  console.log('addToCart');
-  let length = menus.menu.length;
-  let menuId = 'm' + length;
-  menus.menu.push({ menuId, ...times, ...thisVendor.value });
-  console.log(menus.menu);
+  if (checkIsInput()) {
+    // console.log('addToCart');
+    let length = menus.menu.length;
+    let menuId = 'm' + length;
+    menus.menu.push({ menuId, ...times, ...thisVendor.value });
+    // console.log(menus.menu);
+    closeWindow();
+  }
+};
+
+const clearSheet = () => {
+  times.openTimeFrom = '';
+  times.openTimeTo = '';
+  times.arrivalTime = '';
+  isInput.openTimeFrom = true;
+  isInput.openTimeTo = true;
+  isInput.arrivalTime = true;
 };
 
 const thisVendor = computed(() => {
@@ -124,6 +200,10 @@ const thisVendor = computed(() => {
       label {
         font-weight: 600;
         display: block;
+      }
+      .warning {
+        color: red;
+        font-size: small;
       }
       input {
         font-size: 16px;
